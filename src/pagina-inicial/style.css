@@ -120,7 +120,13 @@ h2 {
     margin-right: 20px;
 }
 
-@media (max-width: 510px) {
+@media (max-width: 831px) {
+    h2 {
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 557px) {
     h1 {
         font-size: 35px;
     }
@@ -142,6 +148,9 @@ h2 {
     }
     .opcao-1 {
        margin-bottom: 20px; 
+    }
+    .rodape {
+        width: 100%;
     }
     .rodape div p {
         font-size: 15px;
@@ -180,9 +189,6 @@ h2 {
     }
     .opcao-1 {
        margin-bottom: 20px; 
-    }
-    .rodape {
-        width: 100%;
     }
     .rodape div p {
         font-weight: 600;
