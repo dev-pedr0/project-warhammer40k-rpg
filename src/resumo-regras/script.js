@@ -7,5 +7,5 @@ function mostrarTexto () {
     });
     textos[idBotao].style.display = "block";
     let rodape = document.querySelector(".rodape");
-    rodape.style.position = "relative";   
+    rodape.style.position = "relative";
 }

@@ -18,6 +18,22 @@ html, body {
     font-family: "Lora", serif;
 }
 
+.link-retornar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    border-radius: 35px;
+    margin-top: 5px;
+    margin-left: 5px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-retornar:hover{
+    text-decoration: underline;
+}
+
 .container {
     margin: 1vh;
     height: 98vh;
