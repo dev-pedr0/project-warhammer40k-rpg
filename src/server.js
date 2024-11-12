@@ -1,0 +1,31 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const path = require('path');
+const app = express();
+
+// Configuração do Body-Parser para ler dados do formulário
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Conectar ao MongoDB usando o mongoose
+mongoose.connect('mongodb+srv://pedro4costa:N0m4nSk%@clusterprojectcc50.q3kaz.mongodb.net/?retryWrites=true&w=majority&appName=ClusterProjectCC50', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log('Conectado ao MongoDB'))
+.catch(err => console.log('Erro ao conectar ao MongoDB:', err));
+
+// Servir arquivos estáticos da pasta public
+app.use(express.static(path.join(__dirname, 'src')));
+
+// Rota principal
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'pagina-login-cadastro', 'index.html'));
+});
+
+// Porta do servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
