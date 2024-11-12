@@ -1,0 +1,72 @@
+/*#615F5C (Cinza Escuro) - nav, rodapé, painel lateral*/
+/*#FCB02D (Amarelo Mostarda) - botão, links, ícones*/
+/*#7D0000 (Vermelho Escuro) - títulos, cabeçalhos, bordas*/
+/*#835214 (Marrom Médio) - fundo de seções grandes*/
+/*#140D0B (Preto Avermelhado) - fundo principal, seção de pouco texto, fundo de cabeçalho*/
+/*#FFFFFF (Branco) - letra*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #140D0B;
+    color: #FFFFFF;
+    font-family: "Uncial Antiqua";
+
+}
+
+.container {
+    margin: 1vh;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,h2 {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    color: #FCB02D;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+nav {
+    width: 100%;
+    font-family: "Cinzel", serif;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: bold;
+    background-color: #835214;
+    border-radius: 10px;
+}
+
+nav ul li {
+    padding: 10px;
+    font-size: 25px;
+}
+
+nav ul li:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .descricao {
+    text-align: justify;
+    background-color: #835214
+  }
