@@ -55,7 +55,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .formulario input {
@@ -117,6 +117,15 @@ h2 {
     margin-right: 20px;
 }
 
+@media (max-width: 641px) {
+    .formulario input {
+        width: 100%;
+    }
+    .rodape {
+        width: 100%;
+    }
+}
+
 @media (max-width: 510px) {
     h1 {
         font-size: 35px;
@@ -126,20 +135,6 @@ h2 {
         font-size: 25px;
     }
 
-    .opcoes {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 55%;
-
-    }
-    .opcao {
-        width: 60%;
-        height: 70%;
-    }
-    .opcao-1 {
-       margin-bottom: 20px; 
-    }
     .rodape div p {
         font-size: 15px;
     }
@@ -151,12 +146,12 @@ h2 {
 }
 
 @media (max-width: 426px) {
-    .opcao {
-        width: 80%;
-        height: 70%;
+    .formulario input {
+        width: 70%;
     }
-    .opcao-1 {
-       margin-bottom: 20px; 
+    .butoes button {
+        font-size: 20px;
+        width: 120px;
     }
     .rodape div p {
         font-weight: 600;
@@ -171,15 +166,8 @@ h2 {
 }
 
 @media (max-width: 376px) {
-    .opcao {
-        width: 90%;
-        height: 100%;
-    }
-    .opcao-1 {
-       margin-bottom: 20px; 
-    }
-    .rodape {
-        width: 100%;
+    .butoes {
+        flex-direction: column;
     }
     .rodape div p {
         font-weight: 600;
