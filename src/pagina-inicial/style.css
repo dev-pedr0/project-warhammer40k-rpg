@@ -24,7 +24,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("src/img/inquisiton-rosete.png");
+    background-image: url("../img/inquisiton-rosete.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size:contain;
@@ -51,48 +51,51 @@ h2 {
     margin-bottom: 10%;
 }
 
-.formulario {
+.opcoes {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: 40%;
+    justify-content: space-evenly;
+}
+
+.opcao {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 5%;
-}
-
-.formulario input {
-    background-color: black;
-    color: white;
-    width: 150%;
-    font-size: 20px;
-}
-
-.formulario p {
-    text-align: center;
-    margin-bottom: 0;
-    font-size: 25px;
-    font-weight: bold;
-    color: #FCB02D;
-}
-
-.butoes {
-    margin-top: 25px;
-    display: flex;
-    gap: 20px;
-}
-
-.butoes button {
-    font-size: 25px;
-    width: 200px;
-    background-color: #615F5C;
+    border-radius: 10px;
+    font-family: "Uncial Antiqua";
+    font-size: 30px;
     cursor: pointer;
-}
-
-.butoes button a {
-    color: #FCB02D;
+    transition: transform 0.1s ease, background-color 0.3s;
+    color: white;
     text-decoration: none;
 }
 
-.butoes button:hover {
+.opcao:active {
+    transform: scale(0.95);
+  }
+  
+  .opcao:hover {
     opacity: 0.7;
+    text-decoration: underline;
+  }
+
+.opcao-1 {
+    background-image: url("../img/criar-personagem.jpg");
+    /*Creditos: L J Koh*/
+}
+
+.opcao-2 {
+    background-image: url("../img/resumo-regras.jpg");
+    /*Hector Martínez*/
+}
+
+.opcao p {
+    text-align: center;
 }
 
 .rodape {
