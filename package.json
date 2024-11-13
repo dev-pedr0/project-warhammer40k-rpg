@@ -1,0 +1,18 @@
+{
+  "name": "projeto-final-cc50",
+  "version": "1.0.0",
+  "description": "Esse é meu projeto em andamento de criar um site com um resumo de regras do sistema de rpg warhammer 40k Dark Heresy 2.\r O objetivo é criar um sistema de cadastro e login. criação de fichas, e resumo de regras.\r Eu não sei até onde o projeto vai, mas também devo adicionar outros sistemas.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1"
+  }
+}
