@@ -16,8 +16,11 @@ mongoose.connect('mongodb+srv://pedro4costa:N0m4nSk%@clusterprojectcc50.q3kaz.mo
 .then(() => console.log('Conectado ao MongoDB'))
 .catch(err => console.log('Erro ao conectar ao MongoDB:', err));
 
-// Servir arquivos estáticos da pasta public
-app.use(express.static(path.join(__dirname, 'src')));
+// Servir arquivos estáticos da pasta src/pagina-login-cadastro (css, js)
+app.use(express.static(path.join(__dirname, 'src', 'pagina-login-cadastro')));
+
+// Servir imagens da pasta src/img
+app.use('/img', express.static(path.join(__dirname, 'src', 'img')));
 
 // Rota principal
 app.get('/', (req, res) => {
