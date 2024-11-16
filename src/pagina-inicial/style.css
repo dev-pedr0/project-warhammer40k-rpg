@@ -9,6 +9,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
+.toogle-flex {
+    display: flex !important;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -16,22 +20,6 @@ html, body {
     background-color: #140D0B;
     color: #FFFFFF;
     font-family: "Lora", serif;
-}
-
-.link-retornar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    border-radius: 35px;
-    margin-top: 5px;
-    margin-left: 5px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.link-retornar:hover{
-    text-decoration: underline;
 }
 
 .container {
@@ -44,6 +32,35 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     background-size:contain;
+}
+
+.link-retornar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.link-retornar:hover{
+    text-decoration: underline;
+}
+
+.usuario {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    margin: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 50px;
+    text-align: center;
+    background-color: #fcb02d25;
+    border-radius: 50%;
 }
 
 .titulos {
@@ -196,6 +213,11 @@ h2 {
         max-width: 20px;
         margin-right: 10px;
     }
+
+    .container-topo {
+        display: none;
+    }
+
 }
 
 @media (max-width: 376px) {
