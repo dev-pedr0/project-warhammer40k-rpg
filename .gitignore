@@ -1,0 +1,20 @@
+# Ignorar a pasta node_modules (bibliotecas instaladas pelo npm)
+node_modules/
+
+# Ignorar o arquivo .env (informações sensíveis, como chaves e URLs)
+.env
+
+# Ignorar logs gerados pela aplicação
+logs/
+*.log
+
+# Ignorar cache do sistema
+.cache/
+
+# Ignorar pastas de configuração específicas do editor de código
+.vscode/
+.idea/
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
