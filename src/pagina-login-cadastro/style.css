@@ -169,14 +169,22 @@ h2 {
     .butoes {
         flex-direction: column;
     }
-    .rodape div p {
-        font-weight: 600;
-        font-size: 15px;
-        margin-left: 20px;
-    }
     
     .rodape div a img {
         max-width: 25px;
-        margin-right: 10px;
     }
 }
+
+@media (max-width: 321px) {
+    .butoes {
+        flex-direction: column;
+    }
+    .rodape div p {
+        font-weight: 600;
+        font-size: 12px;
+    }
+    .rodape div a img {
+        max-width: 20px;
+    }
+}
+

@@ -9,6 +9,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
+.toogle-block {
+    display: block !important;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -30,16 +34,54 @@ html, body {
     background-size:contain;
 }
 
-h1 {
+.usuario {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    right: 0;
     margin: 0;
-    font-family: "Cinzel", serif;
-    color: #FCB02D;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 50px;
+    text-align: center;
+    background-color: #fcb02d25;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.usuario-opcoes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #615F5C;
+    border-radius: 5px;
+    display:none;
+}
+
+.usuario-opcoes a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.usuario-opcoes a:hover {
+    text-decoration: underline;
 }
 
 h1 {
     font-size: 50px;
+    margin: 0;
     margin-top: 5%;
     margin-bottom: 5%;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    color: #FCB02D;
 }
 
 .link-retornar {
@@ -64,6 +106,7 @@ nav {
 }
 
 nav ul {
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -110,4 +153,114 @@ nav ul li:hover {
 .rodape div a img {
     max-width: 40px;
     margin-right: 20px;
+}
+
+@media (max-width: 875px) {
+    .usuario {
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+    }
+    
+    .link-retornar img {
+        width: 25px;
+    }
+    .rodape {
+        width: 100%;
+    }
+}
+
+@media (max-width: 610px) {
+    .usuario {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+    .link-retornar {
+        padding: 5px;
+    }
+    .link-retornar img {
+        width: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 510px) {
+    h1 {
+        font-size: 35px;
+    }
+    nav ul li {
+        font-size: 20px;
+    }
+    .rodape div p {
+        font-size: 15px;
+    }
+    
+    .rodape div a img {
+        max-width: 30px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+    .usuario {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+    .link-retornar {
+        padding: 3px;
+    }
+    .link-retornar img {
+        width: 15px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    nav ul li {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+    .usuario {
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+    .link-retornar {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .rodape div p {
+        font-size: 12px;
+    }
+    
+    .rodape div a img {
+        max-width: 25px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        font-size: 20px;
+    }
+    nav ul li {
+        font-size: 12px;
+    }
+    .rodape div p {
+        font-size: 10px;
+    }
+    
+    .rodape div a img {
+        max-width: 20px;
+        margin-right: 10px;
+    }
 }

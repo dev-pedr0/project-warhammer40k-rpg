@@ -9,8 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-.toogle-flex {
-    display: flex !important;
+.toogle-block {
+    display: block !important;
 }
 
 html, body {
@@ -61,6 +61,31 @@ html, body {
     text-align: center;
     background-color: #fcb02d25;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.usuario-opcoes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #615F5C;
+    border-radius: 5px;
+    display:none;
+}
+
+.usuario-opcoes a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.usuario-opcoes a:hover {
+    text-decoration: underline;
 }
 
 .titulos {
@@ -153,6 +178,14 @@ h2 {
     margin-right: 20px;
 }
 
+@media (max-width: 935px) {
+    .usuario {
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+    }
+}
+
 @media (max-width: 831px) {
     h2 {
         margin-bottom: 5%;
@@ -195,6 +228,22 @@ h2 {
     }
 }
 
+@media (max-width: 615px) {
+    .usuario {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 455px) {
+    .usuario {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 426px) {
     .opcao {
         width: 80%;
@@ -217,6 +266,14 @@ h2 {
     .container-topo {
         display: none;
     }
+    .link-retornar {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .usuario {
+        margin-top: 0px;
+        margin-right: 0px;
+    }
 
 }
 
@@ -236,6 +293,31 @@ h2 {
     
     .rodape div a img {
         max-width: 25px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 316px) {
+    .rodape div p {
+        font-weight: 600;
+        font-size: 12px;
+        margin-left: 15px;
+    }
+    
+    .rodape div a img {
+        max-width: 20px;
         margin-right: 10px;
     }
 }
