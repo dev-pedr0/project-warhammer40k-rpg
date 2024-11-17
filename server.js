@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -9,10 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Conectar ao MongoDB usando o mongoose
-mongoose.connect('mongodb+srv://pedro4costa:N0m4nSk%@clusterprojectcc50.q3kaz.mongodb.net/?retryWrites=true&w=majority&appName=ClusterProjectCC50', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('Conectado ao MongoDB'))
 .catch(err => console.log('Erro ao conectar ao MongoDB:', err));
 
