@@ -14,3 +14,5 @@ document.addEventListener("click", (evento) => {
 function abrirOpcoesUsuario() {
     usuarioOpcoes.classList.add("toogle-block");
 }
+
+console.log(user);

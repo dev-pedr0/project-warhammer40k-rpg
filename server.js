@@ -168,10 +168,11 @@ app.get('/logout', (req, res) => {
     return res.redirect('/');
 });
 
+//TODO
 app.get('/main', (req, res) => {
     return res.render("main");
 });
-
+//TODO
 app.get('/regras', (req, res) => {
     return res.render('regras');
 });
