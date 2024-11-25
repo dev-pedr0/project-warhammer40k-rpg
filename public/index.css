@@ -1,0 +1,213 @@
+/*#615F5C (Cinza Escuro) - nav, rodapé, painel lateral*/
+/*#FCB02D (Amarelo Mostarda) - botão, links, ícones*/
+/*#7D0000 (Vermelho Escuro) - títulos, cabeçalhos, bordas*/
+/*#835214 (Marrom Médio) - fundo de seções grandes*/
+/*#140D0B (Preto Avermelhado) - fundo principal, seção de pouco texto, fundo de cabeçalho*/
+/*#FFFFFF (Branco) - letra*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #140D0B;
+    color: #FFFFFF;
+    font-family: "Lora", serif;
+}
+
+.container {
+    margin: 1vh;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../imgs/inquisiton-rosete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+}
+
+.titulos {
+    text-align: center;  
+}
+
+h1,h2 {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    color: #FCB02D;
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 10%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.formulario input {
+    background-color: black;
+    color: white;
+    width: 150%;
+    font-size: 20px;
+}
+
+.formulario p {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FCB02D;
+}
+
+.butoes {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.butoes button {
+    font-size: 25px;
+    width: 200px;
+    background-color: #615F5C;
+    cursor: pointer;
+}
+
+.butoes button a {
+    color: #FCB02D;
+    text-decoration: none;
+}
+
+.butoes button:hover {
+    opacity: 0.7;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 100px);
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px 20px 0 0;
+}
+
+.rodape div p {
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.rodape div a img {
+    max-width: 40px;
+    margin-right: 20px;
+}
+
+.error {
+    margin:0;
+    padding: 0;
+}
+
+.error p {
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    color: red;
+}
+
+.sucess {
+    margin:0;
+    padding: 0;
+}
+
+.sucess p {
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    color: rgb(35, 202, 35);
+}
+
+@media (max-width: 641px) {
+    .formulario input {
+        width: 100%;
+    }
+    .rodape {
+        width: 100%;
+    }
+}
+
+@media (max-width: 510px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .rodape div p {
+        font-size: 15px;
+    }
+    
+    .rodape div a img {
+        max-width: 30px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 426px) {
+    .formulario input {
+        width: 70%;
+    }
+    .butoes button {
+        font-size: 20px;
+        width: 120px;
+    }
+    .rodape div p {
+        font-weight: 600;
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    
+    .rodape div a img {
+        max-width: 20px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 376px) {
+    .butoes {
+        flex-direction: column;
+    }
+    
+    .rodape div a img {
+        max-width: 25px;
+    }
+}
+
+@media (max-width: 321px) {
+    .butoes {
+        flex-direction: column;
+    }
+    .rodape div p {
+        font-weight: 600;
+        font-size: 12px;
+    }
+    .rodape div a img {
+        max-width: 20px;
+    }
+}

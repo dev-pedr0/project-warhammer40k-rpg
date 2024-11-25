@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <a class="link-retornar" href="/logout">
+            Sair
+        </a>
+        <p class="usuario">
+            <%= user.username ? user.username[0].toUpperCase() : "0" %>
+        </p>
+        <div class="usuario-opcoes">
+            <a href="../criar-personagem/index.html">Criar Personagem</a>
+            <a href="...">Personagens Criados</a>
+            <a href="/regras">Resumo de Regras</a>
+            <a href="../pagina-login-cadastro/index.html">Sair</a>
+        </div>
+        <header class="titulos">
+            <h1>
+                Warhammer 40K em Português
+            </h1>
+            <h2>
+                Criação de Personagens e Resumo de Regras
+            </h2>
+        </header>
+        <nav class="opcoes">
+            <a class="opcao opcao-1" href="../criar-personagem/index.html">
+                <p>
+                    Criar Personagem
+                </p>
+            </a>  
+            <a class="opcao opcao-2" href="/regras">
+                <p>Resumo de Regras</p>
+            </a>       
+        </nav>
+        <footer class="rodape">
+            <div>
+                <p>
+                    © 2024 Pedro Costa
+                </p>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/pedro-conceicao1" target="_blank">
+                    <img src="../imgs/linkedin.png">
+                </a>
+                <a href="https://github.com/dev-pedr0" target="_blank">
+                    <img src="../imgs/github-mark-white.png">
+                </a>
+                <a href="https://wa.me/5571987412297" target="_blank">
+                    <img src="../imgs/wwp.png">
+                </a>
+                <a href="mailto:pedro4costa@outlook.com" target="_blank">
+                    <img src="../imgs/email.png">
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="/main.js"></script>
+</body>
+</html>

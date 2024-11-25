@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="titulos">
+                <h1>
+                    Warhammer 40K em Português
+                </h1>
+                <h2>
+                    Criação de Personagens e Resumo de Regras
+                </h2>
+            </header>
+            <% if (message) { %>
+                <div class="<%= messageType %>">
+                    <p><%= message %></p>
+                </div>
+            <% } %>
+            <form method="POST" class="formulario" action="/process-action">
+                <p>Usuário</p>
+                <input type="text" name="username" required/>
+    
+                <p>Senha</p>
+                <input type="password" name="password" required/>
+                <input type="hidden" name="action" value="register" id="formAction"/>
+                <div class="butoes">
+                    <button type="submit" onclick="setAction('login')">
+                        <a>
+                            Login
+                        </a>
+                    </button>
+                    <button type="submit" onclick="setAction('register')">
+                        <a>
+                            Cadastrar
+                        </a>
+                    </button>
+                </div>
+            </form>
+            <footer class="rodape">
+                <div>
+                    <p>
+                        © 2024 Pedro Costa
+                    </p>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/pedro-conceicao1/" target="_blank">
+                        <img src="../imgs/linkedin.png">
+                    </a>
+                    <a href="https://github.com/dev-pedr0" target="_blank">
+                        <img src="../imgs/github-mark-white.png">
+                    </a>
+                    <a href="https://wa.me/5571987412297" target="_blank">
+                        <img src="../imgs/wwp.png">
+                    </a>
+                    <a href="mailto:pedro4costa@outlook.com" target="_blank">
+                        <img src="../imgs/email.png">
+                    </a>
+                </div>
+            </footer>
+        </div>
+        <script src="/index.js"></script>
+    </body>
+</html>

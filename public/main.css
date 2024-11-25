@@ -1,0 +1,323 @@
+/*#615F5C (Cinza Escuro) - nav, rodapé, painel lateral*/
+/*#FCB02D (Amarelo Mostarda) - botão, links, ícones*/
+/*#7D0000 (Vermelho Escuro) - títulos, cabeçalhos, bordas*/
+/*#835214 (Marrom Médio) - fundo de seções grandes*/
+/*#140D0B (Preto Avermelhado) - fundo principal, seção de pouco texto, fundo de cabeçalho*/
+/*#FFFFFF (Branco) - letra*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+.toogle-block {
+    display: block !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #140D0B;
+    color: #FFFFFF;
+    font-family: "Lora", serif;
+}
+
+.container {
+    margin: 1vh;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../imgs/inquisiton-rosete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+}
+
+.link-retornar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.link-retornar:hover{
+    text-decoration: underline;
+}
+
+.usuario {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    margin: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 50px;
+    text-align: center;
+    background-color: #fcb02d25;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.usuario-opcoes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #615F5C;
+    border-radius: 5px;
+    display:none;
+}
+
+.usuario-opcoes a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.usuario-opcoes a:hover {
+    text-decoration: underline;
+}
+
+.titulos {
+    text-align: center;  
+}
+
+h1,h2 {
+    margin: 0;
+    font-family: "Cinzel", serif;
+    color: #FCB02D;
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 10%;
+}
+
+.opcoes {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    justify-content: space-evenly;
+}
+
+.opcao {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-family: "Uncial Antiqua";
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+.opcao:active {
+    transform: scale(0.95);
+  }
+  
+  .opcao:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+
+.opcao-1 {
+    background-image: url("../imgs/criar-personagem.jpg");
+    /*Creditos: L J Koh*/
+}
+
+.opcao-2 {
+    background-image: url("../imgs/resumo-regras.jpg");
+    /*Hector Martínez*/
+}
+
+.opcao p {
+    text-align: center;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 100px);
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px 20px 0 0;
+}
+
+.rodape div p {
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.rodape div a img {
+    max-width: 40px;
+    margin-right: 20px;
+}
+
+@media (max-width: 935px) {
+    .usuario {
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 831px) {
+    h2 {
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 557px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .opcoes {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 55%;
+
+    }
+    .opcao {
+        width: 60%;
+        height: 70%;
+    }
+    .opcao-1 {
+       margin-bottom: 20px; 
+    }
+    .rodape {
+        width: 100%;
+    }
+    .rodape div p {
+        font-size: 15px;
+    }
+    
+    .rodape div a img {
+        max-width: 30px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 615px) {
+    .usuario {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 455px) {
+    .usuario {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 426px) {
+    .opcao {
+        width: 80%;
+        height: 70%;
+    }
+    .opcao-1 {
+       margin-bottom: 20px; 
+    }
+    .rodape div p {
+        font-weight: 600;
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    
+    .rodape div a img {
+        max-width: 20px;
+        margin-right: 10px;
+    }
+
+    .container-topo {
+        display: none;
+    }
+    .link-retornar {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .usuario {
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+
+}
+
+@media (max-width: 376px) {
+    .opcao {
+        width: 90%;
+        height: 100%;
+    }
+    .opcao-1 {
+       margin-bottom: 20px; 
+    }
+    .rodape div p {
+        font-weight: 600;
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    
+    .rodape div a img {
+        max-width: 25px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 316px) {
+    .rodape div p {
+        font-weight: 600;
+        font-size: 12px;
+        margin-left: 15px;
+    }
+    
+    .rodape div a img {
+        max-width: 20px;
+        margin-right: 10px;
+    }
+}
