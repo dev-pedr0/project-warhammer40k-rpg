@@ -12,17 +12,17 @@
             <%= user.username ? user.username[0].toUpperCase() : "0" %>
        </p>
        <div class="usuario-opcoes">
-           <a href="../criar-personagem/index.html">Criar Personagem</a>
-           <a href="...">Personagens Criados</a>
-           <a href="../resumo-regras/index.html">Resumo de Regras</a>
-           <a href="../pagina-login-cadastro/index.html">Sair</a>
-       </div>
+        <a href="../criar-personagem/index.html">Criar Personagem</a>
+        <a href="...">Personagens Criados</a>
+        <a href="/user/<%= user._id %>/regras">Resumo de Regras</a>
+        <a href="/logout">Sair</a>
+    </div>
         <header class="titulos">
             <h1>
                 Warhammer 40K em Português
             </h1>
-            <a class="link-retornar" href="/main">
-                <img src="../imgs/home.png" alt="retornar-inicio" title="Retornar">
+            <a class="link-retornar" href="/user/<%= user._id %>/main">
+                <img src="/imgs/home.png" alt="retornar-inicio" title="Retornar">
             <!-- Créditos da imagem: Dave Gandy -->
             </a>
         </header>
@@ -123,16 +123,16 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
             </div>
             <div>
                 <a href="https://www.linkedin.com/in/pedro-conceicao1/" target="_blank">
-                    <img src="../imgs/linkedin.png">
+                    <img src="/imgs/linkedin.png">
                 </a>
                 <a href="https://github.com/dev-pedr0" target="_blank">
-                    <img src="../imgs/github-mark-white.png">
+                    <img src="/imgs/github-mark-white.png">
                 </a>
                 <a href="https://wa.me/5571987412297" target="_blank">
-                    <img src="../imgs/wwp.png">
+                    <img src="/imgs/wwp.png">
                 </a>
                 <a href="mailto:pedro4costa@outlook.com" target="_blank">
-                    <img src="../imgs/email.png">
+                    <img src="/imgs/email.png">
                 </a>
             </div>
         </footer>

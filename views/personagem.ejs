@@ -3,41 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/personagem.css">
     <title>Document</title>
 </head>
 <body>
     <div class="container">
-        <a class="link-retornar" href="/logout">
-            Sair
-        </a>
         <p class="usuario">
             <%= user.username ? user.username[0].toUpperCase() : "0" %>
         </p>
-        <div class="usuario-opcoes">
-            <a href="../criar-personagem/index.html">Criar Personagem</a>
-            <a href="...">Personagens Criados</a>
-            <a href="/user/<%= user._id %>/regras">Resumo de Regras</a>
-            <a href="/logout">Sair</a>
-        </div>
+       <div class="usuario-opcoes">
+        <a href="../criar-personagem/index.html">Criar Personagem</a>
+        <a href="...">Personagens Criados</a>
+        <a href="/user/<%= user._id %>/regras">Resumo de Regras</a>
+        <a href="/logout">Sair</a>
+    </div>
         <header class="titulos">
             <h1>
                 Warhammer 40K em Português
             </h1>
-            <h2>
-                Criação de Personagens e Resumo de Regras
-            </h2>
+            <a class="link-retornar" href="/user/<%= user._id %>/main">
+                <img src="/imgs/home.png" alt="retornar-inicio" title="Retornar">
+            <!-- Créditos da imagem: Dave Gandy -->
+            </a>
         </header>
-        <nav class="opcoes">
-            <a class="opcao opcao-1" href="/user/<%= user._id %>/personagem">
-                <p>
-                    Criar Personagem
-                </p>
-            </a>  
-            <a class="opcao opcao-2" href="/user/<%= user._id %>/regras">
-                <p>Resumo de Regras</p>
-            </a>       
-        </nav>
+        <div>
+            Criação de Personagem
+        </div>
         <footer class="rodape">
             <div>
                 <p>
@@ -60,10 +51,5 @@
             </div>
         </footer>
     </div>
-    <script src="/main.js"></script>
-    <script>
-        let user = '<%= user.username %>';
-        console.log(user);
-    </script>
+    <script src="/personagem.js"></script>
 </body>
-</html>

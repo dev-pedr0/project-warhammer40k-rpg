@@ -168,13 +168,25 @@ app.get('/logout', (req, res) => {
     return res.redirect('/');
 });
 
-//TODO
-app.get('/main', (req, res) => {
-    return res.render("main");
+//Private route - return to main
+app.get('/user/:id/main', async (req, res) => {
+    const userId = req.params.id;
+    const user = await User.findById(userId, "-password");
+    return res.render('main', { user });
 });
-//TODO
-app.get('/regras', (req, res) => {
-    return res.render('regras');
+
+//Private route - create character page
+app.get('/user/:id/personagem', async (req, res) => {
+    const userId = req.params.id;
+    const user = await User.findById(userId, "-password");
+    return res.render('personagem', { user });
+});
+
+//Private route - rules page
+app.get('/user/:id/regras', async (req, res) => {
+    const userId = req.params.id;
+    const user = await User.findById(userId, "-password");
+    return res.render('regras', { user });
 });
 
 //Credentials
