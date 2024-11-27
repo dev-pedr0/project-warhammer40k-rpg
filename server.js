@@ -160,7 +160,7 @@ function checkToken(req, res, next) {
     //console.log(token);
     if(!token) {
     logError("Token Inválido");
-    return res.render("index", { message: "Acesso Negado", messageType: "error" });
+    return res.render("index", { message: "Token não identificado. Faça login novamente", messageType: "error" });
     }
 
     try {
@@ -171,7 +171,7 @@ function checkToken(req, res, next) {
 
     } catch (err) {
         logError(err.message || "Erro Desconhecido");
-        return res.render("index", { message: "Acesso Negado", messageType: "error" });
+        return res.render("index", { message: "Acesso Negado. Faça login novamente", messageType: "error" });
     }
 }
 
@@ -189,7 +189,7 @@ app.get('/user/:id/main', checkToken, async (req, res) => {
     return res.render('main', { user });
 });
 
-//Private route - create character page
+//Private route - character page
 app.get('/user/:id/personagem', checkToken, async (req, res) => {
     res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
