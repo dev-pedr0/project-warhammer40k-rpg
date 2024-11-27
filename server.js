@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const fs = require("fs");
 const path = require("path");
+const cookieParser = require("cookie-parser");
 
 // Function to save error messages
 function logError(errorMessage) {
@@ -33,6 +34,9 @@ const app = express();
 
 //Config json response
 app.use(express.json());
+
+//Use cookies
+app.use(cookieParser());
 
 app.use(express.urlencoded({extended: false}));
 
@@ -110,7 +114,12 @@ app.post('/process-action', async (req, res) => {
                 },
                 secret,
             );
-            res.redirect(`/user/${user._id}?token=${token}`);
+            res.cookie("token", token, {
+                httpOnly: true,
+                secure: false,  // true in production
+                maxAge: 24 * 60 * 60 * 1000 // one day
+            });
+            res.redirect(`/user/${user._id}`);
         } catch(err) {
             logError(err.message || "Erro Desconhecido");
             return res.render("index", { message: "Erro no login do usuário. Tente novamente", messageType: "error" });
@@ -121,6 +130,9 @@ app.post('/process-action', async (req, res) => {
 
 //Private route - main page
 app.get("/user/:id", checkToken, async(req, res) => {
+    //Stops page to acessed using the comand to go back one page
+    res.set('Cache-Control', 'no-store');
+
     const userId = req.params.id;
 
     //Check if user exists
@@ -144,7 +156,7 @@ app.get("/user/:id", checkToken, async(req, res) => {
 
 //Function to check token and safe guard tha user page
 function checkToken(req, res, next) {
-    const token = req.query.token;
+    const token = req.cookies.token;
     //console.log(token);
     if(!token) {
     logError("Token Inválido");
@@ -153,7 +165,8 @@ function checkToken(req, res, next) {
 
     try {
         const secret = process.env.SECRET;
-        jwt.verify(token, secret);
+        const decoded = jwt.verify(token, secret);
+        req.user = decoded;
         next();
 
     } catch (err) {
@@ -169,21 +182,24 @@ app.get('/logout', (req, res) => {
 });
 
 //Private route - return to main
-app.get('/user/:id/main', async (req, res) => {
+app.get('/user/:id/main', checkToken, async (req, res) => {
+    res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
     return res.render('main', { user });
 });
 
 //Private route - create character page
-app.get('/user/:id/personagem', async (req, res) => {
+app.get('/user/:id/personagem', checkToken, async (req, res) => {
+    res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
     return res.render('personagem', { user });
 });
 
 //Private route - rules page
-app.get('/user/:id/regras', async (req, res) => {
+app.get('/user/:id/regras', checkToken, async (req, res) => {
+    res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
     return res.render('regras', { user });
