@@ -26,8 +26,17 @@
             <!-- Créditos da imagem: Dave Gandy -->
             </a>
         </header>
-        <div>
-            Criação de Personagem
+        <div class="meio">
+            <nav class="opcoes">
+                <a class="opcao opcao-1" href="/user/<%= user._id %>/novo-personagem">
+                    <p>
+                        Criar Personagem
+                    </p>
+                </a>  
+                <a class="opcao opcao-2" href="/user/<%= user._id %>/lista-personagem">
+                    <p>Lista de Personagens</p>
+                </a>       
+            </nav>
         </div>
         <footer class="rodape">
             <div>

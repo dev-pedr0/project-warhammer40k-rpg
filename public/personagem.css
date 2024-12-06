@@ -28,7 +28,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("../img/inquisiton-rosete.png");
+    background-image: url("../imgs/inquisiton-rosete.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size:contain;
@@ -83,7 +83,6 @@ h1 {
 h1 {
     font-size: 50px;
     margin-top: 5%;
-    margin-bottom: 5%;
 }
 
 .link-retornar {
@@ -99,6 +98,63 @@ h1 {
 
 .link-retornar img {
     width: 30px;
+}
+
+.meio {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.opcoes {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.opcao {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1/1;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-family: "Uncial Antiqua";
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+.opcao:active {
+    transform: scale(0.95);
+  }
+  
+  .opcao:hover {
+    opacity: 0.7;
+  }
+
+.opcao-1 {
+    background-image: url("../imgs/novo-personagem.png");
+    /*Creditos: Hinchel Or*/
+}
+
+.opcao-2 {
+    background-image: url("../imgs/lista-personagens.jpg");
+    /*Créditos Frost Llamzon*/
+}
+
+.opcao p {
+    text-align: center;
 }
 
 .rodape {
