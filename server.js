@@ -28,6 +28,7 @@ function logError(errorMessage) {
 
 //Models
 const User = require("./models/User");
+const Character = require("./models/Character");
 
 //run server
 const app = express();
@@ -203,6 +204,49 @@ app.get('/user/:id/regras', checkToken, async (req, res) => {
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
     return res.render('regras', { user });
+});
+
+//Private route - create character page
+app.get('/user/:id/novo-personagem', checkToken, async (req, res) => {
+    res.set('Cache-Control', 'no-store');
+    const userId = req.params.id;
+    const user = await User.findById(userId, "-password");
+    return res.render('criar-personagem', { user });
+});
+
+//create new character a fill values
+app.post("/character", checkToken, async (req, res) => {
+    const { name, class: charClass, level, stats } = req.body;
+    try {
+        // Verify if fields are filleds
+        if (!name || !charClass || !level || !stats) {
+            return res.status(400).json({ message: 'Todos os campos são obrigatórios!' });
+        }
+
+        // Create new character with data from form
+        const character = new Character({
+            userId: req.user.id,
+            name,
+            class: charClass,
+            level,
+            stats,
+        });
+
+        await character.save(); // Salva o personagem no banco de dados
+        return res.status(200).json({ message: 'Personagem salvo com sucesso!', character });
+
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Erro ao salvar personagem!', error: err.message });
+    }
+});
+
+//Private route - character list page
+app.get('/user/:id/lista-personagem', checkToken, async (req, res) => {
+    res.set('Cache-Control', 'no-store');
+    const userId = req.params.id;
+    const user = await User.findById(userId, "-password");
+    return res.render('lista-personagem', { user });
 });
 
 //Credentials

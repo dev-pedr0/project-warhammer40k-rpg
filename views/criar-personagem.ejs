@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/personagem.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p class="usuario">
+            <%= user.username ? user.username[0].toUpperCase() : "0" %>
+        </p>
+       <div class="usuario-opcoes">
+        <a href="../criar-personagem/index.html">Criar Personagem</a>
+        <a href="...">Personagens Criados</a>
+        <a href="/user/<%= user._id %>/regras">Resumo de Regras</a>
+        <a href="/logout">Sair</a>
+    </div>
+        <header class="titulos">
+            <h1>
+                Criar Personagem
+            </h1>
+            <a class="link-retornar" href="/user/<%= user._id %>/main">
+                <img src="/imgs/home.png" alt="retornar-inicio" title="Retornar">
+            <!-- Créditos da imagem: Dave Gandy -->
+            </a>
+        </header>
+        <div class="meio">
+            <form id="characterForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required />
+            
+                <label for="class">Classe:</label>
+                <input type="text" id="class" name="class" required />
+            
+                <label for="level">Nível:</label>
+                <input type="number" id="level" name="level" min="1" required />
+            
+                <label for="strength">Força:</label>
+                <input type="number" id="strength" name="stats[strength]" min="1" required />
+            
+                <label for="dexterity">Destreza:</label>
+                <input type="number" id="dexterity" name="stats[dexterity]" min="1" required />
+            
+                <label for="intelligence">Inteligência:</label>
+                <input type="number" id="intelligence" name="stats[intelligence]" min="1" required />
+            
+                <button type="submit">Salvar Personagem</button>
+            </form>
+        </div>
+        <footer class="rodape">
+            <div>
+                <p>
+                    © 2024 Pedro Costa
+                </p>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/pedro-conceicao1/" target="_blank">
+                    <img src="/imgs/linkedin.png">
+                </a>
+                <a href="https://github.com/dev-pedr0" target="_blank">
+                    <img src="/imgs/github-mark-white.png">
+                </a>
+                <a href="https://wa.me/5571987412297" target="_blank">
+                    <img src="/imgs/wwp.png">
+                </a>
+                <a href="mailto:pedro4costa@outlook.com" target="_blank">
+                    <img src="/imgs/email.png">
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="/criar-personagem.js"></script>
+</body>
