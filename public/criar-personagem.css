@@ -1,0 +1,609 @@
+/*#615F5C (Cinza Escuro) - nav, rodapé, painel lateral*/
+/*#FCB02D (Amarelo Mostarda) - botão, links, ícones*/
+/*#7D0000 (Vermelho Escuro) - títulos, cabeçalhos, bordas*/
+/*#835214 (Marrom Médio) - fundo de seções grandes*/
+/*#140D0B (Preto Avermelhado) - fundo principal, seção de pouco texto, fundo de cabeçalho*/
+/*#FFFFFF (Branco) - letra*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+html,body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #140D0B;
+    color: #FFFFFF;
+    font-family: "Lora", serif;
+}
+
+input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: #615F5C;
+    color: #FFFFFF;
+    font-family: "Uncial Antiqua";
+}
+
+textarea {
+    background-color: #615F5C;
+    color: #FFFFFF;
+    font-family: "Uncial Antiqua";
+    resize: none;
+}
+
+input:focus {
+    border: 1px solid #7D0000;
+}
+
+textarea:focus {
+    border-color: #7D0000;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #615F5C;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: 615F5C;
+}
+
+input[type="checkbox"]:hover {
+    border-color: #7D0000;
+}
+
+input[type="checkbox"]:checked {
+    border-color: #FCB02D;
+    background-color: #FCB02D;
+}
+
+input[type="checkbox"]:focus {
+    border-color: #7D0000;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.74);
+    font-style: italic;
+}
+
+button {
+    color: black;
+    background-color: #ffffff;
+}
+
+button:hover {
+    background-color: #FCB02D;
+}
+
+button:active {
+    background-color: #c98c24; 
+}
+
+.ficha {
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    color: #FCB02D;
+    font-family: "Cinzel", serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.dados-iniciais {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dados-iniciais label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.divisor-ficha {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%; 
+    margin-top: 20px;
+}
+
+.coluna {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.coluna:nth-child(1) {
+    padding-right: 5px;
+    border-right: 2px solid #ccc;
+}
+
+.aliados-inimigos {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.botoes {
+    display: flex;
+    gap: 5px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.carac-titulo {
+    margin-top: 20px;
+}
+
+.caracteristica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caracteristica table {
+    table-layout: auto;
+    border-collapse: collapse;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.caracteristica-input {
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.caracteristica td, .caracteristica th {
+    padding: 5px;
+    white-space: nowrap;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.xp-pd {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.xp-pd-1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.xp-pd-1 label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.xp-pd-1 input {
+    text-align: center;
+}
+
+.insa-corrup {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.insa-corrup-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.insa-corrup-1 label {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.insa-corrup-1 input {
+    text-align: center;
+}
+
+.aptidao {
+    margin-top: 20px;
+}
+
+.aptidao-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    justify-content:space-between;
+    
+}
+
+.pericia {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-tabelas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.container-tabelas table {
+    border-collapse: collapse;
+}
+
+.container-tabelas table th, td {
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid white;
+}
+
+.mais-menos {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.talentos-tracos {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-descricao {
+    width: 100%;
+
+}
+
+.item-descricao {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.titulo-descricao input {
+    width: 25%;
+    text-align: center;
+}
+
+.titulo-descricao textarea {
+    width: 75%;
+}
+
+.armas {
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+    background-color: #140D0B;
+    border: 2px solid white;
+    margin-bottom: 5px;
+}
+
+.grid-container > div {
+    background-color: #140D0B;
+    padding: 10px;
+    border: 1px solid white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container div input {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.grid-container div label {
+    margin-right: 5px;
+}
+
+.arma-nome {
+    grid-column: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arma-classe {
+    grid-column: span 2;
+}
+
+.arma-alc {
+    grid-column: 1;
+}
+
+.arma-tdt {
+    grid-column: span 2;
+}
+
+.arma-dano {
+    grid-column: span 2;
+}
+
+.arma-pen {
+    grid-column: 1;
+}
+
+.arma-mun {
+    grid-column: 2;
+}
+
+.arma-rec {
+    grid-column: 3;
+}
+
+.arma-peso {
+    grid-column: 4;
+}
+
+.arma-disp {
+    grid-column: 5;
+}
+
+.arma-especial {
+    grid-column: span 5;
+}
+
+.equipamento {
+    margin-top: 20px;
+}
+
+.equipamento-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.equipamento-lista input {
+    height: 100%;
+}
+
+.equipamento-lista textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.armadura-defesa {
+    margin-top: 20px;
+}
+
+.flex-ad {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+}
+
+.grid-armadura {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    background-color: #140D0B;
+    border: 2px solid white;
+    width: 100%;
+}
+
+.grid-armadura > div {
+    background-color: #140D0B;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.grid-armadura div input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.cabeca {
+    grid-column: 2;
+}
+
+.bracoe {
+    grid-column: 1;
+}
+
+.bracod {
+    grid-column: 3;
+}
+
+.corpo {
+    grid-column: 2;
+}
+
+.pernae {
+    grid-column: 1;
+}
+
+.pernad {
+    grid-column: 3;
+}
+
+.vida-condicao {
+    width: 30%;
+}
+
+.vida {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    width: 100%;
+}
+
+.vida input {
+    text-align: center;
+}
+
+.vida h3, .condicoes h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.condicoes {
+    margin-top: 5px;
+}
+
+.condicoes input {
+    width: 100%;
+}
+
+.condicoes textarea {
+    width: 100%;
+}
+
+.movimento-fadiga {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movimento {
+    width: 50%;
+}
+
+.movimento div label {
+    font-weight: bold;
+}
+
+.movimento div input {
+    text-align: center;
+}
+
+.grid-movimento {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+
+.movimento-cell {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.fadiga {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.grid-fadiga {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+
+.grid-fadiga div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+}
+
+.grid-fadiga div input {
+    width: 50%;
+    text-align: center;
+}
+
+.grid-fadiga div label {
+    font-weight: bold;
+}
+
+.psiquico {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.psiquico label {
+    font-weight: bold;
+}
+
+.psi-nivel input {
+    text-align: center;
+}
+
+.pp-descricao {
+    width: 500px;
+}
+
+.container-mostrar-esconder-poderes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mostrar-esconder-poder {
+    margin-top: 20px;
+}
+
+.notas {
+    margin-top: 20px;
+}
+
+.notas textarea {
+    width: 98%;
+    height: 200px;
+    resize: both;
+}
