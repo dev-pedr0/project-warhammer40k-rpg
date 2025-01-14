@@ -216,24 +216,69 @@ app.get('/user/:id/novo-personagem', checkToken, async (req, res) => {
 
 //create new character a fill values
 app.post("/character", checkToken, async (req, res) => {
-    const { name, class: charClass, level, stats } = req.body;
+    
     try {
-        // Verify if fields are filleds
-        if (!name || !charClass || !level || !stats) {
-            return res.status(400).json({ message: 'Todos os campos são obrigatórios!' });
-        }
-
-        // Create new character with data from form
-        const character = new Character({
-            userId: req.user.id,
-            name,
-            class: charClass,
-            level,
+        const {
+            characterName,
+            homePlanet,
+            background,
+            role,
+            eliteAdvance,
+            destiny,
+            allies,
+            enemies,
             stats,
+            exp,
+            insanity,
+            fatePoints,
+            corruption,
+            aptitude,
+            skills,
+            talentosETracos,
+            armas,
+            equipamentos,
+            defesa,
+            vida,
+            condicoes,
+            movimento,
+            fadiga,
+            psiNivel,
+            poderes,
+            notas,
+        } = req.body;
+        
+        const newCharacter = new Character({
+            userId: req.params.id,
+            characterName,
+            homePlanet,
+            background,
+            role,
+            eliteAdvance,
+            destiny,
+            allies,
+            enemies,
+            stats,
+            exp,
+            insanity,
+            fatePoints,
+            corruption,
+            aptitude,
+            skills,
+            talentosETracos,
+            armas,
+            equipamentos,
+            defesa,
+            vida,
+            condicoes,
+            movimento,
+            fadiga,
+            psiNivel,
+            poderes,
+            notas,
         });
 
-        await character.save(); // Salva o personagem no banco de dados
-        return res.status(200).json({ message: 'Personagem salvo com sucesso!', character });
+        await newCharacter.save();
+        res.status(201).json({ message: 'Personagem salvo com sucesso!' });
 
     } catch (err) {
         console.error(err);

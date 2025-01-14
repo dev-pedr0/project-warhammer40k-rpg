@@ -7,8 +7,8 @@ const characterSchema = new mongoose.Schema({
     homePlanet: {type: String, required: true},
     background: {type: String, required: true},
     role: {type: String, required: true},
-    eliteAdvance: {type: String, required: true},
-    destiny: {type: String, required: true},
+    eliteAdvance: {type: String, default: ""},
+    destiny: {type: String, default: ""},
     allies: [{type: String }],
     enemies: [{type: String }],
     stats: {
@@ -70,7 +70,7 @@ const characterSchema = new mongoose.Schema({
     insanity: {
         insanityPoints: { type: Number, default: 0 },
         insanityBonus: { type: Number, default: 0 },
-        insanityText: {type: String},
+        insanityText: {type: String, default: ""},
     },
     fatePoints: {
         limit: { type: Number, default: 0 },
@@ -79,8 +79,8 @@ const characterSchema = new mongoose.Schema({
     corruption: {
         corruptionPoints: { type: Number, default: 0 },
         corruptionBonus: { type: Number, default: 0 },
-        malignances: {type: String},
-        mutations: {type: String},
+        malignances: {type: String,  default: ""},
+        mutations: {type: String,  default: ""},
     },
     aptitude: {
         general: { type: Boolean, default: false },
@@ -118,6 +118,83 @@ const characterSchema = new mongoose.Schema({
             descricao: { type: String, required: true },
         }
     ],
+    armas: [
+        {
+            nome: { type: String, required: true },
+            classe: { type: String, required: true },
+            alcance: { type: String },
+            taxaDeTiro: { type: String },
+            dano: { type: String, required: true },
+            penetracao: { type: String, required: true },
+            municao: { type: String },
+            recarga: { type: String },
+            peso: { type: String, required: true },
+            disponibilidade: { type: String, required: true },
+            especial: { type: String },
+        }
+    ],
+    equipamentos: [
+        {
+            nome: { type: String, required: true },
+            peso: { type: String, required: true },
+            descricao: { type: String, required: true },
+        }
+    ],
+    defesa: {
+        cabeca: {
+            armadura: { type: Number, default: 0 },
+            armaduraTotal: { type: Number, default: 0 },
+        },
+        bracoEsquerdo: {
+            armadura: { type: Number, default: 0 },
+            armaduraTotal: { type: Number, default: 0 },
+        },
+        bracoDireito: {
+            armadura: { type: Number, default: 0 },
+            armaduraTotal: { type: Number, default: 0 },
+        },
+        corpo: {
+            armadura: { type: Number, default: 0 },
+            armaduraTotal: { type: Number, default: 0 },
+        },
+        pernaEsquerda: {
+            armadura: { type: Number, default: 0 },
+            armaduraTotal: { type: Number, default: 0 },
+        },
+        pernaDireita: {
+            armadura: { type: Number, default: 0 },
+            armaduraTotal: { type: Number, default: 0 },
+        },
+    },
+    vida: {
+        total: { type: Number, default: 0 },
+        atual: { type: Number, default: 0 },
+        danoCritico: { type: Number, default: 0 },
+    },
+    condicoes: [
+        {
+            nome: { type: String, required: true },
+            descricao: { type: String, required: true },
+        }
+    ],
+    movimento: {
+        metade: { type: Number, default: 0 },
+        total: { type: Number, default: 0 },
+        disparada: { type: Number, default: 0 },
+        corrida: { type: Number, default: 0 },
+    },
+    fadiga: {
+        limite: { type: Number, default: 0 },
+        atual: { type: Number, default: 0 },
+    },
+    psiNivel: { type: Number, default: 0 },
+    poderes: [
+        {
+            nome: { type: String, required: true },
+            descricao: { type: String, required: true },
+        }
+    ],
+    notas:{ type: String },
 });
 
 const Character = mongoose.model('Character', characterSchema);

@@ -105,6 +105,19 @@ form {
     margin-top: 20px;
 }
 
+.nome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nome label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
 .dados-iniciais {
     display: flex;
     flex-wrap: wrap;
@@ -606,4 +619,21 @@ h2 {
     width: 98%;
     height: 200px;
     resize: both;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.submit button {
+    border: 2px solid #FCB02D;
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Uncial Antiqua";
 }
