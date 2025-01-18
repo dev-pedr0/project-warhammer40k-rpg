@@ -39,7 +39,7 @@ app.use(express.json());
 //Use cookies
 app.use(cookieParser());
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 
 //static file for css and javascript
 app.use(express.static(path.join(__dirname, 'public')));
@@ -195,7 +195,7 @@ app.get('/user/:id/personagem', checkToken, async (req, res) => {
     res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
-    return res.render('personagem', { user });
+    return res.render('personagem', { user, success: false});
 });
 
 //Private route - rules page
@@ -216,9 +216,11 @@ app.get('/user/:id/novo-personagem', checkToken, async (req, res) => {
 
 //create new character a fill values
 app.post("/character", checkToken, async (req, res) => {
-    
     try {
+        const currentUser = req.user;
+        //get parameters for the new character
         const {
+            userId,
             characterName,
             homePlanet,
             background,
@@ -234,21 +236,92 @@ app.post("/character", checkToken, async (req, res) => {
             corruption,
             aptitude,
             skills,
-            talentosETracos,
-            armas,
-            equipamentos,
-            defesa,
-            vida,
-            condicoes,
-            movimento,
-            fadiga,
-            psiNivel,
-            poderes,
-            notas,
+            talentsAndTraces,
+            weapons,
+            equipments,
+            defense,
+            health,
+            conditions,
+            movement,
+            fatigue,
+            psiLevel,
+            powers,
+            notes,
         } = req.body;
+
+        //Convert string fields to number fields
+        const parsedStats = {};
+        for (const key in stats) {
+            parsedStats[key] = {
+                value: Number(stats[key]?.value || 0),
+                bonus: Number(stats[key]?.bonus || 0),
+                improvements: Number(stats[key]?.improvements || 0),
+            };
+        }
+
+        const parsedExp = {
+            expToSpend: Number(exp?.expToSpend || 0),
+            expSpent: Number(exp?.expSpent || 0),
+        };
+
+        const parsedInsanity = {
+            insanityPoints: Number(insanity?.insanityPoints || 0),
+            insanityBonus: Number(insanity?.insanityBonus || 0),
+            insanityText: insanity?.insanityText || "",
+        };
+
+        const data = req.body;
+        const parsedSkills = Object.keys(data.skills || {}).map(skillName => ({
+            name: skillName,
+            known: data.skills[skillName].known === 'true' || false,
+            plus10: data.skills[skillName].plus10 === 'true' || false,
+            plus20: data.skills[skillName].plus20 === 'true' || false,
+            plus30: data.skills[skillName].plus30 === 'true' || false,
+        }));
+
+        const parsedFatePoints = {
+            limit: Number(fatePoints?.limit || 0),
+            current: Number(fatePoints?.current || 0),
+        };
+
+        const parsedCorruption = {
+            corruptionPoints: Number(corruption?.corruptionPoints || 0),
+            corruptionBonus: Number(corruption?.corruptionBonus || 0),
+            malignances: corruption?.malignances || "",
+            mutations: corruption?.mutations || "",
+        };
+
+        const parsedDefense = {};
+        for (const part in defense) {
+            parsedDefense[part] = {
+                armour: Number(defense[part]?.armour || 0),
+                totalArmour: Number(defense[part]?.totalArmour || 0),
+            };
+        }
+
+        const parsedHealth = {
+            total: Number(health?.total || 0),
+            current: Number(health?.current || 0),
+            criticalDamage: Number(health?.criticalDamage || 0),
+        };
+
+        const parsedMovement = {
+            half: Number(movement?.half || 0),
+            full: Number(movement?.full || 0),
+            charge: Number(movement?.charge || 0),
+            run: Number(movement?.run || 0),
+        };
+
+        const parsedFatigue = {
+            limit: Number(fatigue?.limit || 0),
+            current: Number(fatigue?.current || 0),
+        };
+
+        const parsedPsiLevel = Number(psiLevel || 0);
         
+        //create new character
         const newCharacter = new Character({
-            userId: req.params.id,
+            userId,
             characterName,
             homePlanet,
             background,
@@ -257,28 +330,29 @@ app.post("/character", checkToken, async (req, res) => {
             destiny,
             allies,
             enemies,
-            stats,
-            exp,
-            insanity,
-            fatePoints,
-            corruption,
+            stats: parsedStats,
+            exp: parsedExp,
+            insanity: parsedInsanity,
+            fatePoints: parsedFatePoints,
+            corruption: parsedCorruption,
             aptitude,
-            skills,
-            talentosETracos,
-            armas,
-            equipamentos,
-            defesa,
-            vida,
-            condicoes,
-            movimento,
-            fadiga,
-            psiNivel,
-            poderes,
-            notas,
+            skills: parsedSkills,
+            talentsAndTraces,
+            weapons,
+            equipments,
+            defense: parsedDefense,
+            health: parsedHealth,
+            conditions,
+            movement: parsedMovement,
+            fatigue: parsedFatigue,
+            psiLevel: parsedPsiLevel,
+            powers,
+            notes,
         });
 
         await newCharacter.save();
-        res.status(201).json({ message: 'Personagem salvo com sucesso!' });
+        console.log(currentUser);
+        res.render('personagem', { success: true, user: currentUser});
 
     } catch (err) {
         console.error(err);

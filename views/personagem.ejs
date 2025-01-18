@@ -60,5 +60,13 @@
             </div>
         </footer>
     </div>
+    <% if (success) { %>
+        <script>
+            // Exibe o alerta
+            alert("Personagem salvo com sucesso!");
+            // Redireciona para a página de personagem (você pode ajustar o destino conforme necessário)
+             window.location.href = '/user/<%= user.id %>/personagem'
+        </script>
+    <% } %>
     <script src="/personagem.js"></script>
 </body>

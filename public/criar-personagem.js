@@ -3,7 +3,7 @@ const areaAliados = document.getElementById('area-aliados');
 const aliadosMais = document.getElementById('mais-alidados');
 const aliadosMenos = document.getElementById('menos-aliados');
 
-let aliadoCount = 1;
+let aliadoCount = 0;
 
 aliadosMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -11,14 +11,14 @@ aliadosMais.addEventListener('click', (event) => {
     const novaDivInput = document.createElement('div');
     novaDivInput.classList.add('container-aliados');
     novaDivInput.innerHTML = `
-        <input type="text" id="al${aliadoCount}" name="al${aliadoCount}">
+        <input type="text" id="al${aliadoCount}" name="allies[${aliadoCount}]">
     `;
     areaAliados.appendChild(novaDivInput);
 });
 
 aliadosMenos.addEventListener('click', (event) => {
     event.preventDefault();
-    if (areaAliados.children.length > 1) {
+    if (areaAliados.children.length > 0) {
         areaAliados.lastElementChild.remove();
         aliadoCount--;
     }
@@ -29,7 +29,7 @@ const areaInimigos = document.getElementById('area-inimigos');
 const inimigosMais = document.getElementById('mais-inimigos');
 const inimigosMenos = document.getElementById('menos-inimigos');
 
-let inimigoCount = 1;
+let inimigoCount = 0;
 
 inimigosMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -37,14 +37,14 @@ inimigosMais.addEventListener('click', (event) => {
     const novaDivInput = document.createElement('div');
     novaDivInput.classList.add('container-inimigos');
     novaDivInput.innerHTML = `
-        <input type="text" id="al${inimigoCount}" name="al${inimigoCount}">
+        <input type="text" id="al${inimigoCount}" name="enemies[${inimigoCount}]">
     `;
     areaInimigos.appendChild(novaDivInput);
 });
 
 inimigosMenos.addEventListener('click', (event) => {
     event.preventDefault();
-    if (areaInimigos.children.length > 1) {
+    if (areaInimigos.children.length > 0) {
         areaInimigos.lastElementChild.remove();
         inimigoCount--;
     }
@@ -55,7 +55,7 @@ const ttMais = document.getElementById("ttmais");
 const ttMenos = document.getElementById("ttmenos");
 const containerDescricao = document.getElementById("container-descricao");
 
-let ttCount = 1;
+let ttCount = 0;
 
 ttMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -66,12 +66,12 @@ ttMais.addEventListener('click', (event) => {
 
     const novaInput = document.createElement('input');
     novaInput.type = 'text';
-    novaInput.name = `tt${ttCount}`;
+    novaInput.name = `talentsAndTraces[${ttCount}][name]`;
     novaInput.id = `tt${ttCount}`;
     novaInput.placeholder = 'Nome do Talento ou Traço';
 
     const novoTextarea = document.createElement('textarea');
-    novoTextarea.name = `descricao${ttCount}`;
+    novoTextarea.name = `talentsAndTraces[${ttCount}][description]`;
     novoTextarea.id = `descricao${ttCount}`;
     novoTextarea.rows = 1;
     novoTextarea.textContent = 'Descrição:';
@@ -83,7 +83,7 @@ ttMais.addEventListener('click', (event) => {
 
 ttMenos.addEventListener('click', (event) => {
     event.preventDefault();
-    if (ttCount > 1) {
+    if (ttCount > 0) {
         containerDescricao.lastElementChild.remove();
         ttCount--;
     }
@@ -94,7 +94,7 @@ const armasContainer = document.getElementById('armas-container');
 const armaMais = document.getElementById('arma-mais');
 const armaMenos = document.getElementById('arma-menos');
 
-let armaCount = 1;
+let armaCount = 0;
 
 armaMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -108,7 +108,7 @@ armaMais.addEventListener('click', (event) => {
         const velhodId = input.id;
         const velhoName = input.name;
         const novoId = velhodId.replace(/_\d+$/, `_${armaCount}`);
-        const novoName = velhoName.replace(/_\d+$/, `_${armaCount}`);
+        const novoName = velhoName.replace(/\[\d+\]/, `[${armaCount}]`);
 
         input.id = novoId;
         input.name = novoName;
@@ -121,7 +121,7 @@ armaMais.addEventListener('click', (event) => {
 armaMenos.addEventListener('click', (event) => {
     event.preventDefault();
     const armas = document.querySelectorAll('.grid-container');
-    if (armas.length > 1) {
+    if (armas.length > 0) {
         armas[armas.length - 1].remove();
         armaCount--;
     }
@@ -132,7 +132,7 @@ const equipamentoContainer = document.getElementById('equipamento-container');
 const equipMais = document.getElementById('equip-mais');
 const equipMenos = document.getElementById('equip-menos');
 
-let equipCount = 1;
+let equipCount = 0;
 
 equipMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -146,7 +146,7 @@ equipMais.addEventListener('click', (event) => {
         const velhoId = input.id;
         const velhoName = input.name;
         const novoId = velhoId.replace(/\d+$/, equipCount);
-        const novoName = velhoName.replace(/\d+$/, equipCount);
+        const novoName = velhoName.replace(/\[\d+\]/, `[${equipCount}]`);
 
         input.id = novoId;
         input.name = novoName;
@@ -159,7 +159,7 @@ equipMais.addEventListener('click', (event) => {
 equipMenos.addEventListener('click', (event) => {
     event.preventDefault();
     const equipamentos = document.querySelectorAll('.equipamento-lista');
-    if (equipamentos.length > 1) {
+    if (equipamentos.length > 0) {
         equipamentos[equipamentos.length - 1].remove();
         equipCount--;
     }
@@ -170,7 +170,7 @@ const poderContainer = document.getElementById('poder-container');
 const poderMais = document.getElementById('poder-mais');
 const poderMenos = document.getElementById('poder-menos');
 
-let poderCount = 1;
+let poderCount = 0;
 
 poderMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -185,7 +185,7 @@ poderMais.addEventListener('click', (event) => {
         const velhoName = input.name;
 
         const novoId = velhoId.replace(/\d+$/, poderCount);
-        const novoName = velhoName.replace(/\d+$/, poderCount);
+        const novoName = velhoName.replace(/\[\d+\]/, `[${equipCount}]`);
 
         input.id = novoId;
         input.name = novoName;
@@ -199,7 +199,7 @@ poderMenos.addEventListener('click', (event) => {
     event.preventDefault();
 
     const poderes = document.querySelectorAll('.lista-poder');
-    if (poderes.length > 1) {
+    if (poderes.length > 0) {
         poderes[poderes.length - 1].remove();
         poderCount--;
     }

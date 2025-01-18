@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const characterSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     characterName: { type: String, required: true },
@@ -105,96 +104,96 @@ const characterSchema = new mongoose.Schema({
     },
     skills: [
         {
-            nome: { type: String, required: true },
-            conhecida: { type: Boolean, default: false },
-            mais10: { type: Boolean, default: false },
-            mais20: { type: Boolean, default: false },
-            mais30: { type: Boolean, default: false }
+            name: { type: String, required: true },
+            known: { type: Boolean, default: false },
+            plus10: { type: Boolean, default: false },
+            plus20: { type: Boolean, default: false },
+            plus30: { type: Boolean, default: false }
         }
     ],
-    talentosETracos: [
+    talentsAndTraces: [
         {
-            nome: { type: String, required: true },
-            descricao: { type: String, required: true },
+            name: { type: String, default: "" },
+            description: { type: String, default: "" },
         }
     ],
-    armas: [
+    weapons: [
         {
-            nome: { type: String, required: true },
-            classe: { type: String, required: true },
-            alcance: { type: String },
-            taxaDeTiro: { type: String },
-            dano: { type: String, required: true },
-            penetracao: { type: String, required: true },
-            municao: { type: String },
-            recarga: { type: String },
-            peso: { type: String, required: true },
-            disponibilidade: { type: String, required: true },
-            especial: { type: String },
+            name: { type: String, default: "" },
+            class: { type: String, default: "" },
+            range: { type: String, default: ""},
+            rateOfFire: { type: String, default: ""},
+            damage: { type: String, default: "" },
+            penetration: { type: String, default: "" },
+            munition: { type: String, default: ""},
+            reload: { type: String, default: ""},
+            weight: { type: String, default: "" },
+            availability: { type: String, default: "" },
+            special: { type: String, default: ""},
         }
     ],
-    equipamentos: [
+    equipments: [
         {
-            nome: { type: String, required: true },
-            peso: { type: String, required: true },
-            descricao: { type: String, required: true },
+            name: { type: String, default: "" },
+            weight: { type: String, default: "" },
+            description: { type: String, default: "Descrição:" },
         }
     ],
-    defesa: {
-        cabeca: {
-            armadura: { type: Number, default: 0 },
-            armaduraTotal: { type: Number, default: 0 },
+    defense: {
+        head: {
+            armour: { type: Number, default: 0 },
+            totalArmour: { type: Number, default: 0 },
         },
-        bracoEsquerdo: {
-            armadura: { type: Number, default: 0 },
-            armaduraTotal: { type: Number, default: 0 },
+        leftArm: {
+            armour: { type: Number, default: 0 },
+            totalArmour: { type: Number, default: 0 },
         },
-        bracoDireito: {
-            armadura: { type: Number, default: 0 },
-            armaduraTotal: { type: Number, default: 0 },
+        rightArm: {
+            armour: { type: Number, default: 0 },
+            totalArmour: { type: Number, default: 0 },
         },
-        corpo: {
-            armadura: { type: Number, default: 0 },
-            armaduraTotal: { type: Number, default: 0 },
+        body: {
+            armour: { type: Number, default: 0 },
+            totalArmour: { type: Number, default: 0 },
         },
-        pernaEsquerda: {
-            armadura: { type: Number, default: 0 },
-            armaduraTotal: { type: Number, default: 0 },
+        leftLeg: {
+            armour: { type: Number, default: 0 },
+            totalArmour: { type: Number, default: 0 },
         },
-        pernaDireita: {
-            armadura: { type: Number, default: 0 },
-            armaduraTotal: { type: Number, default: 0 },
+        rightLeg: {
+            armour: { type: Number, default: 0 },
+            totalArmour: { type: Number, default: 0 },
         },
     },
-    vida: {
+    health: {
         total: { type: Number, default: 0 },
-        atual: { type: Number, default: 0 },
-        danoCritico: { type: Number, default: 0 },
+        current: { type: Number, default: 0 },
+        criticalDamage: { type: Number, default: 0 },
     },
-    condicoes: [
+    conditions: [
         {
-            nome: { type: String, required: true },
-            descricao: { type: String, required: true },
+            name: { type: String, default: "" },
+            description: { type: String, default: "" },
         }
     ],
-    movimento: {
-        metade: { type: Number, default: 0 },
-        total: { type: Number, default: 0 },
-        disparada: { type: Number, default: 0 },
-        corrida: { type: Number, default: 0 },
+    movement: {
+        half: { type: Number, default: 0 },
+        full: { type: Number, default: 0 },
+        charge: { type: Number, default: 0 },
+        run: { type: Number, default: 0 },
     },
-    fadiga: {
-        limite: { type: Number, default: 0 },
-        atual: { type: Number, default: 0 },
+    fatigue: {
+        limit: { type: Number, default: 0 },
+        current: { type: Number, default: 0 },
     },
-    psiNivel: { type: Number, default: 0 },
-    poderes: [
+    psiLevel: { type: Number, default: 0 },
+    powers: [
         {
-            nome: { type: String, required: true },
-            descricao: { type: String, required: true },
+            name: { type: String, default: "" },
+            description: { type: String, default: "" },
         }
     ],
-    notas:{ type: String },
+    notes:{ type: String, default: "" },
 });
 
 const Character = mongoose.model('Character', characterSchema);

@@ -12,6 +12,7 @@
             <div class="nome">
                 <label>Nome: </label>
                 <input type="text" name="characterName">
+                <input type="hidden" name="userId" value="<%= user._id %>" />
             </div>
             <div class="dados-iniciais">
                 <div>
@@ -43,7 +44,7 @@
                             <h2>Alidados</h2>
                             <div id="area-aliados">
                                 <div class="container-aliados">
-                                    <input type="text" id="al1" name="allies[]">
+                                    <input type="text" id="al0" name="allies[0]">
                                 </div>
                             </div>
                             <div class="botoes">
@@ -55,7 +56,7 @@
                             <h2>Inimigos</h2>
                             <div id="area-inimigos">
                                 <div class="container-inimigos">
-                                    <input type="text" id="ini1" name="enemies[]">
+                                    <input type="text" id="ini0" name="enemies[0]">
                                 </div>
                             </div>
                             <div class="botoes">
@@ -348,91 +349,91 @@
                                 <tr>
                                     <td>Acrobacia (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b1" name="b1" value="true" data-group="grupo1">
+                                        <input type="checkbox" id="b1" name="skills[Acrobacia][known]" value="true" data-group="grupo1">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b2" name="b2" value="true" data-group="grupo1">
+                                        <input type="checkbox" id="b2" name="skills[Acrobacia][plus10]" value="true" data-group="grupo1">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b3" name="b3" value="true" data-group="grupo1">
+                                        <input type="checkbox" id="b3" name="skills[Acrobacia][plus20]" value="true" data-group="grupo1">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b4" name="b4" value="true" data-group="grupo1">
+                                        <input type="checkbox" id="b4" name="skills[Acrobacia][plus30]" value="true" data-group="grupo1">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Atletismo (F)</td>
                                     <td>
-                                        <input type="checkbox" id="b5" name="b5" value="true" data-group="grupo2">
+                                        <input type="checkbox" id="b5" name="skills[Atletismo][known]" value="true" data-group="grupo2">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b6" name="b6" value="true" data-group="grupo2">
+                                        <input type="checkbox" id="b6" name="skills[Atletismo][plus10]" value="true" data-group="grupo2">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b7" name="b7" value="true" data-group="grupo2">
+                                        <input type="checkbox" id="b7" name="skills[Atletismo][plus20]" value="true" data-group="grupo2">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b8" name="b8" value="true" data-group="grupo2">
+                                        <input type="checkbox" id="b8" name="skills[Atletismo][plus30]" value="true" data-group="grupo2">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Atenção (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b9" name="b9" value="true" data-group="grupo3">
+                                        <input type="checkbox" id="b9" name="skills[Atenção][known]" value="true" data-group="grupo3">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b10" name="b10" value="true" data-group="grupo3">
+                                        <input type="checkbox" id="b10" name="skills[Atenção][plus10]" value="true" data-group="grupo3">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b11" name="b11" value="true" data-group="grupo3">
+                                        <input type="checkbox" id="b11" name="skills[Atenção][plus20]" value="true" data-group="grupo3">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b12" name="b12" value="true" data-group="grupo3">
+                                        <input type="checkbox" id="b12" name="skills[Atenção][plus30]" value="true" data-group="grupo3">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Charme (Soc)</td>
                                     <td>
-                                        <input type="checkbox" id="b13" name="b13" value="true" data-group="grupo4">
+                                        <input type="checkbox" id="b13" name="skills[Charme][known]" value="true" data-group="grupo4">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b14" name="b14" value="true" data-group="grupo4">
+                                        <input type="checkbox" id="b14" name="skills[Charme][plus10]" value="true" data-group="grupo4">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b15" name="b15" value="true" data-group="grupo4">
+                                        <input type="checkbox" id="b15" name="skills[Charme][plus20]" value="true" data-group="grupo4">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b16" name="b16" value="true" data-group="grupo4">
+                                        <input type="checkbox" id="b16" name="skills[Charme][plus30]" value="true" data-group="grupo4">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Comando (Soc)</td>
                                     <td>
-                                        <input type="checkbox" id="b17" name="b17" value="true" data-group="grupo5">
+                                        <input type="checkbox" id="b17" name="skills[Comando][known]" value="true" data-group="grupo5">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b18" name="b18" value="true" data-group="grupo5">
+                                        <input type="checkbox" id="b18" name="skills[Comando][plus10]" value="true" data-group="grupo5">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b19" name="b19" value="true" data-group="grupo5">
+                                        <input type="checkbox" id="b19" name="skills[Comando][plus20]" value="true" data-group="grupo5">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b20" name="b20" value="true" data-group="grupo5">
+                                        <input type="checkbox" id="b20" name="skills[Comando][plus30]" value="true" data-group="grupo5">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Comercio (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b21" name="b21" value="true" data-group="grupo6">
+                                        <input type="checkbox" id="b21" name="skills[Comercio][known]" value="true" data-group="grupo6">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b22" name="b22" value="true" data-group="grupo6">
+                                        <input type="checkbox" id="b22" name="skills[Comercio][plus10]" value="true" data-group="grupo6">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b23" name="b23" value="true" data-group="grupo6">
+                                        <input type="checkbox" id="b23" name="skills[Comercio][plus20]" value="true" data-group="grupo6">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b24" name="b24" value="true" data-group="grupo6">
+                                        <input type="checkbox" id="b24" name="skills[Comercio][plus30]" value="true" data-group="grupo6">
                                     </td>
                                 </tr>
                                 <tr>
@@ -444,70 +445,70 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cc1" name="cc1">
+                                        <input type="text" id="cc1" name="skills[0][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco1" name="cco1" value="true" data-group="grupo7">
+                                        <input type="checkbox" id="cco1" name="skills[0][known]" value="true" data-group="grupo7">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco2" name="cco2" value="true" data-group="grupo7"> 
+                                        <input type="checkbox" id="cco2" name="skills[0][plus10]" value="true" data-group="grupo7"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco3" name="cco3" value="true" data-group="grupo7">
+                                        <input type="checkbox" id="cco3" name="skills[0][plus20]" value="true" data-group="grupo7">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco4" name="cco4" value="true" data-group="grupo7">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="cc2" name="cc2">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco5" name="cco5" value="true" data-group="grupo8">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco6" name="cco6" value="true" data-group="grupo8"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco7" name="cco7" value="true" data-group="grupo8">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco8" name="cco8" value="true" data-group="grupo8">
+                                        <input type="checkbox" id="cco4" name="skills[0][plus30]" value="true" data-group="grupo7">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cc3" name="cc3">
+                                        <input type="text" id="cc2" name="skills[1][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco9" name="cco9" value="true" data-group="grupo9">
+                                        <input type="checkbox" id="cco5" name="skills[1][known]" value="true" data-group="grupo8">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco10" name="cco10" value="true" data-group="grupo9"> 
+                                        <input type="checkbox" id="cco6" name="skills[1][plus10]" value="true" data-group="grupo8"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco11" name="cco11" value="true" data-group="grupo9">
+                                        <input type="checkbox" id="cco7" name="skills[1][plus20]" value="true" data-group="grupo8">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco12" name="cco12" value="true" data-group="grupo9">
+                                        <input type="checkbox" id="cco8" name="skills[1][plus30]" value="true" data-group="grupo8">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cc4" name="cc4">
+                                        <input type="text" id="cc3" name="skills[2][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco13" name="cco13" value="true" data-group="grupo10">
+                                        <input type="checkbox" id="cco9" name="skills[2][known]" value="true" data-group="grupo9">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco14" name="cco14" value="true" data-group="grupo10"> 
+                                        <input type="checkbox" id="cco10" name="skills[2][plus10]" value="true" data-group="grupo9"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco15" name="cco15" value="true" data-group="grupo10">
+                                        <input type="checkbox" id="cco11" name="skills[2][plus20]" value="true" data-group="grupo9">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco16" name="cco16" value="true" data-group="grupo10">
+                                        <input type="checkbox" id="cco12" name="skills[2][plus30]" value="true" data-group="grupo9">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="cc4" name="skills[3][name]">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco13" name="skills[3][known]" value="true" data-group="grupo10">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco14" name="skills[3][plus10]" value="true" data-group="grupo10"> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco15" name="skills[3][plus20]" value="true" data-group="grupo10">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco16" name="skills[3][plus30]" value="true" data-group="grupo10">
                                     </td>
                                 </tr>
                                 <tr>
@@ -515,16 +516,16 @@
                                         Enganação (Soc)
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b25" name="b25" value="true" data-group="grupo11">
+                                        <input type="checkbox" id="b25" name="skills[Enganação][known]" value="true" data-group="grupo11">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b26" name="b26" value="true" data-group="grupo11">
+                                        <input type="checkbox" id="b26" name="skills[Enganação][plus10]" value="true" data-group="grupo11">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b27" name="b27" value="true" data-group="grupo11">
+                                        <input type="checkbox" id="b27" name="skills[Enganação][plus20]" value="true" data-group="grupo11">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b28" name="b28" value="true" data-group="grupo11">
+                                        <input type="checkbox" id="b28" name="skills[Enganação][plus30]" value="true" data-group="grupo11">
                                     </td>
                                 </tr>
                                 <tr>
@@ -532,16 +533,16 @@
                                         Esquiva (Ag)
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b29" name="b29" value="true" data-group="grupo12">
+                                        <input type="checkbox" id="b29" name="skills[Esquiva][known]" value="true" data-group="grupo12">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b30" name="b30" value="true" data-group="grupo12">
+                                        <input type="checkbox" id="b30" name="skills[Esquiva][plus10]" value="true" data-group="grupo12">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b31" name="b31" value="true" data-group="grupo12">
+                                        <input type="checkbox" id="b31" name="skills[Esquiva][plus20]" value="true" data-group="grupo12">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b32" name="b32" value="true" data-group="grupo12">
+                                        <input type="checkbox" id="b32" name="skills[Esquiva][plus30]" value="true" data-group="grupo12">
                                     </td>
                                 </tr>
                                 <tr>
@@ -553,115 +554,115 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cp1" name="cp1">
+                                        <input type="text" id="cp1" name="skills[4][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo1" name="cpo1" value="true" data-group="grupo13">
+                                        <input type="checkbox" id="cpo1" name="skills[4][known]" value="true" data-group="grupo13">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo2" name="cpo2" value="true" data-group="grupo13"> 
+                                        <input type="checkbox" id="cpo2" name="skills[4][plus10]" value="true" data-group="grupo13"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo3" name="cpo3" value="true" data-group="grupo13">
+                                        <input type="checkbox" id="cpo3" name="skills[4][plus20]" value="true" data-group="grupo13">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo4" name="cpo4" value="true" data-group="grupo13">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="cp2" name="cp2">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo5" name="cpo5" value="true" data-group="grupo14">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo6" name="cpo6" value="true" data-group="grupo14"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo7" name="cpo7" value="true" data-group="grupo14">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo8" name="cpo8" value="true" data-group="grupo14">
+                                        <input type="checkbox" id="cpo4" name="skills[4][plus30]" value="true" data-group="grupo13">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cp3" name="cp3">
+                                        <input type="text" id="cp2" name="skills[5][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo9" name="cpo9" value="true" data-group="grupo15">
+                                        <input type="checkbox" id="cpo5" name="skills[5][known]" value="true" data-group="grupo14">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo10" name="cpo10" value="true" data-group="grupo15"> 
+                                        <input type="checkbox" id="cpo6" name="skills[5][plus10]" value="true" data-group="grupo14"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo11" name="cpo11" value="true" data-group="grupo15">
+                                        <input type="checkbox" id="cpo7" name="skills[5][plus20]" value="true" data-group="grupo14">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo12" name="cpo12" value="true" data-group="grupo15">
+                                        <input type="checkbox" id="cpo8" name="skills[5][plus30]" value="true" data-group="grupo14">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cp4" name="cp4">
+                                        <input type="text" id="cp3" name="skills[6][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo13" name="cpo13" value="true" data-group="grupo16">
+                                        <input type="checkbox" id="cpo9" name="skills[6][known]" value="true" data-group="grupo15">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo14" name="cpo14" value="true" data-group="grupo16"> 
+                                        <input type="checkbox" id="cpo10" name="skills[6][plus10]" value="true" data-group="grupo15"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo15" name="cpo15" value="true" data-group="grupo16">
+                                        <input type="checkbox" id="cpo11" name="skills[6][plus20]" value="true" data-group="grupo15">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo16" name="cpo16" value="true" data-group="grupo16">
+                                        <input type="checkbox" id="cpo12" name="skills[6][plus30]" value="true" data-group="grupo15">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="cp4" name="skills[7][name]">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo13" name="skills[7][known]" value="true" data-group="grupo16">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo14" name="skills[7][plus10]" value="true" data-group="grupo16"> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo15" name="skills[7][plus20]" value="true" data-group="grupo16">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo16" name="skills[7][plus30]" value="true" data-group="grupo16">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Investigação (Soc)</td>
                                     <td>
-                                        <input type="checkbox" id="b33" name="b33" value="true" data-group="grupo17">
+                                        <input type="checkbox" id="b33" name="skills[Investigação][known]" value="true" data-group="grupo17">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b34" name="b34" value="true" data-group="grupo17">
+                                        <input type="checkbox" id="b34" name="skills[Investigação][plus10]" value="true" data-group="grupo17">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b35" name="b35" value="true" data-group="grupo17">
+                                        <input type="checkbox" id="b35" name="skills[Investigação][plus20]" value="true" data-group="grupo17">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b36" name="b36" value="true" data-group="grupo17">
+                                        <input type="checkbox" id="b36" name="skills[Investigação][plus30]" value="true" data-group="grupo17">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Interrogatório (Von)</td>
                                     <td>
-                                        <input type="checkbox" id="b37" name="b37" value="true" data-group="grupo18">
+                                        <input type="checkbox" id="b37" name="skills[Interrogatório][known]" value="true" data-group="grupo18">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b38" name="b38" value="true" data-group="grupo18">
+                                        <input type="checkbox" id="b38" name="skills[Interrogatório][plus10]" value="true" data-group="grupo18">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b39" name="b39" value="true" data-group="grupo18">
+                                        <input type="checkbox" id="b39" name="skills[Interrogatório][plus20]" value="true" data-group="grupo18">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b40" name="b40" value="true" data-group="grupo18">
+                                        <input type="checkbox" id="b40" name="skills[Interrogatório][plus30]" value="true" data-group="grupo18">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Intimidação (F)</td>
                                     <td>
-                                        <input type="checkbox" id="b41" name="b41" value="true" data-group="grupo19">
+                                        <input type="checkbox" id="b41" name="skills[Intimidação][known]" value="true" data-group="grupo19">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b42" name="b42" value="true" data-group="grupo19">
+                                        <input type="checkbox" id="b42" name="skills[Intimidação][plus10]" value="true" data-group="grupo19">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b43" name="b43" value="true" data-group="grupo19">
+                                        <input type="checkbox" id="b43" name="skills[Intimidação][plus20]" value="true" data-group="grupo19">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b44" name="b44" value="true" data-group="grupo19">
+                                        <input type="checkbox" id="b44" name="skills[Intimidação][plus30]" value="true" data-group="grupo19">
                                     </td>
                                 </tr>
                                 <tr>
@@ -673,51 +674,51 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="lg1" name="lg1">
+                                        <input type="text" id="lg1" name="skills[8][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo1" name="lgo1" value="true" data-group="grupo20">
+                                        <input type="checkbox" id="lgo1" name="skills[8][known]" value="true" data-group="grupo20">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo2" name="lgo2" value="true" data-group="grupo20"> 
+                                        <input type="checkbox" id="lgo2" name="skills[8][plus10]" value="true" data-group="grupo20"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo3" name="lgo3" value="true" data-group="grupo20">
+                                        <input type="checkbox" id="lgo3" name="skills[8][plus20]" value="true" data-group="grupo20">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo4" name="lgo4" value="true" data-group="grupo20">
+                                        <input type="checkbox" id="lgo4" name="skills[8][plus30]" value="true" data-group="grupo20">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="lg2" name="lg2">
+                                        <input type="text" id="lg2" name="skills[9][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo5" name="lgo5" value="true" data-group="grupo21">
+                                        <input type="checkbox" id="lgo5" name="skills[9][known]" value="true" data-group="grupo21">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo6" name="lgo6" value="true" data-group="grupo21"> 
+                                        <input type="checkbox" id="lgo6" name="skills[9][plus10]" value="true" data-group="grupo21"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo7" name="lgo7" value="true" data-group="grupo21">
+                                        <input type="checkbox" id="lgo7" name="skills[9][plus20]" value="true" data-group="grupo21">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo8" name="lgo8" value="true" data-group="grupo21">
+                                        <input type="checkbox" id="lgo8" name="skills[9][plus30]" value="true" data-group="grupo21">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Lógica (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b45" name="b45" value="true" data-group="grupo22">
+                                        <input type="checkbox" id="b45" name="skills[Lógica][known]" value="true" data-group="grupo22">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b46" name="b46" value="true" data-group="grupo22">
+                                        <input type="checkbox" id="b46" name="skills[Lógica][plus10]" value="true" data-group="grupo22">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b47" name="b47" value="true" data-group="grupo22">
+                                        <input type="checkbox" id="b47" name="skills[Lógica][plus20]" value="true" data-group="grupo22">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b48" name="b48" value="true" data-group="grupo22">
+                                        <input type="checkbox" id="b48" name="skills[Lógica][plus30]" value="true" data-group="grupo22">
                                     </td>
                                 </tr>
                             </table>
@@ -733,136 +734,136 @@
                                 <tr>
                                     <td>Medicina (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b49" name="b49" value="true" data-group="grupo23">
+                                        <input type="checkbox" id="b49" name="skills[Medicina][known]" value="true" data-group="grupo23">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b50" name="b50" value="true" data-group="grupo23">
+                                        <input type="checkbox" id="b50" name="skills[Medicina][plus10]" value="true" data-group="grupo23">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b51" name="b51" value="true" data-group="grupo23">
+                                        <input type="checkbox" id="b51" name="skills[Medicina][plus20]" value="true" data-group="grupo23">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b52" name="b52" value="true" data-group="grupo23">
+                                        <input type="checkbox" id="b52" name="skills[Medicina][plus30]" value="true" data-group="grupo23">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Navegação Superfície (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b53" name="b53" value="true" data-group="grupo24">
+                                        <input type="checkbox" id="b53" name="skills[Navegação Superfície][known]" value="true" data-group="grupo24">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b54" name="b54" value="true" data-group="grupo24">
+                                        <input type="checkbox" id="b54" name="skills[Navegação Superfície][plus10]" value="true" data-group="grupo24">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b55" name="b55" value="true" data-group="grupo24">
+                                        <input type="checkbox" id="b55" name="skills[Navegação Superfície][plus20]" value="true" data-group="grupo24">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b56" name="b56" value="true" data-group="grupo24">
+                                        <input type="checkbox" id="b56" name="skills[Navegação Superfície][plus30]" value="true" data-group="grupo24">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Navegação Estelar (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b57" name="b57" value="true" data-group="grupo25">
+                                        <input type="checkbox" id="b57" name="skills[Navegação Superfície][known]" value="true" data-group="grupo25">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b58" name="b58" value="true" data-group="grupo25">
+                                        <input type="checkbox" id="b58" name="skills[Navegação Estelar][plus10]" value="true" data-group="grupo25">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b59" name="b59" value="true" data-group="grupo25">
+                                        <input type="checkbox" id="b59" name="skills[Navegação Estelar][plus20]" value="true" data-group="grupo25">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b60" name="b60" value="true" data-group="grupo25">
+                                        <input type="checkbox" id="b60" name="skills[Navegação Estelar][plus30]" value="true" data-group="grupo25">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Navegação Warp (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b61" name="b61" value="true" data-group="grupo26">
+                                        <input type="checkbox" id="b61" name="skills[Navegação Warp][known]" value="true" data-group="grupo26">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b62" name="b62" value="true" data-group="grupo26">
+                                        <input type="checkbox" id="b62" name="skills[Navegação Warp][plus10]" value="true" data-group="grupo26">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b63" name="b63" value="true" data-group="grupo26">
+                                        <input type="checkbox" id="b63" name="skills[Navegação Warp][plus20]" value="true" data-group="grupo26">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b64" name="b64" value="true" data-group="grupo26">
+                                        <input type="checkbox" id="b64" name="skills[Navegação Warp][plus30]" value="true" data-group="grupo26">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Operar Superfície (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b65" name="b65" value="true" data-group="grupo27">
+                                        <input type="checkbox" id="b65" name="skills[Operar Superfície][known]" value="true" data-group="grupo27">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b66" name="b66" value="true" data-group="grupo27">
+                                        <input type="checkbox" id="b66" name="skills[Operar Superfície][plus10]" value="true" data-group="grupo27">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b67" name="b67" value="true" data-group="grupo27">
+                                        <input type="checkbox" id="b67" name="skills[Operar Superfície][plus20]" value="true" data-group="grupo27">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b68" name="b68" value="true" data-group="grupo27">
+                                        <input type="checkbox" id="b68" name="skills[Operar Superfície][plus30]" value="true" data-group="grupo27">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Operar Aeronautica (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b69" name="b69" value="true" data-group="grupo28">
+                                        <input type="checkbox" id="b69" name="skills[Operar Aeronautica][known]" value="true" data-group="grupo28">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b70" name="b70" value="true" data-group="grupo28">
+                                        <input type="checkbox" id="b70" name="skills[Operar Aeronautica][plus10]" value="true" data-group="grupo28">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b71" name="b71" value="true" data-group="grupo28">
+                                        <input type="checkbox" id="b71" name="skills[Operar Aeronautica][plus20]" value="true" data-group="grupo28">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b72" name="b72" value="true" data-group="grupo28">
+                                        <input type="checkbox" id="b72" name="skills[Operar Aeronautica][plus30]" value="true" data-group="grupo28">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Operar Warp (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b73" name="b73" value="true" data-group="grupo29">
+                                        <input type="checkbox" id="b73" name="skills[Operar Warp][known]" value="true" data-group="grupo29">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b74" name="b74" value="true" data-group="grupo29">
+                                        <input type="checkbox" id="b74" name="skills[Operar Warp][plus10]" value="true" data-group="grupo29">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b75" name="b75" value="true" data-group="grupo29">
+                                        <input type="checkbox" id="b75" name="skills[Operar Warp][plus20]" value="true" data-group="grupo29">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b76" name="b76" value="true" data-group="grupo29">
+                                        <input type="checkbox" id="b76" name="skills[Operar Warp][plus30]" value="true" data-group="grupo29">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Bloqueio (HeC)</td>
                                     <td>
-                                        <input type="checkbox" id="b77" name="b77" value="true" data-group="grupo30">
+                                        <input type="checkbox" id="b77" name="skills[Bloqueio][known]" value="true" data-group="grupo30">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b78" name="b78" value="true" data-group="grupo30">
+                                        <input type="checkbox" id="b78" name="skills[Bloqueio][plus10]" value="true" data-group="grupo30">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b79" name="b79" value="true" data-group="grupo30">
+                                        <input type="checkbox" id="b79" name="skills[Bloqueio][plus20]" value="true" data-group="grupo30">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b80" name="b80" value="true" data-group="grupo30">
+                                        <input type="checkbox" id="b80" name="skills[Bloqueio][plus30]" value="true" data-group="grupo30">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Senso Psíquico (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b81" name="b81" value="true" data-group="grupo31">
+                                        <input type="checkbox" id="b81" name="skills[Senso Psíquico][known]" value="true" data-group="grupo31">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b82" name="b82" value="true" data-group="grupo31">
+                                        <input type="checkbox" id="b82" name="skills[Senso Psíquico][plus10]" value="true" data-group="grupo31">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b83" name="b83" value="true" data-group="grupo31">
+                                        <input type="checkbox" id="b83" name="skills[Senso Psíquico][plus20]" value="true" data-group="grupo31">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b84" name="b84" value="true" data-group="grupo31">
+                                        <input type="checkbox" id="b84" name="skills[Senso Psíquico][plus30]" value="true" data-group="grupo31">
                                     </td>
                                 </tr>
                                 <tr>
@@ -874,178 +875,177 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ce1" name="ce1">
+                                        <input type="text" id="ce1" name="skills[10][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo1" name="ceo1" value="true" data-group="grupo32">
+                                        <input type="checkbox" id="ceo1" name="skills[10][known]" value="true" data-group="grupo32">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo2" name="ceo2" value="true" data-group="grupo32"> 
+                                        <input type="checkbox" id="ceo2" name="skills[10][plus10]" value="true" data-group="grupo32"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo3" name="ceo3" value="true" data-group="grupo32">
+                                        <input type="checkbox" id="ceo3" name="skills[10][plus20]" value="true" data-group="grupo32">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo4" name="ceo4" value="true" data-group="grupo32">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="ce2" name="ce2">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo5" name="ceo5" value="true" data-group="grupo33">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo6" name="ceo6" value="true" data-group="grupo33"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo7" name="ceo7" value="true" data-group="grupo33">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo8" name="ceo8" value="true" data-group="grupo33">
+                                        <input type="checkbox" id="ceo4" name="skills[10][plus30]" value="true" data-group="grupo32">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ce3" name="ce3">
+                                        <input type="text" id="ce2" name="skills[11][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo9" name="ceo9" value="true" data-group="grupo34">
+                                        <input type="checkbox" id="ceo5" name="skills[11][known]" value="true" data-group="grupo33">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo10" name="ceo10" value="true" data-group="grupo34"> 
+                                        <input type="checkbox" id="ceo6" name="skills[11][plus10]" value="true" data-group="grupo33"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo11" name="ceo11" value="true" data-group="grupo34">
+                                        <input type="checkbox" id="ceo7" name="skills[11][plus20]" value="true" data-group="grupo33">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo12" name="ceo12" value="true" data-group="grupo34">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="ce4" name="ce4">
-                                    </td>
-                                    <td>
-                                        <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
-                                        <input type="checkbox" id="ceo13" name="ceo13" value="Conhecida" data-group="grupo35">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo14" name="ceo14" value="+10" data-group="grupo35"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo15" name="ceo15" value="+20" data-group="grupo35">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo16" name="ceo16" value="+30" data-group="grupo35">
+                                        <input type="checkbox" id="ceo8" name="skills[11][plus30]" value="true" data-group="grupo33">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ce5" name="ce5">
+                                        <input type="text" id="ce3" name="skills[12][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo17" name="ceo17" value="Conhecida" data-group="grupo36">
+                                        <input type="checkbox" id="ceo9" name="skills[12][known]" value="true" data-group="grupo34">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo18" name="ceo18" value="+10" data-group="grupo36"> 
+                                        <input type="checkbox" id="ceo10" name="skills[12][plus10]" value="true" data-group="grupo34"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo19" name="ceo19" value="+20" data-group="grupo36">
+                                        <input type="checkbox" id="ceo11" name="skills[12][plus20]" value="true" data-group="grupo34">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo20" name="ceo20" value="+30" data-group="grupo36">
+                                        <input type="checkbox" id="ceo12" name="skills[12][plus30]" value="true" data-group="grupo34">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="ce4" name="skills[13][name]">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo13" name="skills[13][known]" value="true" data-group="grupo35">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo14" name="skills[13][plus10]" value="true" data-group="grupo35"> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo15" name="skills[13][plus20]" value="true" data-group="grupo35">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo16" name="skills[13][plus30]" value="true" data-group="grupo35">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="ce5" name="skills[14][name]">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo17" name="skills[14][known]" value="true" data-group="grupo36">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo18" name="skills[14][plus10]" value="true" data-group="grupo36"> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo19" name="skills[14][plus20]" value="true" data-group="grupo36">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo20" name="skills[14][plus30]" value="true" data-group="grupo36">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Intuição (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b85" name="b85" value="Conhecida" data-group="grupo37">
+                                        <input type="checkbox" id="b85" name="skills[Intuição][known]" value="true" data-group="grupo37">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b86" name="b86" value="+10" data-group="grupo37">
+                                        <input type="checkbox" id="b86" name="skills[Intuição][plus10]" value="true" data-group="grupo37">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b87" name="b87" value="+20" data-group="grupo37">
+                                        <input type="checkbox" id="b87" name="skills[Intuição][plus20]" value="true" data-group="grupo37">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b88" name="b88" value="+30" data-group="grupo37">
+                                        <input type="checkbox" id="b88" name="skills[Intuição][plus30]" value="true" data-group="grupo37">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Segurança (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b89" name="b89" value="Conhecida" data-group="grupo38">
+                                        <input type="checkbox" id="b89" name="skills[Segurança][known]" value="true" data-group="grupo38">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b90" name="b90" value="+10" data-group="grupo38">
+                                        <input type="checkbox" id="b90" name="skills[Segurança][plus10]" value="true" data-group="grupo38">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b91" name="b91" value="+20" data-group="grupo38">
+                                        <input type="checkbox" id="b91" name="skills[Segurança][plus20]" value="true" data-group="grupo38">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b92" name="b92" value="+30" data-group="grupo38">
+                                        <input type="checkbox" id="b92" name="skills[Segurança][plus30]" value="true" data-group="grupo38">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Prestidigitação (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b93" name="b93" value="Conhecida" data-group="grupo39">
+                                        <input type="checkbox" id="b93" name="skills[Prestidigitação][known]" value="true" data-group="grupo39">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b94" name="b94" value="+10" data-group="grupo39">
+                                        <input type="checkbox" id="b94" name="skills[Prestidigitação][plus10]" value="true" data-group="grupo39">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b95" name="b95" value="+20" data-group="grupo39">
+                                        <input type="checkbox" id="b95" name="skills[Prestidigitação][plus20]" value="true" data-group="grupo39">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b96" name="b96" value="+30" data-group="grupo39">
+                                        <input type="checkbox" id="b96" name="skills[Prestidigitação][plus30]" value="true" data-group="grupo39">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Furtividade (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b97" name="b97" value="Conhecida" data-group="grupo40">
+                                        <input type="checkbox" id="b97" name="skills[Furtividade][known]" value="true" data-group="grupo40">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b98" name="b98" value="+10" data-group="grupo40">
+                                        <input type="checkbox" id="b98" name="skills[Furtividade][plus10]" value="true" data-group="grupo40">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b99" name="b99" value="+20" data-group="grupo40">
+                                        <input type="checkbox" id="b99" name="skills[Furtividade][plus20]" value="true" data-group="grupo40">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b100" name="b100" value="+30" data-group="grupo40">
+                                        <input type="checkbox" id="b100" name="skills[Furtividade][plus30]" value="true" data-group="grupo40">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Sobrevivência (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b101" name="b101" value="Conhecida" data-group="grupo41">
+                                        <input type="checkbox" id="b101" name="skills[Sobrevivência][known]" value="true" data-group="grupo41">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b102" name="b102" value="+10" data-group="grupo41">
+                                        <input type="checkbox" id="b102" name="skills[Sobrevivência][plus10]" value="true" data-group="grupo41">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b103" name="b103" value="+20" data-group="grupo41">
+                                        <input type="checkbox" id="b103" name="skills[Sobrevivência][plus20]" value="true" data-group="grupo41">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b104" name="b104" value="+30" data-group="grupo41">
+                                        <input type="checkbox" id="b104" name="skills[Sobrevivência][plus30]" value="true" data-group="grupo41">
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Uso Tecnológico (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b105" name="b105" value="Conhecida" data-group="grupo42">
+                                        <input type="checkbox" id="b105" name="skills[Uso Tecnológico][known]" value="true" data-group="grupo42">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b106" name="b106" value="+10" data-group="grupo42">
+                                        <input type="checkbox" id="b106" name="skills[Uso Tecnológico][plus10]" value="true" data-group="grupo42">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b107" name="b107" value="+20" data-group="grupo42">
+                                        <input type="checkbox" id="b107" name="skills[Uso Tecnológico][plus20]" value="true" data-group="grupo42">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b108" name="b108" value="+30" data-group="grupo42">
+                                        <input type="checkbox" id="b108" name="skills[Uso Tecnológico][plus30]" value="true" data-group="grupo42">
                                     </td>
                                 </tr>
                                 <tr>
@@ -1057,53 +1057,53 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ng1" name="ng1">
+                                        <input type="text" id="ng1" name="skills[15][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo1" name="ngo1" value="Conhecida" data-group="grupo43">
+                                        <input type="checkbox" id="ngo1" name="skills[15][known]" value="true" data-group="grupo43">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo2" name="ngo2" value="+10" data-group="grupo43"> 
+                                        <input type="checkbox" id="ngo2" name="skills[15][plus10]" value="true" data-group="grupo43"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo3" name="ngo3" value="+20" data-group="grupo43">
+                                        <input type="checkbox" id="ngo3" name="skills[15][plus20]" value="true" data-group="grupo43">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo4" name="ngo4" value="+30" data-group="grupo43">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="ng2" name="ng2">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo5" name="ngo5" value="Conhecida" data-group="grupo44">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo6" name="ngo6" value="+10" data-group="grupo44"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo7" name="ngo7" value="+20" data-group="grupo44">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo8" name="ngo8" value="+30" data-group="grupo44">
+                                        <input type="checkbox" id="ngo4" name="skills[15][plus30]" value="true" data-group="grupo43">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ng3" name="ng3">
+                                        <input type="text" id="ng2" name="skills[16][name]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo9" name="ngo9" value="Conhecida" data-group="grupo45">
+                                        <input type="checkbox" id="ngo5" name="skills[16][known]" value="true" data-group="grupo44">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo10" name="ngo10" value="+10" data-group="grupo45"> 
+                                        <input type="checkbox" id="ngo6" name="skills[16][plus10]" value="true" data-group="grupo44"> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo11" name="ngo11" value="+20" data-group="grupo45">
+                                        <input type="checkbox" id="ngo7" name="skills[16][plus20]" value="true" data-group="grupo44">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo12" name="ngo12" value="+30" data-group="grupo45">
+                                        <input type="checkbox" id="ngo8" name="skills[16][plus30]" value="true" data-group="grupo44">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="ng3" name="skills[17][name]">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo9" name="skills[17][known]" value="true" data-group="grupo45">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo10" name="skills[17][plus10]" value="true" data-group="grupo45"> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo11" name="skills[17][plus20]" value="true" data-group="grupo45">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo12" name="skills[17][plus30]" value="true" data-group="grupo45">
                                     </td>
                                 </tr>
                             </table>
@@ -1116,8 +1116,8 @@
                         <h2>Talentos e Traços</h2>
                         <div class="titulo-descricao" id="container-descricao">
                             <div class="item-descricao">
-                                <input type="text" id="tt1" name="tt1" placeholder="Nome do Talento ou Traço">
-                                <textarea id="descricao1" name="descricao1" rows="1">Descrição: </textarea>
+                                <input type="text" id="tt1" name="talentsAndTraces[0][name]" placeholder="Nome do Talento ou Traço">
+                                <textarea id="descricao1" name="talentsAndTraces[0][description]" rows="1">Descrição: </textarea>
                             </div>
                         </div>
                         <div class="mais-menos">
@@ -1132,47 +1132,47 @@
                             <div class="grid-container">
                                 <div class="arma-nome">
                                     <label>Nome:</label>
-                                    <input type="text" id="arma_nome_1" name="arma_nome_1">
+                                    <input type="text" id="arma_nome_1" name="weapons[0][name]">
                                 </div>
                                 <div class="arma-classe">
                                     <label>Cls:</label>
-                                    <input type="text" id="arma_classe_1" name="arma_classe_1">
+                                    <input type="text" id="arma_classe_1" name="weapons[0][class]">
                                 </div>
                                 <div class="arma-alc">
                                     <label>Alc:</label>
-                                    <input type="text" id="arma_alc_1" name="arma_alc_1">
+                                    <input type="text" id="arma_alc_1" name="weapons[0][range]">
                                 </div>
                                 <div class="arma-tdt">
                                     <label>TdT:</label>
-                                    <input type="text" id="arma_tdt_1" name="arma_tdt_1">
+                                    <input type="text" id="arma_tdt_1" name="weapons[0][rateOfFire]">
                                 </div>
                                 <div class="arma-dano">
                                     <label>Dano:</label>
-                                    <input type="text" id="arma_dano_1" name="arma_dano_1">
+                                    <input type="text" id="arma_dano_1" name="weapons[0][damage]">
                                 </div>
                                 <div class="arma-pen">
                                     <label>Pen:</label>
-                                    <input type="text" id="arma_pen_1" name="arma_pen_1">
+                                    <input type="text" id="arma_pen_1" name="weapons[0][penetration]">
                                 </div>
                                 <div class="arma-mun">
                                     <label>Mun:</label>
-                                    <input type="text" id="arma_mun_1" name="arma_mun_1">
+                                    <input type="text" id="arma_mun_1" name="weapons[0][munition]">
                                 </div>
                                 <div class="arma-rec">
                                     <label>Rec:</label>
-                                    <input type="text" id="arma_rec_1" name="arma_rec_1">
+                                    <input type="text" id="arma_rec_1" name="weapons[0][reload]">
                                 </div>
                                 <div class="arma-peso">
                                     <label>Peso:</label>
-                                    <input type="text" id="arma_peso_1" name="arma_peso_1">
+                                    <input type="text" id="arma_peso_1" name="weapons[0][weight]">
                                 </div>
                                 <div class="arma-disp">
                                     <label>Disp:</label>
-                                    <input type="text" id="arma_disp_1" name="arma_disp_1">
+                                    <input type="text" id="arma_disp_1" name="weapons[0][availability]">
                                 </div>
                                 <div class="arma-especial">
                                     <label>Especial:</label>
-                                    <input type="text" id="arma_especial_1" name="arma_especial_1">
+                                    <input type="text" id="arma_especial_1" name="weapons[0][special]">
                                 </div>  
                             </div>
                         </div>
@@ -1187,10 +1187,10 @@
                         <div id="equipamento-container">
                             <div class="equipamento-lista">
                                 <label>Nome:</label>
-                                <input type="text" id="equip1" name="equip1">
+                                <input type="text" id="equip1" name="equipments[0][name]">
                                 <label>Peso:</label>
-                                <input type="text" id="peso1" name="peso1">
-                                <textarea id="descricao_peso1" name="descricao_peso1" rows="2">Descrição:</textarea>
+                                <input type="text" id="peso1" name="equipments[0][weight]">
+                                <textarea id="descricao_peso1" name="equipments[0][description]" rows="2">Descrição:</textarea>
                             </div>
                         </div>
                         <div class="mais-menos">
@@ -1205,53 +1205,53 @@
                             <div class="grid-armadura">
                                 <div class="cabeca">
                                     <label for="cabecaa">Cabeça:</label>
-                                    <input type="number" id="cabecaa" name="cabecaa" placeholder="Armadura">
-                                    <input type="number" id="cabecat" name="cabecat" class="armadura-total">
+                                    <input type="number" id="cabecaa" name="defense[head][armour]" placeholder="Armadura">
+                                    <input type="number" id="cabecat" name="defense[head][totalArmour]" class="armadura-total">
                                 </div>
                                 <div class="bracoe">
                                     <label for="bracoea">Braço Esquerdo:</label>
-                                    <input type="number" id="bracoea" name="bracoea" placeholder="Armadura">
-                                    <input type="number" id="bracoet" name="bracoet" class="armadura-total">
+                                    <input type="number" id="bracoea" name="defense[leftArm][armour]" placeholder="Armadura">
+                                    <input type="number" id="bracoet" name="defense[leftArm][totalArmour]" class="armadura-total">
                                 </div>
                                 <div class="bracod">
                                     <label for="bracoda">Braço Direito:</label>
-                                    <input type="number" id="bracoda" name="bracoda" placeholder="Armadura">
-                                    <input type="number" id="bracodt" name="bracodt" class="armadura-total">
+                                    <input type="number" id="bracoda" name="defense[rightArm][armour]" placeholder="Armadura">
+                                    <input type="number" id="bracodt" name="defense[rightArm][totalArmour]" class="armadura-total">
                                 </div>
                                 <div class="corpo">
                                     <label for="corpoa">Corpo:</label>
-                                    <input type="number" id="corpoa" name="corpoa" placeholder="Armadura">
-                                    <input type="number" id="corpot" name="corpot" class="armadura-total">
+                                    <input type="number" id="corpoa" name="defense[body][armour]" placeholder="Armadura">
+                                    <input type="number" id="corpot" name="defense[body][totalArmour]" class="armadura-total">
                                 </div>
                                 <div class="pernae">
                                     <label for="pernaea">Perna Esquerda:</label>
-                                    <input type="number" id="pernaea" name="pernaea" placeholder="Armadura">
-                                    <input type="number" id="pernaet" name="pernaet" class="armadura-total">
+                                    <input type="number" id="pernaea" name="defense[leftLeg][armour]" placeholder="Armadura">
+                                    <input type="number" id="pernaet" name="defense[leftLeg][totalArmour]" class="armadura-total">
                                 </div>
                                 <div class="pernad">
                                     <label for="pernada">Perna Direita:</label>
-                                    <input type="number" id="pernada" name="pernada" placeholder="Armadura">
-                                    <input type="number" id="pernadt" name="pernadt" class="armadura-total">
+                                    <input type="number" id="pernada" name="defense[rightLeg][armour]" placeholder="Armadura">
+                                    <input type="number" id="pernadt" name="defense[rightLeg][totalArmour]" class="armadura-total">
                                 </div>
                             </div>
                             <div class="vida-condicao">
                                 <div class="vida">
                                     <h3>Vida</h3>
                                     <label for="vida_total">Total:</label>
-                                    <input type="number" id="vida_total" name="vida_total" min="0" value="1">
+                                    <input type="number" id="vida_total" name="health[total]" min="0" value="1">
                                     <label for="vida_atual">Atual:</label>
-                                    <input type="number" id="vida_atual" name="vida_atual" min="0" value="1">
+                                    <input type="number" id="vida_atual" name="health[current]" min="0" value="1">
                                     <label for="dano_critico">Dano Crítico:</label>
-                                    <input type="number" id="dano_critico" name="dano_critico" min="0" max="10" value="0">
+                                    <input type="number" id="dano_critico" name="health[criticalDamage]" min="0" max="10" value="0">
                                 </div>
                                 <div class="condicoes">
                                     <h3>Condições</h3>
-                                    <input type="text" id="condicao1" name="condicao1" placeholder="Nome da Condição">
-                                    <textarea id="descricao_condicao1" name="descricao_condicao1" rows="1">Descrição:</textarea>
-                                    <input type="text" id="condicao2" name="condicao2" placeholder="Nome da Condição">
-                                    <textarea id="descricao_condicao2" name="descricao_condicao2" rows="1">Descrição:</textarea>
-                                    <input type="text" id="condicao3" name="condicao3" placeholder="Nome da Condição">
-                                    <textarea id="descricao_condicao3" name="descricao_condicao3" rows="1">Descrição:</textarea>
+                                    <input type="text" id="condicao1" name="conditions[0][name]" placeholder="Nome da Condição">
+                                    <textarea id="descricao_condicao1" name="conditions[0][description]" rows="1">Descrição:</textarea>
+                                    <input type="text" id="condicao2" name="conditions[1][name]" placeholder="Nome da Condição">
+                                    <textarea id="descricao_condicao2" name="conditions[1][description]" rows="1">Descrição:</textarea>
+                                    <input type="text" id="condicao3" name="conditions[2][name]" placeholder="Nome da Condição">
+                                    <textarea id="descricao_condicao3" name="conditions[2][description]" rows="1">Descrição:</textarea>
                                 </div>
                             </div>
                         </div>
@@ -1263,19 +1263,19 @@
                             <div class="grid-movimento">
                                 <div class="movimento-cell">
                                     <label for="movi_metade">Metade:</label>
-                                    <input type="number" id="movi_metade" name="movi_metade">
+                                    <input type="number" id="movi_metade" name="movement[half]">
                                 </div>
                                 <div class="movimento-cell">
                                     <label for="movi_total">Total:</label>
-                                    <input type="number" id="movi_total" name="movi_total">
+                                    <input type="number" id="movi_total" name="movement[full]">
                                 </div>
                                 <div class="movimento-cell">
                                     <label for="movi_disparada">Disparada:</label>
-                                    <input type="number" id="movi_disparada" name="movi_disparada">
+                                    <input type="number" id="movi_disparada" name="movement[charge]">
                                 </div>
                                 <div class="movimento-cell">
                                     <label for="movi_corrida">Corrida:</label>
-                                    <input type="number" id="movi_corrida" name="movi_corrida">
+                                    <input type="number" id="movi_corrida" name="movement[run]">
                                 </div>
                             </div>
                         </div>
@@ -1285,11 +1285,11 @@
                             <div class="grid-fadiga">
                                 <div>
                                     <label for="fadiga_limite">Limite:</label>
-                                    <input type="number" id="fadiga_limite" name="fadiga_limite" min="0">
+                                    <input type="number" id="fadiga_limite" name="fatigue[limit]" min="0">
                                 </div>
                                 <div>
                                     <label for="fadiga_atual">Atual:</label>
-                                    <input type="number" id="fadiga_atual" name="fadiga_atual" min="0">
+                                    <input type="number" id="fadiga_atual" name="fatigue[current]" min="0">
                                 </div> 
                             </div>
                         </div>
@@ -1299,13 +1299,13 @@
                         <h2>Poderes Psíquicos</h2>
                         <div class="psi-nivel">
                             <label for="pp_psi">Psi-Nível:</label>
-                            <input type="number" id="pp_psi" name="pp_psi" value="0" min="0">
+                            <input type="number" id="pp_psi" name="psiLevel" value="0" min="0">
                         </div>
                         <div id="poder-container">
                             <div class="lista-poder">
                                 <label>Poder:</label>
-                                <input type="text" id="pp_poder1" name="pp_poder1" placeholder="Nome do Poder">
-                                <input type="text" id="pp_descricao1" name="pp_descricao1" class="pp-descricao" placeholder="Descrição:">
+                                <input type="text" id="pp_poder1" name="powers[0][name]" placeholder="Nome do Poder">
+                                <input type="text" id="pp_descricao1" name="powers[0][description]" class="pp-descricao" placeholder="Descrição:">
                             </div>
                         </div>
                         <div class="mais-menos">
@@ -1320,12 +1320,12 @@
                     
                     <div class="notas">
                         <h2>Notas</h2>
-                        <textarea id="notas" name="notas" rows="1">Notas:</textarea>
+                        <textarea id="notas" name="notes" rows="1">Notas:</textarea>
                     </div>
                 </div>
             </div>
             <div class="submit">
-                <button>
+                <button type="submit">
                     SALVAR
                 </button>
             </div>             
