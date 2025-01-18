@@ -195,7 +195,7 @@ app.get('/user/:id/personagem', checkToken, async (req, res) => {
     res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
-    return res.render('personagem', { user, success: false});
+    return res.render('personagem', { user, success: false, errorMessage: null});
 });
 
 //Private route - rules page
@@ -211,13 +211,26 @@ app.get('/user/:id/novo-personagem', checkToken, async (req, res) => {
     res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
+
+    //Limits 3 characters per user
+    const characterCount = await Character.countDocuments({ userId });
+    if (characterCount >= 3) {
+        return res.render('personagem', { 
+            user, 
+            success: false, 
+            errorMessage: "Você já atingiu o limite de 3 personagens. Não é possível criar mais." 
+        });
+    }
+
     return res.render('criar-personagem', { user });
 });
 
 //create new character a fill values
 app.post("/character", checkToken, async (req, res) => {
     try {
+        //get current User creating character
         const currentUser = req.user;
+
         //get parameters for the new character
         const {
             userId,
@@ -351,11 +364,10 @@ app.post("/character", checkToken, async (req, res) => {
         });
 
         await newCharacter.save();
-        console.log(currentUser);
-        res.render('personagem', { success: true, user: currentUser});
+        res.render('personagem', { success: true, user: currentUser, errorMessage: null});
 
     } catch (err) {
-        console.error(err);
+        logError(err.message || "Erro Desconhecido");
         return res.status(500).json({ message: 'Erro ao salvar personagem!', error: err.message });
     }
 });
@@ -365,7 +377,49 @@ app.get('/user/:id/lista-personagem', checkToken, async (req, res) => {
     res.set('Cache-Control', 'no-store');
     const userId = req.params.id;
     const user = await User.findById(userId, "-password");
-    return res.render('lista-personagem', { user });
+    const characters = await Character.find({ userId });
+    return res.render('lista-personagem', { user, characters  });
+});
+
+//Go to character page
+app.get('/character/:id', checkToken, async (req, res) => {
+    try {
+        const characterId = req.params.id;
+
+        if (!mongoose.Types.ObjectId.isValid(characterId)) {
+            return res.status(400).send('ID de personagem inválido.');
+        }
+
+        const character = await Character.findById(characterId);
+
+        if (!character) {
+            return res.status(404).send('Personagem não encontrado.');
+        }
+
+        return res.render('detalhes-personagem', { character });
+    } catch (err) {
+        logError(err.message || "Erro Desconhecido");
+        res.status(500).send('Erro ao buscar informações do personagem.');
+    }
+});
+
+//Delete character
+app.delete('/character/:id', checkToken, async (req, res) => {
+    try {
+        const characterId = req.params.id;
+
+        // Deletar o personagem pelo ID
+        const result = await Character.findByIdAndDelete(characterId);
+
+        if (!result) {
+            return res.status(404).json({ message: 'Personagem não encontrado.' });
+        }
+
+        res.status(200).json({ message: 'Personagem deletado com sucesso!' });
+    } catch (err) {
+        logError(err.message || "Erro Desconhecido");
+        res.status(500).json({ message: 'Erro ao deletar personagem.', error: err.message });
+    }
 });
 
 //Credentials

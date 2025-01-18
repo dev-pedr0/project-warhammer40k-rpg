@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/criar-personagem.css">
+    <link rel="stylesheet" href="/detalhes-personagem.css">
     <title>Document</title>
 </head>
 <body>
     <div class="ficha">
         <form action="/character" method="post">
             <div class="nome">
-                <label>Nome: </label>
-                <input type="text" name="characterName">
-                <input type="hidden" name="userId" value="<%= user._id %>" />
+                <%= character.characterName %>
             </div>
             <div class="dados-iniciais">
                 <div>
                     <label for="homePlanet">Planeta de Origem:</label>
-                    <input type="text" id="pdo" name="homePlanet">
+                    <input type="text" id="pdo" name="homePlanet" value="<%= character.homePlanet %>">
                 </div>
                 <div>
                     <label for="background">Background:</label>
-                    <input type="text" id="background" name="background">
+                    <input type="text" id="background" name="background" value="<%= character.background %>">
                 </div>
                 <div>
                     <label for="role">Função:</label>
-                    <input type="text" id="função" name="role">
+                    <input type="text" id="função" name="role" value="<%= character.role %>">
                 </div>
                 <div>
                     <label for="eliteAdvance">Avanço de Elite:</label>
-                    <input type="text" id="ade" name="eliteAdvance">
+                    <input type="text" id="ade" name="eliteAdvance" value="<%= character.eliteAdvance %>">
                 </div>
                 <div>
                     <label for="destiny">Destino:</label>
-                    <input type="text" id="destino" name="destiny">
+                    <input type="text" id="destino" name="destiny" value="<%= character.destiny %>">
                 </div>
             </div>
 
@@ -44,7 +42,15 @@
                             <h2>Alidados</h2>
                             <div id="area-aliados">
                                 <div class="container-aliados">
-                                    <input type="text" id="al0" name="allies[0]">
+                                    <% if (character.allies && character.allies.length > 0) { %>
+                                        <% character.allies.forEach((ally, index) => { %>
+                                            <div class="input-aliado">
+                                                <input type="text" id="al<%= index %>" name="allies[<%= index %>]" value="<%= ally %>">
+                                            </div>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <input type="text" id="al0" name="allies[0]">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="botoes">
@@ -56,7 +62,15 @@
                             <h2>Inimigos</h2>
                             <div id="area-inimigos">
                                 <div class="container-inimigos">
-                                    <input type="text" id="ini0" name="enemies[0]">
+                                    <% if (character.enemies && character.enemies.length > 0) { %>
+                                        <% character.enemies.forEach((enemy, index) => { %>
+                                            <div class="input-aliado">
+                                                <input type="text" id="ini<%= index %>" name="enemies[<%= index %>]" value="<%= enemy %>">
+                                            </div>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <input type="text" id="ini0" name="enemies[0]">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="botoes">
@@ -74,13 +88,13 @@
                                     Habilidade em Combate (HeC)
                                 </td>
                                 <td>
-                                    <input type="number" id="hec" name="stats[weaponSkill][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="hec" name="stats[weaponSkill][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.weaponSkill.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="hecb" name="stats[weaponSkill][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="hecb" name="stats[weaponSkill][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.weaponSkill.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="heca" name="stats[weaponSkill][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="heca" name="stats[weaponSkill][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.weaponSkill.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -88,13 +102,13 @@
                                     Habilidade Balística (HB)
                                 </td>
                                 <td>
-                                    <input type="number" id="hb" name="stats[balisticSkill][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="hb" name="stats[balisticSkill][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.balisticSkill.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="hbb" name="stats[balisticSkill][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="hbb" name="stats[balisticSkill][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.balisticSkill.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="hba" name="stats[balisticSkill][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="hba" name="stats[balisticSkill][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.balisticSkill.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -102,13 +116,13 @@
                                     Força (F)
                                 </td>
                                 <td>
-                                    <input type="number" id="f" name="stats[strength][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="f" name="stats[strength][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.strength.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="fb" name="stats[strength][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="fb" name="stats[strength][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.strength.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="fa" name="stats[strength][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="fa" name="stats[strength][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.strength.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -116,13 +130,13 @@
                                     Resistência (R)
                                 </td>
                                 <td>
-                                    <input type="number" id="r" name="stats[toughness][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="r" name="stats[toughness][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.toughness.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="rb" name="stats[toughness][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="rb" name="stats[toughness][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.toughness.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="ra" name="stats[toughness][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="ra" name="stats[toughness][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.toughness.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -130,13 +144,13 @@
                                     Agilidade (Ag)
                                 </td>
                                 <td>
-                                    <input type="number" id="ag" name="stats[agility][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="ag" name="stats[agility][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.agility.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="agb" name="stats[agility][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="agb" name="stats[agility][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.agility.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="aga" name="stats[agility][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="aga" name="stats[agility][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.agility.improvements %>">
                                 </td>
                             </tr>
                         </table>
@@ -1331,5 +1345,5 @@
             </div>             
         </form>
     </div>
-    <script src="/criar-personagem.js"></script>
+    <script src="/detalhes-personagem.js"></script>
 </body>

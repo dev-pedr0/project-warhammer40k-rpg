@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/personagem.css">
+    <link rel="stylesheet" href="/lista-personagem.css">
     <title>Document</title>
 </head>
 <body>
@@ -18,26 +18,45 @@
         <a href="/logout">Sair</a>
     </div>
         <header class="titulos">
-            <h1>
-                Lista de Personagem
-            </h1>
+            <h1>Personagens de <%= user.username %></h1>
             <a class="link-retornar" href="/user/<%= user._id %>/main">
                 <img src="/imgs/home.png" alt="retornar-inicio" title="Retornar">
             <!-- Créditos da imagem: Dave Gandy -->
             </a>
         </header>
-        <div class="meio">
-            <nav class="opcoes">
-                <a class="opcao opcao-1" href="/user/<%= user._id %>/novo-personagem">
-                    <p>
-                        Criar Personagem
-                    </p>
-                </a>  
-                <a class="opcao opcao-2" href="/user/<%= user._id %>/lista-personagem">
-                    <p>Lista de Personagens</p>
-                </a>       
-            </nav>
-        </div>
+
+    <% if (characters.length > 0) { %>
+        <ul class="lista-personagem">
+            <% characters.forEach(character => { %>
+                <li>
+                    <div class="caixa-personagem">
+                        <div class="personagem-nome">
+                            <a href="/character/<%= character._id %>">
+                                <%= character.characterName %>
+                            </a>
+                        </div>
+                        <div class="personagem-valores">
+                            <p>
+                                <%= character.homePlanet %> /
+                            </p>
+                            <p>
+                                <%= character.background %> /
+                            </p>
+                            <p>
+                                <%= character.role %>
+                            </p>
+                        </div>
+                        <div class="personagem-deletar" onclick="deleteCharacter('<%= character._id %>')">
+                            Deletar
+                        </div>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Você ainda não criou nenhum personagem.</p>
+    <% } %>
+
         <footer class="rodape">
             <div>
                 <p>
@@ -60,5 +79,5 @@
             </div>
         </footer>
     </div>
-    <script src="/personagem.js"></script>
+    <script src="/lista-personagem.js"></script>
 </body>

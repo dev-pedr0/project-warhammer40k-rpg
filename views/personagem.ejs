@@ -68,5 +68,12 @@
              window.location.href = '/user/<%= user.id %>/personagem'
         </script>
     <% } %>
+
+    <% if (errorMessage) { %>
+        <script>
+            // Exibe o alerta
+            alert("<%= errorMessage %>");
+        </script>
+    <% } %>
     <script src="/personagem.js"></script>
 </body>
