@@ -104,7 +104,7 @@ const characterSchema = new mongoose.Schema({
     },
     skills: [
         {
-            name: { type: String, required: true },
+            name: { type: String },
             known: { type: Boolean, default: false },
             plus10: { type: Boolean, default: false },
             plus20: { type: Boolean, default: false },

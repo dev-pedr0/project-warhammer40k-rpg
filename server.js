@@ -283,13 +283,12 @@ app.post("/character", checkToken, async (req, res) => {
             insanityText: insanity?.insanityText || "",
         };
 
-        const data = req.body;
-        const parsedSkills = Object.keys(data.skills || {}).map(skillName => ({
-            name: skillName,
-            known: data.skills[skillName].known === 'true' || false,
-            plus10: data.skills[skillName].plus10 === 'true' || false,
-            plus20: data.skills[skillName].plus20 === 'true' || false,
-            plus30: data.skills[skillName].plus30 === 'true' || false,
+        const parsedSkills = Object.keys(skills || {}).map(skillIndex => ({
+            name: skills[skillIndex]?.name || "",
+            known: skills[skillIndex]?.known === 'true',
+            plus10: skills[skillIndex]?.plus10 === 'true',
+            plus20: skills[skillIndex]?.plus20 === 'true',
+            plus30: skills[skillIndex]?.plus30 === 'true',
         }));
 
         const parsedFatePoints = {
@@ -401,6 +400,21 @@ app.get('/character/:id', checkToken, async (req, res) => {
         logError(err.message || "Erro Desconhecido");
         res.status(500).send('Erro ao buscar informações do personagem.');
     }
+});
+
+app.post('/character-update/:id', checkToken, async (req, res) => {
+    const characterId = req.params.id;
+    const updatedData = req.body;
+
+    //Update info on character
+    Character.findByIdAndUpdate(characterId, updatedData, {new: true})
+        .then(updatedCharacter => {
+            res.redirect(`/character/${updatedCharacter._id}`);
+        })
+        .catch (error => {
+            logError(error.message || "Erro Desconhecido");
+            res.status(500).send('Erro ao atualizar o personagem.');
+        });
 });
 
 //Delete character

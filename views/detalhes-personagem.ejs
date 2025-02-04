@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="ficha">
-        <form action="/character" method="post">
+        <form action="/character-update/<%= character._id %>" method="post">
             <div class="nome">
                 <%= character.characterName %>
             </div>
@@ -160,13 +160,13 @@
                                     Inteligência (Int)
                                 </td>
                                 <td>
-                                    <input type="number" id="int" name="stats[intelligence][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="int" name="stats[intelligence][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.intelligence.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="intb" name="stats[intelligence][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="intb" name="stats[intelligence][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.intelligence.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="inta" name="stats[intelligence][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="inta" name="stats[intelligence][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.intelligence.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -174,13 +174,13 @@
                                     Percepção (Per)
                                 </td>
                                 <td>
-                                    <input type="number" id="per" name="stats[perception][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="per" name="stats[perception][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.perception.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="perb" name="stats[perception][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="perb" name="stats[perception][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.perception.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="pera" name="stats[perception][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="pera" name="stats[perception][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.perception.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -188,13 +188,13 @@
                                     Vontade (Von)
                                 </td>
                                 <td>
-                                    <input type="number" id="von" name="stats[willpower][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="von" name="stats[willpower][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.willpower.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="vonb" name="stats[willpower][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="vonb" name="stats[willpower][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.willpower.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="vona" name="stats[willpower][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="vona" name="stats[willpower][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.willpower.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -202,13 +202,13 @@
                                     Socialização (Soc)
                                 </td>
                                 <td>
-                                    <input type="number" id="soc" name="stats[fellowship][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="soc" name="stats[fellowship][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.fellowship.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="socb" name="stats[fellowship][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="socb" name="stats[fellowship][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.fellowship.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="soca" name="stats[fellowship][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="soca" name="stats[fellowship][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.fellowship.improvements %>">
                                 </td>
                             </tr>
                             <tr>
@@ -216,13 +216,13 @@
                                     Influência (Ifl)
                                 </td>
                                 <td>
-                                    <input type="number" id="ifl" name="stats[influence][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="1">
+                                    <input type="number" id="ifl" name="stats[influence][value]" class="caracteristica-input caracteristica-valor" min="1" max="100" step="1" value="<%= character.stats.influence.value %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="iflb" name="stats[influence][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="0">
+                                    <input type="number" id="iflb" name="stats[influence][bonus]" class="caracteristica-input" min="0" max="9" step="1" value="<%= character.stats.influence.bonus %>">
                                 </td>
                                 <td>
-                                    <input type="number" id="ifla" name="stats[influence][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="0">
+                                    <input type="number" id="ifla" name="stats[influence][improvements]" class="caracteristica-input" min="0" max="5" step="1" value="<%= character.stats.influence.improvements %>">
                                 </td>
                             </tr>
                         </table>
@@ -233,35 +233,35 @@
                             <h2>Experiência (EXP)</h2>
         
                             <label for="exp[expToSpend]">EXP para gastar</label>
-                            <input type="number" id="exppg" name="exp[expToSpend]" value="0" min="0" step="1">
+                            <input type="number" id="exppg" name="exp[expToSpend]" value="<%= character.exp.expToSpend %>" min="0" step="1">
             
                             <label for="exp[expSpent]">Total de EXP gasto</label>
-                            <input type="number" id="tdeg" name="exp[expSpent]" value="0" min="0" step="1">
+                            <input type="number" id="tdeg" name="exp[expSpent]" value="<%= character.exp.expSpent %>" min="0" step="1">
                         </div>
                         <div class="xp-pd-1">
                             <h2>Pontos de Destino</h2>
         
                             <label for="fatePoints[limit]">Limite</label>
-                            <input type="number" id="limite" name="fatePoints[limit]" min="0" step="1">
+                            <input type="number" id="limite" name="fatePoints[limit]" min="0" step="1" value="<%= character.fatePoints.limit %>">
             
                             <label for="fatePoints[current]">Atual</label>
-                            <input type="number" id="atual" name="fatePoints[current]"min="0" step="1">
+                            <input type="number" id="atual" name="fatePoints[current]"min="0" step="1" value="<%= character.fatePoints.current %>">
                         </div>
                     </div>
         
                     <div class="insa-corrup">
                         <div class="insa-corrup-1">
                             <label for="insanity[insanityPoints]">Insanidade (Ins)</label>
-                            <input type="number" id="ins" name="insanity[insanityPoints]" value="0" min="0" max="100" step="1">
-                            <input type="number" id="insm" name="insanity[insanityBonus]" value="0" min="-30" max="10" step="10">
-                            <textarea id="desordem" name="insanityText" rows="5"> Desordem Mental:</textarea>
+                            <input type="number" id="ins" name="insanity[insanityPoints]" value="<%= character.insanity.insanityPoints %>" min="0" max="100" step="1">
+                            <input type="number" id="insm" name="insanity[insanityBonus]" value="<%= character.insanity.insanityBonus %>" min="-30" max="10" step="10">
+                            <textarea id="desordem" name="insanity[insanityText]" rows="5"><%= character.insanity.insanityText %></textarea>
                         </div>
                         <div class="insa-corrup-1">
                             <label for="corruption[corruptionPoints]">Corrupção (Cor)</label>
-                            <input type="number" id="cor" name="corruption[corruptionPoints]" value="0" min="0" max="100" step="1">
-                            <input type="number" id="corm" name="corruption[corruptionBonus]" value="0" min="-30" max="0" step="10">
-                            <textarea id="malignancia" name="corruption[malignances]" rows="5">Malignancia:</textarea>
-                            <textarea id="mutacao" name="corruption[mutations]" rows="5">Mutações:</textarea>
+                            <input type="number" id="cor" name="corruption[corruptionPoints]" value="<%= character.corruption.corruptionPoints %>" min="0" max="100" step="1">
+                            <input type="number" id="corm" name="corruption[corruptionBonus]" value="<%= character.corruption.corruptionBonus %>" min="-30" max="0" step="10">
+                            <textarea id="malignancia" name="corruption[malignances]" rows="5"><%= character.corruption.malignances %></textarea>
+                            <textarea id="mutacao" name="corruption[mutations]" rows="5"><%= character.corruption.mutations %></textarea>
         
                         </div>
                     </div>
@@ -270,79 +270,79 @@
                         <h2>Aptidões</h2>
                         <div class="aptidao-lista">
                             <div>
-                                <input type="checkbox" id="apt1" name="aptitude[general]" value="true">
+                                <input type="checkbox" id="apt1" name="aptitude[general]" value="true" <%= character.aptitude.general ? "checked" : "" %>>
                                 <label for="aptitude[general]">Geral</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt2" name="aptitude[weaponSkill]" value="true">
+                                <input type="checkbox" id="apt2" name="aptitude[weaponSkill]" value="true" <%= character.aptitude.weaponSkill ? "checked" : "" %>>
                                 <label for="aptitude[weaponSkill]">Habilidade em Combate</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt3" name="aptitude[balisticSkill]" value="true">
+                                <input type="checkbox" id="apt3" name="aptitude[balisticSkill]" value="true" <%= character.aptitude.balisticSkill ? "checked" : "" %>>
                                 <label for="aptitude[balisticSkill]">Habilidade Balística</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt4" name="aptitude[strength]" value="true">
+                                <input type="checkbox" id="apt4" name="aptitude[strength]" value="true" <%= character.aptitude.strength ? "checked" : "" %>>
                                 <label for="aptitude[strength]">Força</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt5" name="aptitude[toughness]" value="true">
+                                <input type="checkbox" id="apt5" name="aptitude[toughness]" value="true" <%= character.aptitude.toughness ? "checked" : "" %>>
                                 <label for="aptitude[toughness]">Resistência</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt6" name="aptitude[agility]" value="true">
+                                <input type="checkbox" id="apt6" name="aptitude[agility]" value="true" <%= character.aptitude.agility ? "checked" : "" %>>
                                 <label for="aptitude[agility]">Agilidade</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt7" name="aptitude[intelligence]" value="true">
+                                <input type="checkbox" id="apt7" name="aptitude[intelligence]" value="true" <%= character.aptitude.intelligence ? "checked" : "" %>>
                                 <label for="aptitude[intelligence]">Inteligência</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt8" name="aptitude[perception]" value="true">
+                                <input type="checkbox" id="apt8" name="aptitude[perception]" value="true" <%= character.aptitude.perception ? "checked" : "" %>>
                                 <label for="aptitude[perception]">Percepção</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt9" name="aptitude[willpower]" value="true">
+                                <input type="checkbox" id="apt9" name="aptitude[willpower]" value="true" <%= character.aptitude.willpower ? "checked" : "" %>>
                                 <label for="aptitude[willpower]">Vontade</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt10" name="aptitude[fellowship]" value="true">
+                                <input type="checkbox" id="apt10" name="aptitude[fellowship]" value="true" <%= character.aptitude.fellowship ? "checked" : "" %>>
                                 <label for="aptitude[fellowship]">Socialização</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt11" name="aptitude[ofensive]" value="true">
+                                <input type="checkbox" id="apt11" name="aptitude[ofensive]" value="true" <%= character.aptitude.ofensive ? "checked" : "" %>>
                                 <label for="aptitude[ofensive]">Ofensivo</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt12" name="aptitude[finesse]" value="true">
+                                <input type="checkbox" id="apt12" name="aptitude[finesse]" value="true" <%= character.aptitude.finesse ? "checked" : "" %>>
                                 <label for="aptitude[finesse]">Sutileza</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt13" name="aptitude[defensive]" value="true">
+                                <input type="checkbox" id="apt13" name="aptitude[defensive]" value="true" <%= character.aptitude.defensive ? "checked" : "" %>>
                                 <label for="aptitude[defensive]">Defensivo</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt14" name="aptitude[psychic]" value="true">
+                                <input type="checkbox" id="apt14" name="aptitude[psychic]" value="true" <%= character.aptitude.psychic ? "checked" : "" %>>
                                 <label for="aptitude[psychic]">Psíquico</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt15" name="aptitude[tech]" value="true">
+                                <input type="checkbox" id="apt15" name="aptitude[tech]" value="true" <%= character.aptitude.tech ? "checked" : "" %>>
                                 <label for="aptitude[tech]">Tecnologia</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt16" name="aptitude[knowledge]" value="true">
+                                <input type="checkbox" id="apt16" name="aptitude[knowledge]" value="true" <%= character.aptitude.knowledge ? "checked" : "" %>>
                                 <label for="aptitude[knowledge]">Conhecimento</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt17" name="aptitude[leadership]" value="true">
+                                <input type="checkbox" id="apt17" name="aptitude[leadership]" value="true" <%= character.aptitude.leadership ? "checked" : "" %>>
                                 <label for="aptitude[leadership]">Liderança</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt18" name="aptitude[survival]" value="true">
+                                <input type="checkbox" id="apt18" name="aptitude[survival]" value="true" <%= character.aptitude.survival ? "checked" : "" %>>
                                 <label for="aptitude[survival]">Sobrevivência</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="apt19" name="aptitude[social]" value="true">
+                                <input type="checkbox" id="apt19" name="aptitude[social]" value="true" <%= character.aptitude.social ? "checked" : "" %>>
                                 <label for="aptitude[social]">Social</label>
                             </div>
                         </div>
@@ -363,91 +363,97 @@
                                 <tr>
                                     <td>Acrobacia (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b1" name="skills[Acrobacia][known]" value="true" data-group="grupo1">
+                                        <input type="hidden" name="skills[0][name]" value="Acrobacia">
+                                        <input type="checkbox" id="b1" name="skills[0][known]" value="true" data-group="grupo1" <%= character.skills[0].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b2" name="skills[Acrobacia][plus10]" value="true" data-group="grupo1">
+                                        <input type="checkbox" id="b2" name="skills[0][plus10]" value="true" data-group="grupo1" <%= character.skills[0].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b3" name="skills[Acrobacia][plus20]" value="true" data-group="grupo1">
+                                        <input type="checkbox" id="b3" name="skills[0][plus20]" value="true" data-group="grupo1" <%= character.skills[0].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b4" name="skills[Acrobacia][plus30]" value="true" data-group="grupo1">
+                                        <input type="checkbox" id="b4" name="skills[0][plus30]" value="true" data-group="grupo1" <%= character.skills[0].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Atletismo (F)</td>
                                     <td>
-                                        <input type="checkbox" id="b5" name="skills[Atletismo][known]" value="true" data-group="grupo2">
+                                        <input type="hidden" name="skills[1][name]" value="Atletismo">
+                                        <input type="checkbox" id="b5" name="skills[1][known]" value="true" data-group="grupo2" <%= character.skills[1].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b6" name="skills[Atletismo][plus10]" value="true" data-group="grupo2">
+                                        <input type="checkbox" id="b6" name="skills[1][plus10]" value="true" data-group="grupo2" <%= character.skills[1].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b7" name="skills[Atletismo][plus20]" value="true" data-group="grupo2">
+                                        <input type="checkbox" id="b7" name="skills[1][plus20]" value="true" data-group="grupo2" <%= character.skills[1].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b8" name="skills[Atletismo][plus30]" value="true" data-group="grupo2">
+                                        <input type="checkbox" id="b8" name="skills[1][plus30]" value="true" data-group="grupo2" <%= character.skills[1].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Atenção (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b9" name="skills[Atenção][known]" value="true" data-group="grupo3">
+                                        <input type="hidden" name="skills[2][name]" value="Atenção"> 
+                                        <input type="checkbox" id="b9" name="skills[2][known]" value="true" data-group="grupo3" <%= character.skills[2].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b10" name="skills[Atenção][plus10]" value="true" data-group="grupo3">
+                                        <input type="checkbox" id="b10" name="skills[2][plus10]" value="true" data-group="grupo3" <%= character.skills[2].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b11" name="skills[Atenção][plus20]" value="true" data-group="grupo3">
+                                        <input type="checkbox" id="b11" name="skills[2][plus20]" value="true" data-group="grupo3" <%= character.skills[2].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b12" name="skills[Atenção][plus30]" value="true" data-group="grupo3">
+                                        <input type="checkbox" id="b12" name="skills[2][plus30]" value="true" data-group="grupo3" <%= character.skills[2].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Charme (Soc)</td>
                                     <td>
-                                        <input type="checkbox" id="b13" name="skills[Charme][known]" value="true" data-group="grupo4">
+                                        <input type="hidden" name="skills[3][name]" value="Charme"> 
+                                        <input type="checkbox" id="b13" name="skills[3][known]" value="true" data-group="grupo4" <%= character.skills[3].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b14" name="skills[Charme][plus10]" value="true" data-group="grupo4">
+                                        <input type="checkbox" id="b14" name="skills[3][plus10]" value="true" data-group="grupo4" <%= character.skills[3].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b15" name="skills[Charme][plus20]" value="true" data-group="grupo4">
+                                        <input type="checkbox" id="b15" name="skills[3][plus20]" value="true" data-group="grupo4" <%= character.skills[3].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b16" name="skills[Charme][plus30]" value="true" data-group="grupo4">
+                                        <input type="checkbox" id="b16" name="skills[3][plus30]" value="true" data-group="grupo4" <%= character.skills[3].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Comando (Soc)</td>
                                     <td>
-                                        <input type="checkbox" id="b17" name="skills[Comando][known]" value="true" data-group="grupo5">
+                                        <input type="hidden" name="skills[4][name]" value="Comando">
+                                        <input type="checkbox" id="b17" name="skills[4][known]" value="true" data-group="grupo5" <%= character.skills[4].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b18" name="skills[Comando][plus10]" value="true" data-group="grupo5">
+                                        <input type="checkbox" id="b18" name="skills[4][plus10]" value="true" data-group="grupo5" <%= character.skills[4].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b19" name="skills[Comando][plus20]" value="true" data-group="grupo5">
+                                        <input type="checkbox" id="b19" name="skills[4][plus20]" value="true" data-group="grupo5" <%= character.skills[4].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b20" name="skills[Comando][plus30]" value="true" data-group="grupo5">
+                                        <input type="checkbox" id="b20" name="skills[4][plus30]" value="true" data-group="grupo5" <%= character.skills[4].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Comercio (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b21" name="skills[Comercio][known]" value="true" data-group="grupo6">
+                                        <input type="hidden" name="skills[5][name]" value="Comercio">
+                                        <input type="checkbox" id="b21" name="skills[5][known]" value="true" data-group="grupo6" <%= character.skills[5].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b22" name="skills[Comercio][plus10]" value="true" data-group="grupo6">
+                                        <input type="checkbox" id="b22" name="skills[5][plus10]" value="true" data-group="grupo6" <%= character.skills[5].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b23" name="skills[Comercio][plus20]" value="true" data-group="grupo6">
+                                        <input type="checkbox" id="b23" name="skills[5][plus20]" value="true" data-group="grupo6" <%= character.skills[5].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b24" name="skills[Comercio][plus30]" value="true" data-group="grupo6">
+                                        <input type="checkbox" id="b24" name="skills[5][plus30]" value="true" data-group="grupo6" <%= character.skills[5].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
@@ -459,70 +465,70 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cc1" name="skills[0][name]">
+                                        <input type="text" id="cc1" name="skills[6][name]" value="<%= character.skills[6].name ? character.skills[6].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco1" name="skills[0][known]" value="true" data-group="grupo7">
+                                        <input type="checkbox" id="cco1" name="skills[6][known]" value="true" data-group="grupo7" <%= character.skills[6].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco2" name="skills[0][plus10]" value="true" data-group="grupo7"> 
+                                        <input type="checkbox" id="cco2" name="skills[6][plus10]" value="true" data-group="grupo7" <%= character.skills[6].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco3" name="skills[0][plus20]" value="true" data-group="grupo7">
+                                        <input type="checkbox" id="cco3" name="skills[6][plus20]" value="true" data-group="grupo7" <%= character.skills[6].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco4" name="skills[0][plus30]" value="true" data-group="grupo7">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="cc2" name="skills[1][name]">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco5" name="skills[1][known]" value="true" data-group="grupo8">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco6" name="skills[1][plus10]" value="true" data-group="grupo8"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco7" name="skills[1][plus20]" value="true" data-group="grupo8">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cco8" name="skills[1][plus30]" value="true" data-group="grupo8">
+                                        <input type="checkbox" id="cco4" name="skills[6][plus30]" value="true" data-group="grupo7" <%= character.skills[6].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cc3" name="skills[2][name]">
+                                        <input type="text" id="cc2" name="skills[7][name]" value="<%= character.skills[7].name ? character.skills[7].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco9" name="skills[2][known]" value="true" data-group="grupo9">
+                                        <input type="checkbox" id="cco5" name="skills[7][known]" value="true" data-group="grupo8" <%= character.skills[7].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco10" name="skills[2][plus10]" value="true" data-group="grupo9"> 
+                                        <input type="checkbox" id="cco6" name="skills[7][plus10]" value="true" data-group="grupo8" <%= character.skills[7].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco11" name="skills[2][plus20]" value="true" data-group="grupo9">
+                                        <input type="checkbox" id="cco7" name="skills[7][plus20]" value="true" data-group="grupo8" <%= character.skills[7].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco12" name="skills[2][plus30]" value="true" data-group="grupo9">
+                                        <input type="checkbox" id="cco8" name="skills[7][plus30]" value="true" data-group="grupo8" <%= character.skills[7].plus30 ? "checked" : "" %>v>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cc4" name="skills[3][name]">
+                                        <input type="text" id="cc3" name="skills[8][name]" value="<%= character.skills[8].name ? character.skills[8].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco13" name="skills[3][known]" value="true" data-group="grupo10">
+                                        <input type="checkbox" id="cco9" name="skills[8][known]" value="true" data-group="grupo9" <%= character.skills[8].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco14" name="skills[3][plus10]" value="true" data-group="grupo10"> 
+                                        <input type="checkbox" id="cco10" name="skills[8][plus10]" value="true" data-group="grupo9" <%= character.skills[8].plus10 ? "checked" : "" %>v> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco15" name="skills[3][plus20]" value="true" data-group="grupo10">
+                                        <input type="checkbox" id="cco11" name="skills[8][plus20]" value="true" data-group="grupo9" <%= character.skills[8].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cco16" name="skills[3][plus30]" value="true" data-group="grupo10">
+                                        <input type="checkbox" id="cco12" name="skills[8][plus30]" value="true" data-group="grupo9" <%= character.skills[8].plus30 ? "checked" : "" %>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="cc4" name="skills[9][name]" value="<%= character.skills[9].name ? character.skills[9].name : '' %>">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco13" name="skills[9][known]" value="true" data-group="grupo10" <%= character.skills[9].known ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco14" name="skills[9][plus10]" value="true" data-group="grupo10" <%= character.skills[9].plus10 ? "checked" : "" %>> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco15" name="skills[9][plus20]" value="true" data-group="grupo10" <%= character.skills[9].plus20 ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cco16" name="skills[9][plus30]" value="true" data-group="grupo10" <%= character.skills[9].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
@@ -530,16 +536,17 @@
                                         Enganação (Soc)
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b25" name="skills[Enganação][known]" value="true" data-group="grupo11">
+                                        <input type="hidden" name="skills[10][name]" value="Enganação">
+                                        <input type="checkbox" id="b25" name="skills[10][known]" value="true" data-group="grupo11" <%= character.skills[10].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b26" name="skills[Enganação][plus10]" value="true" data-group="grupo11">
+                                        <input type="checkbox" id="b26" name="skills[10][plus10]" value="true" data-group="grupo11" <%= character.skills[10].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b27" name="skills[Enganação][plus20]" value="true" data-group="grupo11">
+                                        <input type="checkbox" id="b27" name="skills[10][plus20]" value="true" data-group="grupo11" <%= character.skills[10].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b28" name="skills[Enganação][plus30]" value="true" data-group="grupo11">
+                                        <input type="checkbox" id="b28" name="skills[10][plus30]" value="true" data-group="grupo11" <%= character.skills[10].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
@@ -547,16 +554,17 @@
                                         Esquiva (Ag)
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b29" name="skills[Esquiva][known]" value="true" data-group="grupo12">
+                                        <input type="hidden" name="skills[11][name]" value="Esquiva">
+                                        <input type="checkbox" id="b29" name="skills[11][known]" value="true" data-group="grupo12" <%= character.skills[11].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b30" name="skills[Esquiva][plus10]" value="true" data-group="grupo12">
+                                        <input type="checkbox" id="b30" name="skills[11][plus10]" value="true" data-group="grupo12" <%= character.skills[11].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b31" name="skills[Esquiva][plus20]" value="true" data-group="grupo12">
+                                        <input type="checkbox" id="b31" name="skills[11][plus20]" value="true" data-group="grupo12" <%= character.skills[11].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b32" name="skills[Esquiva][plus30]" value="true" data-group="grupo12">
+                                        <input type="checkbox" id="b32" name="skills[11][plus30]" value="true" data-group="grupo12" <%= character.skills[11].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
@@ -568,115 +576,118 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cp1" name="skills[4][name]">
+                                        <input type="text" id="cp1" name="skills[12][name]" value="<%= character.skills[12].name ? character.skills[12].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo1" name="skills[4][known]" value="true" data-group="grupo13">
+                                        <input type="checkbox" id="cpo1" name="skills[12][known]" value="true" data-group="grupo13" <%= character.skills[12].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo2" name="skills[4][plus10]" value="true" data-group="grupo13"> 
+                                        <input type="checkbox" id="cpo2" name="skills[12][plus10]" value="true" data-group="grupo13" <%= character.skills[12].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo3" name="skills[4][plus20]" value="true" data-group="grupo13">
+                                        <input type="checkbox" id="cpo3" name="skills[12][plus20]" value="true" data-group="grupo13" <%= character.skills[12].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo4" name="skills[4][plus30]" value="true" data-group="grupo13">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="cp2" name="skills[5][name]">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo5" name="skills[5][known]" value="true" data-group="grupo14">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo6" name="skills[5][plus10]" value="true" data-group="grupo14"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo7" name="skills[5][plus20]" value="true" data-group="grupo14">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="cpo8" name="skills[5][plus30]" value="true" data-group="grupo14">
+                                        <input type="checkbox" id="cpo4" name="skills[12][plus30]" value="true" data-group="grupo13" <%= character.skills[12].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cp3" name="skills[6][name]">
+                                        <input type="text" id="cp2" name="skills[13][name]" value="<%= character.skills[13].name ? character.skills[13].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo9" name="skills[6][known]" value="true" data-group="grupo15">
+                                        <input type="checkbox" id="cpo5" name="skills[13][known]" value="true" data-group="grupo14" <%= character.skills[13].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo10" name="skills[6][plus10]" value="true" data-group="grupo15"> 
+                                        <input type="checkbox" id="cpo6" name="skills[13][plus10]" value="true" data-group="grupo14" <%= character.skills[13].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo11" name="skills[6][plus20]" value="true" data-group="grupo15">
+                                        <input type="checkbox" id="cpo7" name="skills[13][plus20]" value="true" data-group="grupo14" <%= character.skills[13].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo12" name="skills[6][plus30]" value="true" data-group="grupo15">
+                                        <input type="checkbox" id="cpo8" name="skills[13][plus30]" value="true" data-group="grupo14" <%= character.skills[13].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="cp4" name="skills[7][name]">
+                                        <input type="text" id="cp3" name="skills[14][name]" value="<%= character.skills[14].name ? character.skills[14].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo13" name="skills[7][known]" value="true" data-group="grupo16">
+                                        <input type="checkbox" id="cpo9" name="skills[14][known]" value="true" data-group="grupo15" <%= character.skills[14].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo14" name="skills[7][plus10]" value="true" data-group="grupo16"> 
+                                        <input type="checkbox" id="cpo10" name="skills[14][plus10]" value="true" data-group="grupo15" <%= character.skills[14].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo15" name="skills[7][plus20]" value="true" data-group="grupo16">
+                                        <input type="checkbox" id="cpo11" name="skills[14][plus20]" value="true" data-group="grupo15" <%= character.skills[14].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="cpo16" name="skills[7][plus30]" value="true" data-group="grupo16">
+                                        <input type="checkbox" id="cpo12" name="skills[14][plus30]" value="true" data-group="grupo15" <%= character.skills[14].plus30 ? "checked" : "" %>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="cp4" name="skills[15][name]" value="<%= character.skills[15].name ? character.skills[15].name : '' %>">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo13" name="skills[15][known]" value="true" data-group="grupo16" <%= character.skills[15].known ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo14" name="skills[15][plus10]" value="true" data-group="grupo16" <%= character.skills[15].plus10 ? "checked" : "" %>> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo15" name="skills[15][plus20]" value="true" data-group="grupo16" <%= character.skills[15].plus20 ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="cpo16" name="skills[15][plus30]" value="true" data-group="grupo16" <%= character.skills[15].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Investigação (Soc)</td>
                                     <td>
-                                        <input type="checkbox" id="b33" name="skills[Investigação][known]" value="true" data-group="grupo17">
+                                        <input type="hidden" name="skills[16][name]" value="Investigação">
+                                        <input type="checkbox" id="b33" name="skills[16][known]" value="true" data-group="grupo17" <%= character.skills[16].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b34" name="skills[Investigação][plus10]" value="true" data-group="grupo17">
+                                        <input type="checkbox" id="b34" name="skills[16][plus10]" value="true" data-group="grupo17" <%= character.skills[16].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b35" name="skills[Investigação][plus20]" value="true" data-group="grupo17">
+                                        <input type="checkbox" id="b35" name="skills[16][plus20]" value="true" data-group="grupo17" <%= character.skills[16].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b36" name="skills[Investigação][plus30]" value="true" data-group="grupo17">
+                                        <input type="checkbox" id="b36" name="skills[16][plus30]" value="true" data-group="grupo17" <%= character.skills[16].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Interrogatório (Von)</td>
                                     <td>
-                                        <input type="checkbox" id="b37" name="skills[Interrogatório][known]" value="true" data-group="grupo18">
+                                        <input type="hidden" name="skills[17][name]" value="Interrogatório">
+                                        <input type="checkbox" id="b37" name="skills[17][known]" value="true" data-group="grupo18" <%= character.skills[17].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b38" name="skills[Interrogatório][plus10]" value="true" data-group="grupo18">
+                                        <input type="checkbox" id="b38" name="skills[17][plus10]" value="true" data-group="grupo18" <%= character.skills[17].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b39" name="skills[Interrogatório][plus20]" value="true" data-group="grupo18">
+                                        <input type="checkbox" id="b39" name="skills[17][plus20]" value="true" data-group="grupo18" <%= character.skills[17].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b40" name="skills[Interrogatório][plus30]" value="true" data-group="grupo18">
+                                        <input type="checkbox" id="b40" name="skills[17][plus30]" value="true" data-group="grupo18" <%= character.skills[17].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Intimidação (F)</td>
                                     <td>
-                                        <input type="checkbox" id="b41" name="skills[Intimidação][known]" value="true" data-group="grupo19">
+                                        <input type="hidden" name="skills[18][name]" value="Intimidação">
+                                        <input type="checkbox" id="b41" name="skills[18][known]" value="true" data-group="grupo19" <%= character.skills[18].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b42" name="skills[Intimidação][plus10]" value="true" data-group="grupo19">
+                                        <input type="checkbox" id="b42" name="skills[18][plus10]" value="true" data-group="grupo19" <%= character.skills[18].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b43" name="skills[Intimidação][plus20]" value="true" data-group="grupo19">
+                                        <input type="checkbox" id="b43" name="skills[18][plus20]" value="true" data-group="grupo19" <%= character.skills[18].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b44" name="skills[Intimidação][plus30]" value="true" data-group="grupo19">
+                                        <input type="checkbox" id="b44" name="skills[18][plus30]" value="true" data-group="grupo19" <%= character.skills[18].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
@@ -688,51 +699,52 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="lg1" name="skills[8][name]">
+                                        <input type="text" id="lg1" name="skills[19][name]" value="<%= character.skills[19].name ? character.skills[19].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo1" name="skills[8][known]" value="true" data-group="grupo20">
+                                        <input type="checkbox" id="lgo1" name="skills[19][known]" value="true" data-group="grupo20" <%= character.skills[19].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo2" name="skills[8][plus10]" value="true" data-group="grupo20"> 
+                                        <input type="checkbox" id="lgo2" name="skills[19][plus10]" value="true" data-group="grupo20" <%= character.skills[19].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo3" name="skills[8][plus20]" value="true" data-group="grupo20">
+                                        <input type="checkbox" id="lgo3" name="skills[19][plus20]" value="true" data-group="grupo20" <%= character.skills[19].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo4" name="skills[8][plus30]" value="true" data-group="grupo20">
+                                        <input type="checkbox" id="lgo4" name="skills[19][plus30]" value="true" data-group="grupo20" <%= character.skills[19].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="lg2" name="skills[9][name]">
+                                        <input type="text" id="lg2" name="skills[20][name]" value="<%= character.skills[20].name ? character.skills[20].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo5" name="skills[9][known]" value="true" data-group="grupo21">
+                                        <input type="checkbox" id="lgo5" name="skills[20][known]" value="true" data-group="grupo21" <%= character.skills[20].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo6" name="skills[9][plus10]" value="true" data-group="grupo21"> 
+                                        <input type="checkbox" id="lgo6" name="skills[20][plus10]" value="true" data-group="grupo21" <%= character.skills[20].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo7" name="skills[9][plus20]" value="true" data-group="grupo21">
+                                        <input type="checkbox" id="lgo7" name="skills[20][plus20]" value="true" data-group="grupo21" <%= character.skills[20].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="lgo8" name="skills[9][plus30]" value="true" data-group="grupo21">
+                                        <input type="checkbox" id="lgo8" name="skills[20][plus30]" value="true" data-group="grupo21" <%= character.skills[20].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Lógica (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b45" name="skills[Lógica][known]" value="true" data-group="grupo22">
+                                        <input type="hidden" name="skills[21][name]" value="Lógica">
+                                        <input type="checkbox" id="b45" name="skills[21][known]" value="true" data-group="grupo22" <%= character.skills[21].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b46" name="skills[Lógica][plus10]" value="true" data-group="grupo22">
+                                        <input type="checkbox" id="b46" name="skills[21][plus10]" value="true" data-group="grupo22" <%= character.skills[21].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b47" name="skills[Lógica][plus20]" value="true" data-group="grupo22">
+                                        <input type="checkbox" id="b47" name="skills[21][plus20]" value="true" data-group="grupo22" <%= character.skills[21].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b48" name="skills[Lógica][plus30]" value="true" data-group="grupo22">
+                                        <input type="checkbox" id="b48" name="skills[21][plus30]" value="true" data-group="grupo22" <%= character.skills[21].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                             </table>
@@ -748,136 +760,145 @@
                                 <tr>
                                     <td>Medicina (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b49" name="skills[Medicina][known]" value="true" data-group="grupo23">
+                                        <input type="hidden" name="skills[22][name]" value="Medicina">
+                                        <input type="checkbox" id="b49" name="skills[22][known]" value="true" data-group="grupo23" <%= character.skills[22].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b50" name="skills[Medicina][plus10]" value="true" data-group="grupo23">
+                                        <input type="checkbox" id="b50" name="skills[22][plus10]" value="true" data-group="grupo23" <%= character.skills[22].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b51" name="skills[Medicina][plus20]" value="true" data-group="grupo23">
+                                        <input type="checkbox" id="b51" name="skills[22][plus20]" value="true" data-group="grupo23" <%= character.skills[22].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b52" name="skills[Medicina][plus30]" value="true" data-group="grupo23">
+                                        <input type="checkbox" id="b52" name="skills[22][plus30]" value="true" data-group="grupo23" <%= character.skills[22].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Navegação Superfície (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b53" name="skills[Navegação Superfície][known]" value="true" data-group="grupo24">
+                                        <input type="hidden" name="skills[23][name]" value="Navegação Superfície">
+                                        <input type="checkbox" id="b53" name="skills[23][known]" value="true" data-group="grupo24" <%= character.skills[23].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b54" name="skills[Navegação Superfície][plus10]" value="true" data-group="grupo24">
+                                        <input type="checkbox" id="b54" name="skills[23][plus10]" value="true" data-group="grupo24" <%= character.skills[23].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b55" name="skills[Navegação Superfície][plus20]" value="true" data-group="grupo24">
+                                        <input type="checkbox" id="b55" name="skills[23][plus20]" value="true" data-group="grupo24" <%= character.skills[23].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b56" name="skills[Navegação Superfície][plus30]" value="true" data-group="grupo24">
+                                        <input type="checkbox" id="b56" name="skills[23][plus30]" value="true" data-group="grupo24" <%= character.skills[23].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Navegação Estelar (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b57" name="skills[Navegação Superfície][known]" value="true" data-group="grupo25">
+                                        <input type="hidden" name="skills[24][name]" value="Navegação Estelar">
+                                        <input type="checkbox" id="b57" name="skills[24][known]" value="true" data-group="grupo25" <%= character.skills[24].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b58" name="skills[Navegação Estelar][plus10]" value="true" data-group="grupo25">
+                                        <input type="checkbox" id="b58" name="skills[24][plus10]" value="true" data-group="grupo25" <%= character.skills[24].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b59" name="skills[Navegação Estelar][plus20]" value="true" data-group="grupo25">
+                                        <input type="checkbox" id="b59" name="skills[24][plus20]" value="true" data-group="grupo25" <%= character.skills[24].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b60" name="skills[Navegação Estelar][plus30]" value="true" data-group="grupo25">
+                                        <input type="checkbox" id="b60" name="skills[24][plus30]" value="true" data-group="grupo25" <%= character.skills[24].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Navegação Warp (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b61" name="skills[Navegação Warp][known]" value="true" data-group="grupo26">
+                                        <input type="hidden" name="skills[25][name]" value="Navegação Warp">
+                                        <input type="checkbox" id="b61" name="skills[25][known]" value="true" data-group="grupo26" <%= character.skills[25].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b62" name="skills[Navegação Warp][plus10]" value="true" data-group="grupo26">
+                                        <input type="checkbox" id="b62" name="skills[25][plus10]" value="true" data-group="grupo26" <%= character.skills[25].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b63" name="skills[Navegação Warp][plus20]" value="true" data-group="grupo26">
+                                        <input type="checkbox" id="b63" name="skills[25][plus20]" value="true" data-group="grupo26" <%= character.skills[25].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b64" name="skills[Navegação Warp][plus30]" value="true" data-group="grupo26">
+                                        <input type="checkbox" id="b64" name="skills[25][plus30]" value="true" data-group="grupo26" <%= character.skills[25].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Operar Superfície (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b65" name="skills[Operar Superfície][known]" value="true" data-group="grupo27">
+                                        <input type="hidden" name="skills[26][name]" value="Operar Superfície">
+                                        <input type="checkbox" id="b65" name="skills[26][known]" value="true" data-group="grupo27" <%= character.skills[26].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b66" name="skills[Operar Superfície][plus10]" value="true" data-group="grupo27">
+                                        <input type="checkbox" id="b66" name="skills[26][plus10]" value="true" data-group="grupo27" <%= character.skills[26].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b67" name="skills[Operar Superfície][plus20]" value="true" data-group="grupo27">
+                                        <input type="checkbox" id="b67" name="skills[26][plus20]" value="true" data-group="grupo27" <%= character.skills[26].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b68" name="skills[Operar Superfície][plus30]" value="true" data-group="grupo27">
+                                        <input type="checkbox" id="b68" name="skills[26][plus30]" value="true" data-group="grupo27" <%= character.skills[26].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Operar Aeronautica (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b69" name="skills[Operar Aeronautica][known]" value="true" data-group="grupo28">
+                                        <input type="hidden" name="skills[27][name]" value="Operar Aeronautica">
+                                        <input type="checkbox" id="b69" name="skills[27][known]" value="true" data-group="grupo28" <%= character.skills[27].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b70" name="skills[Operar Aeronautica][plus10]" value="true" data-group="grupo28">
+                                        <input type="checkbox" id="b70" name="skills[27][plus10]" value="true" data-group="grupo28" <%= character.skills[27].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b71" name="skills[Operar Aeronautica][plus20]" value="true" data-group="grupo28">
+                                        <input type="checkbox" id="b71" name="skills[27][plus20]" value="true" data-group="grupo28" <%= character.skills[27].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b72" name="skills[Operar Aeronautica][plus30]" value="true" data-group="grupo28">
+                                        <input type="checkbox" id="b72" name="skills[27][plus30]" value="true" data-group="grupo28" <%= character.skills[27].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Operar Warp (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b73" name="skills[Operar Warp][known]" value="true" data-group="grupo29">
+                                        <input type="hidden" name="skills[28][name]" value="Operar Warp">
+                                        <input type="checkbox" id="b73" name="skills[28][known]" value="true" data-group="grupo29" <%= character.skills[28].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b74" name="skills[Operar Warp][plus10]" value="true" data-group="grupo29">
+                                        <input type="checkbox" id="b74" name="skills[28][plus10]" value="true" data-group="grupo29" <%= character.skills[28].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b75" name="skills[Operar Warp][plus20]" value="true" data-group="grupo29">
+                                        <input type="checkbox" id="b75" name="skills[28][plus20]" value="true" data-group="grupo29" <%= character.skills[28].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b76" name="skills[Operar Warp][plus30]" value="true" data-group="grupo29">
+                                        <input type="checkbox" id="b76" name="skills[28][plus30]" value="true" data-group="grupo29" <%= character.skills[28].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Bloqueio (HeC)</td>
                                     <td>
-                                        <input type="checkbox" id="b77" name="skills[Bloqueio][known]" value="true" data-group="grupo30">
+                                        <input type="hidden" name="skills[29][name]" value="Bloqueio">
+                                        <input type="checkbox" id="b77" name="skills[29][known]" value="true" data-group="grupo30" <%= character.skills[29].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b78" name="skills[Bloqueio][plus10]" value="true" data-group="grupo30">
+                                        <input type="checkbox" id="b78" name="skills[29][plus10]" value="true" data-group="grupo30" <%= character.skills[29].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b79" name="skills[Bloqueio][plus20]" value="true" data-group="grupo30">
+                                        <input type="checkbox" id="b79" name="skills[29][plus20]" value="true" data-group="grupo30" <%= character.skills[29].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b80" name="skills[Bloqueio][plus30]" value="true" data-group="grupo30">
+                                        <input type="checkbox" id="b80" name="skills[29][plus30]" value="true" data-group="grupo30" <%= character.skills[29].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Senso Psíquico (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b81" name="skills[Senso Psíquico][known]" value="true" data-group="grupo31">
+                                        <input type="hidden" name="skills[30][name]" value="Senso Psíquico">
+                                        <input type="checkbox" id="b81" name="skills[30][known]" value="true" data-group="grupo31" <%= character.skills[30].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b82" name="skills[Senso Psíquico][plus10]" value="true" data-group="grupo31">
+                                        <input type="checkbox" id="b82" name="skills[30][plus10]" value="true" data-group="grupo31" <%= character.skills[30].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b83" name="skills[Senso Psíquico][plus20]" value="true" data-group="grupo31">
+                                        <input type="checkbox" id="b83" name="skills[30][plus20]" value="true" data-group="grupo31" <%= character.skills[30].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b84" name="skills[Senso Psíquico][plus30]" value="true" data-group="grupo31">
+                                        <input type="checkbox" id="b84" name="skills[30][plus30]" value="true" data-group="grupo31" <%= character.skills[30].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
@@ -889,177 +910,183 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ce1" name="skills[10][name]">
+                                        <input type="text" id="ce1" name="skills[31][name]" value="<%= character.skills[31].name ? character.skills[31].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo1" name="skills[10][known]" value="true" data-group="grupo32">
+                                        <input type="checkbox" id="ceo1" name="skills[31][known]" value="true" data-group="grupo32" <%= character.skills[31].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo2" name="skills[10][plus10]" value="true" data-group="grupo32"> 
+                                        <input type="checkbox" id="ceo2" name="skills[31][plus10]" value="true" data-group="grupo32" <%= character.skills[31].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo3" name="skills[10][plus20]" value="true" data-group="grupo32">
+                                        <input type="checkbox" id="ceo3" name="skills[31][plus20]" value="true" data-group="grupo32" <%= character.skills[31].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo4" name="skills[10][plus30]" value="true" data-group="grupo32">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="ce2" name="skills[11][name]">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo5" name="skills[11][known]" value="true" data-group="grupo33">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo6" name="skills[11][plus10]" value="true" data-group="grupo33"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo7" name="skills[11][plus20]" value="true" data-group="grupo33">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo8" name="skills[11][plus30]" value="true" data-group="grupo33">
+                                        <input type="checkbox" id="ceo4" name="skills[31][plus30]" value="true" data-group="grupo32" <%= character.skills[31].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ce3" name="skills[12][name]">
+                                        <input type="text" id="ce2" name="skills[32][name]" value="<%= character.skills[32].name ? character.skills[32].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo9" name="skills[12][known]" value="true" data-group="grupo34">
+                                        <input type="checkbox" id="ceo5" name="skills[32][known]" value="true" data-group="grupo33" <%= character.skills[32].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo10" name="skills[12][plus10]" value="true" data-group="grupo34"> 
+                                        <input type="checkbox" id="ceo6" name="skills[32][plus10]" value="true" data-group="grupo33" <%= character.skills[32].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo11" name="skills[12][plus20]" value="true" data-group="grupo34">
+                                        <input type="checkbox" id="ceo7" name="skills[32][plus20]" value="true" data-group="grupo33" <%= character.skills[32].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo12" name="skills[12][plus30]" value="true" data-group="grupo34">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="ce4" name="skills[13][name]">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo13" name="skills[13][known]" value="true" data-group="grupo35">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo14" name="skills[13][plus10]" value="true" data-group="grupo35"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo15" name="skills[13][plus20]" value="true" data-group="grupo35">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ceo16" name="skills[13][plus30]" value="true" data-group="grupo35">
+                                        <input type="checkbox" id="ceo8" name="skills[32][plus30]" value="true" data-group="grupo33" <%= character.skills[32].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ce5" name="skills[14][name]">
+                                        <input type="text" id="ce3" name="skills[33][name]" value="<%= character.skills[33].name ? character.skills[33].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo17" name="skills[14][known]" value="true" data-group="grupo36">
+                                        <input type="checkbox" id="ceo9" name="skills[33][known]" value="true" data-group="grupo34" <%= character.skills[33].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo18" name="skills[14][plus10]" value="true" data-group="grupo36"> 
+                                        <input type="checkbox" id="ceo10" name="skills[33][plus10]" value="true" data-group="grupo34" <%= character.skills[33].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo19" name="skills[14][plus20]" value="true" data-group="grupo36">
+                                        <input type="checkbox" id="ceo11" name="skills[33][plus20]" value="true" data-group="grupo34" <%= character.skills[33].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ceo20" name="skills[14][plus30]" value="true" data-group="grupo36">
+                                        <input type="checkbox" id="ceo12" name="skills[33][plus30]" value="true" data-group="grupo34" <%= character.skills[33].plus30 ? "checked" : "" %>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="ce4" name="skills[34][name]" value="<%= character.skills[34].name ? character.skills[34].name : '' %>">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo13" name="skills[34][known]" value="true" data-group="grupo35" <%= character.skills[34].known ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo14" name="skills[34][plus10]" value="true" data-group="grupo35" <%= character.skills[34].plus10 ? "checked" : "" %>> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo15" name="skills[34][plus20]" value="true" data-group="grupo35" <%= character.skills[34].plus20 ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo16" name="skills[34][plus30]" value="true" data-group="grupo35" <%= character.skills[34].plus30 ? "checked" : "" %>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="ce5" name="skills[35][name]" value="<%= character.skills[35].name ? character.skills[35].name : '' %>">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo17" name="skills[35][known]" value="true" data-group="grupo36" <%= character.skills[35].known ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo18" name="skills[35][plus10]" value="true" data-group="grupo36" <%= character.skills[35].plus10 ? "checked" : "" %>> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo19" name="skills[35][plus20]" value="true" data-group="grupo36" <%= character.skills[35].plus20 ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ceo20" name="skills[35][plus30]" value="true" data-group="grupo36" <%= character.skills[35].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Intuição (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b85" name="skills[Intuição][known]" value="true" data-group="grupo37">
+                                        <input type="hidden" name="skills[36][name]" value="Intuição">
+                                        <input type="checkbox" id="b85" name="skills[36][known]" value="true" data-group="grupo37" <%= character.skills[36].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b86" name="skills[Intuição][plus10]" value="true" data-group="grupo37">
+                                        <input type="checkbox" id="b86" name="skills[36][plus10]" value="true" data-group="grupo37" <%= character.skills[36].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b87" name="skills[Intuição][plus20]" value="true" data-group="grupo37">
+                                        <input type="checkbox" id="b87" name="skills[36][plus20]" value="true" data-group="grupo37" <%= character.skills[36].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b88" name="skills[Intuição][plus30]" value="true" data-group="grupo37">
+                                        <input type="checkbox" id="b88" name="skills[36][plus30]" value="true" data-group="grupo37" <%= character.skills[36].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Segurança (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b89" name="skills[Segurança][known]" value="true" data-group="grupo38">
+                                        <input type="hidden" name="skills[37][name]" value="Segurança">
+                                        <input type="checkbox" id="b89" name="skills[37][known]" value="true" data-group="grupo38" <%= character.skills[37].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b90" name="skills[Segurança][plus10]" value="true" data-group="grupo38">
+                                        <input type="checkbox" id="b90" name="skills[37][plus10]" value="true" data-group="grupo38" <%= character.skills[37].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b91" name="skills[Segurança][plus20]" value="true" data-group="grupo38">
+                                        <input type="checkbox" id="b91" name="skills[37][plus20]" value="true" data-group="grupo38" <%= character.skills[37].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b92" name="skills[Segurança][plus30]" value="true" data-group="grupo38">
+                                        <input type="checkbox" id="b92" name="skills[37][plus30]" value="true" data-group="grupo38" <%= character.skills[37].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Prestidigitação (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b93" name="skills[Prestidigitação][known]" value="true" data-group="grupo39">
+                                        <input type="hidden" name="skills[38][name]" value="Prestidigitação">
+                                        <input type="checkbox" id="b93" name="skills[38][known]" value="true" data-group="grupo39" <%= character.skills[38].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b94" name="skills[Prestidigitação][plus10]" value="true" data-group="grupo39">
+                                        <input type="checkbox" id="b94" name="skills[38][plus10]" value="true" data-group="grupo39" <%= character.skills[38].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b95" name="skills[Prestidigitação][plus20]" value="true" data-group="grupo39">
+                                        <input type="checkbox" id="b95" name="skills[38][plus20]" value="true" data-group="grupo39" <%= character.skills[38].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b96" name="skills[Prestidigitação][plus30]" value="true" data-group="grupo39">
+                                        <input type="checkbox" id="b96" name="skills[38][plus30]" value="true" data-group="grupo39" <%= character.skills[38].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Furtividade (Agi)</td>
                                     <td>
-                                        <input type="checkbox" id="b97" name="skills[Furtividade][known]" value="true" data-group="grupo40">
+                                        <input type="hidden" name="skills[39][name]" value="Furtividade">
+                                        <input type="checkbox" id="b97" name="skills[39][known]" value="true" data-group="grupo40" <%= character.skills[39].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b98" name="skills[Furtividade][plus10]" value="true" data-group="grupo40">
+                                        <input type="checkbox" id="b98" name="skills[39][plus10]" value="true" data-group="grupo40" <%= character.skills[39].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b99" name="skills[Furtividade][plus20]" value="true" data-group="grupo40">
+                                        <input type="checkbox" id="b99" name="skills[39][plus20]" value="true" data-group="grupo40" <%= character.skills[39].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b100" name="skills[Furtividade][plus30]" value="true" data-group="grupo40">
+                                        <input type="checkbox" id="b100" name="skills[39][plus30]" value="true" data-group="grupo40" <%= character.skills[39].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Sobrevivência (Per)</td>
                                     <td>
-                                        <input type="checkbox" id="b101" name="skills[Sobrevivência][known]" value="true" data-group="grupo41">
+                                        <input type="hidden" name="skills[40][name]" value="Sobrevivência">
+                                        <input type="checkbox" id="b101" name="skills[40][known]" value="true" data-group="grupo41" <%= character.skills[40].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b102" name="skills[Sobrevivência][plus10]" value="true" data-group="grupo41">
+                                        <input type="checkbox" id="b102" name="skills[40][plus10]" value="true" data-group="grupo41" <%= character.skills[40].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b103" name="skills[Sobrevivência][plus20]" value="true" data-group="grupo41">
+                                        <input type="checkbox" id="b103" name="skills[40][plus20]" value="true" data-group="grupo41" <%= character.skills[40].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b104" name="skills[Sobrevivência][plus30]" value="true" data-group="grupo41">
+                                        <input type="checkbox" id="b104" name="skills[40][plus30]" value="true" data-group="grupo41" <%= character.skills[40].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>    
                                     <td>Uso Tecnológico (Int)</td>
                                     <td>
-                                        <input type="checkbox" id="b105" name="skills[Uso Tecnológico][known]" value="true" data-group="grupo42">
+                                        <input type="hidden" name="skills[41][name]" value="Uso Tecnológico">
+                                        <input type="checkbox" id="b105" name="skills[41][known]" value="true" data-group="grupo42" <%= character.skills[41].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b106" name="skills[Uso Tecnológico][plus10]" value="true" data-group="grupo42">
+                                        <input type="checkbox" id="b106" name="skills[41][plus10]" value="true" data-group="grupo42" <%= character.skills[41].plus10 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b107" name="skills[Uso Tecnológico][plus20]" value="true" data-group="grupo42">
+                                        <input type="checkbox" id="b107" name="skills[41][plus20]" value="true" data-group="grupo42" <%= character.skills[41].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="b108" name="skills[Uso Tecnológico][plus30]" value="true" data-group="grupo42">
+                                        <input type="checkbox" id="b108" name="skills[41][plus30]" value="true" data-group="grupo42" <%= character.skills[41].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1071,53 +1098,53 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ng1" name="skills[15][name]">
+                                        <input type="text" id="ng1" name="skills[42][name]" value="<%= character.skills[42].name ? character.skills[42].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo1" name="skills[15][known]" value="true" data-group="grupo43">
+                                        <input type="checkbox" id="ngo1" name="skills[42][known]" value="true" data-group="grupo43" <%= character.skills[42].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo2" name="skills[15][plus10]" value="true" data-group="grupo43"> 
+                                        <input type="checkbox" id="ngo2" name="skills[42][plus10]" value="true" data-group="grupo43" <%= character.skills[42].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo3" name="skills[15][plus20]" value="true" data-group="grupo43">
+                                        <input type="checkbox" id="ngo3" name="skills[42][plus20]" value="true" data-group="grupo43" <%= character.skills[42].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo4" name="skills[15][plus30]" value="true" data-group="grupo43">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" id="ng2" name="skills[16][name]">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo5" name="skills[16][known]" value="true" data-group="grupo44">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo6" name="skills[16][plus10]" value="true" data-group="grupo44"> 
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo7" name="skills[16][plus20]" value="true" data-group="grupo44">
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="ngo8" name="skills[16][plus30]" value="true" data-group="grupo44">
+                                        <input type="checkbox" id="ngo4" name="skills[42][plus30]" value="true" data-group="grupo43" <%= character.skills[42].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" id="ng3" name="skills[17][name]">
+                                        <input type="text" id="ng2" name="skills[43][name]" value="<%= character.skills[43].name ? character.skills[43].name : '' %>">
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo9" name="skills[17][known]" value="true" data-group="grupo45">
+                                        <input type="checkbox" id="ngo5" name="skills[43][known]" value="true" data-group="grupo44" <%= character.skills[43].known ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo10" name="skills[17][plus10]" value="true" data-group="grupo45"> 
+                                        <input type="checkbox" id="ngo6" name="skills[43][plus10]" value="true" data-group="grupo44" <%= character.skills[43].plus10 ? "checked" : "" %>> 
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo11" name="skills[17][plus20]" value="true" data-group="grupo45">
+                                        <input type="checkbox" id="ngo7" name="skills[43][plus20]" value="true" data-group="grupo44" <%= character.skills[43].plus20 ? "checked" : "" %>>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="ngo12" name="skills[17][plus30]" value="true" data-group="grupo45">
+                                        <input type="checkbox" id="ngo8" name="skills[43][plus30]" value="true" data-group="grupo44" <%= character.skills[43].plus30 ? "checked" : "" %>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" id="ng3" name="skills[44][name]" value="<%= character.skills[44].name ? character.skills[44].name : '' %>">
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo9" name="skills[44][known]" value="true" data-group="grupo45" <%= character.skills[44].known ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo10" name="skills[44][plus10]" value="true" data-group="grupo45" <%= character.skills[44].plus10 ? "checked" : "" %>> 
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo11" name="skills[44][plus20]" value="true" data-group="grupo45" <%= character.skills[44].plus20 ? "checked" : "" %>>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="ngo12" name="skills[44][plus30]" value="true" data-group="grupo45" <%= character.skills[44].plus30 ? "checked" : "" %>>
                                     </td>
                                 </tr>
                             </table>
@@ -1129,10 +1156,23 @@
                     <div class="talentos-tracos">
                         <h2>Talentos e Traços</h2>
                         <div class="titulo-descricao" id="container-descricao">
-                            <div class="item-descricao">
-                                <input type="text" id="tt1" name="talentsAndTraces[0][name]" placeholder="Nome do Talento ou Traço">
-                                <textarea id="descricao1" name="talentsAndTraces[0][description]" rows="1">Descrição: </textarea>
-                            </div>
+                            <% if (character.talentsAndTraces && character.talentsAndTraces.length > 0) { %>
+                                <% character.talentsAndTraces.forEach((talent, index) => { %>
+                                    <div class="item-descricao">
+                                        <input type="text" id="tt<%= index + 1 %>" 
+                                               name="talentsAndTraces[<%= index %>][name]" 
+                                               value="<%= talent.name %>">
+                                        <textarea id="descricao<%= index + 1 %>" 
+                                                  name="talentsAndTraces[<%= index %>][description]" 
+                                                  rows="1"><%= talent.description %></textarea>
+                                    </div>
+                                <% }) %>
+                            <% } else { %>
+                                <div class="item-descricao">
+                                    <input type="text" id="tt1" name="talentsAndTraces[0][name]" placeholder="Nome do Talento ou Traço">
+                                    <textarea id="descricao1" name="talentsAndTraces[0][description]" rows="1">Descrição: </textarea>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="mais-menos">
                             <button id="ttmais">+</button>
@@ -1143,53 +1183,128 @@
                     <div class="armas">
                         <h2>Armas</h2>
                         <div id="armas-container">
-                            <div class="grid-container">
-                                <div class="arma-nome">
-                                    <label>Nome:</label>
-                                    <input type="text" id="arma_nome_1" name="weapons[0][name]">
+                            <% if (character.weapons && character.weapons.length > 0) { %>
+                                <% character.weapons.forEach((weapon, index) => { %>
+                                    <div class="grid-container">
+                                        <div class="arma-nome">
+                                            <label>Nome:</label>
+                                            <input type="text" id="arma_nome_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][name]" 
+                                                   value="<%= weapon.name %>">
+                                        </div>
+                                        <div class="arma-classe">
+                                            <label>Cls:</label>
+                                            <input type="text" id="arma_classe_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][class]" 
+                                                   value="<%= weapon.class %>">
+                                        </div>
+                                        <div class="arma-alc">
+                                            <label>Alc:</label>
+                                            <input type="text" id="arma_alc_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][range]" 
+                                                   value="<%= weapon.range %>">
+                                        </div>
+                                        <div class="arma-tdt">
+                                            <label>TdT:</label>
+                                            <input type="text" id="arma_tdt_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][rateOfFire]" 
+                                                   value="<%= weapon.rateOfFire %>">
+                                        </div>
+                                        <div class="arma-dano">
+                                            <label>Dano:</label>
+                                            <input type="text" id="arma_dano_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][damage]" 
+                                                   value="<%= weapon.damage %>">
+                                        </div>
+                                        <div class="arma-pen">
+                                            <label>Pen:</label>
+                                            <input type="text" id="arma_pen_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][penetration]" 
+                                                   value="<%= weapon.penetration %>">
+                                        </div>
+                                        <div class="arma-mun">
+                                            <label>Mun:</label>
+                                            <input type="text" id="arma_mun_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][munition]" 
+                                                   value="<%= weapon.munition %>">
+                                        </div>
+                                        <div class="arma-rec">
+                                            <label>Rec:</label>
+                                            <input type="text" id="arma_rec_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][reload]" 
+                                                   value="<%= weapon.reload %>">
+                                        </div>
+                                        <div class="arma-peso">
+                                            <label>Peso:</label>
+                                            <input type="text" id="arma_peso_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][weight]" 
+                                                   value="<%= weapon.weight %>">
+                                        </div>
+                                        <div class="arma-disp">
+                                            <label>Disp:</label>
+                                            <input type="text" id="arma_disp_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][availability]" 
+                                                   value="<%= weapon.availability %>">
+                                        </div>
+                                        <div class="arma-especial">
+                                            <label>Especial:</label>
+                                            <input type="text" id="arma_especial_<%= index + 1 %>" 
+                                                   name="weapons[<%= index %>][special]" 
+                                                   value="<%= weapon.special %>">
+                                        </div>  
+                                    </div>
+                                <% }) %>
+                            <% } else { %>
+                                <!-- Caso não tenha armas, cria um campo vazio para adicionar -->
+                                <div class="grid-container">
+                                    <div class="arma-nome">
+                                        <label>Nome:</label>
+                                        <input type="text" id="arma_nome_1" name="weapons[0][name]">
+                                    </div>
+                                    <div class="arma-classe">
+                                        <label>Cls:</label>
+                                        <input type="text" id="arma_classe_1" name="weapons[0][class]">
+                                    </div>
+                                    <div class="arma-alc">
+                                        <label>Alc:</label>
+                                        <input type="text" id="arma_alc_1" name="weapons[0][range]">
+                                    </div>
+                                    <div class="arma-tdt">
+                                        <label>TdT:</label>
+                                        <input type="text" id="arma_tdt_1" name="weapons[0][rateOfFire]">
+                                    </div>
+                                    <div class="arma-dano">
+                                        <label>Dano:</label>
+                                        <input type="text" id="arma_dano_1" name="weapons[0][damage]">
+                                    </div>
+                                    <div class="arma-pen">
+                                        <label>Pen:</label>
+                                        <input type="text" id="arma_pen_1" name="weapons[0][penetration]">
+                                    </div>
+                                    <div class="arma-mun">
+                                        <label>Mun:</label>
+                                        <input type="text" id="arma_mun_1" name="weapons[0][munition]">
+                                    </div>
+                                    <div class="arma-rec">
+                                        <label>Rec:</label>
+                                        <input type="text" id="arma_rec_1" name="weapons[0][reload]">
+                                    </div>
+                                    <div class="arma-peso">
+                                        <label>Peso:</label>
+                                        <input type="text" id="arma_peso_1" name="weapons[0][weight]">
+                                    </div>
+                                    <div class="arma-disp">
+                                        <label>Disp:</label>
+                                        <input type="text" id="arma_disp_1" name="weapons[0][availability]">
+                                    </div>
+                                    <div class="arma-especial">
+                                        <label>Especial:</label>
+                                        <input type="text" id="arma_especial_1" name="weapons[0][special]">
+                                    </div>  
                                 </div>
-                                <div class="arma-classe">
-                                    <label>Cls:</label>
-                                    <input type="text" id="arma_classe_1" name="weapons[0][class]">
-                                </div>
-                                <div class="arma-alc">
-                                    <label>Alc:</label>
-                                    <input type="text" id="arma_alc_1" name="weapons[0][range]">
-                                </div>
-                                <div class="arma-tdt">
-                                    <label>TdT:</label>
-                                    <input type="text" id="arma_tdt_1" name="weapons[0][rateOfFire]">
-                                </div>
-                                <div class="arma-dano">
-                                    <label>Dano:</label>
-                                    <input type="text" id="arma_dano_1" name="weapons[0][damage]">
-                                </div>
-                                <div class="arma-pen">
-                                    <label>Pen:</label>
-                                    <input type="text" id="arma_pen_1" name="weapons[0][penetration]">
-                                </div>
-                                <div class="arma-mun">
-                                    <label>Mun:</label>
-                                    <input type="text" id="arma_mun_1" name="weapons[0][munition]">
-                                </div>
-                                <div class="arma-rec">
-                                    <label>Rec:</label>
-                                    <input type="text" id="arma_rec_1" name="weapons[0][reload]">
-                                </div>
-                                <div class="arma-peso">
-                                    <label>Peso:</label>
-                                    <input type="text" id="arma_peso_1" name="weapons[0][weight]">
-                                </div>
-                                <div class="arma-disp">
-                                    <label>Disp:</label>
-                                    <input type="text" id="arma_disp_1" name="weapons[0][availability]">
-                                </div>
-                                <div class="arma-especial">
-                                    <label>Especial:</label>
-                                    <input type="text" id="arma_especial_1" name="weapons[0][special]">
-                                </div>  
-                            </div>
+                            <% } %>
                         </div>
+                        
                         <div class="mais-menos">
                             <button id="arma-mais">+</button>
                             <button id="arma-menos"> - </button>
@@ -1199,13 +1314,35 @@
                     <div class="equipamento">
                         <h2>Equipamento</h2>
                         <div id="equipamento-container">
-                            <div class="equipamento-lista">
-                                <label>Nome:</label>
-                                <input type="text" id="equip1" name="equipments[0][name]">
-                                <label>Peso:</label>
-                                <input type="text" id="peso1" name="equipments[0][weight]">
-                                <textarea id="descricao_peso1" name="equipments[0][description]" rows="2">Descrição:</textarea>
-                            </div>
+                            <% if (character.equipments && character.equipments.length > 0) { %>
+                                <% character.equipments.forEach((equipment, index) => { %>
+                                    <div class="equipamento-lista">
+                                        <label>Nome:</label>
+                                        <input type="text" id="equip<%= index + 1 %>" 
+                                            name="equipments[<%= index %>][name]" 
+                                            value="<%= equipment.name %>">
+
+                                        <label>Peso:</label>
+                                        <input type="text" id="peso<%= index + 1 %>" 
+                                            name="equipments[<%= index %>][weight]" 
+                                            value="<%= equipment.weight %>">
+
+                                        <textarea id="descricao_peso<%= index + 1 %>" 
+                                                name="equipments[<%= index %>][description]" 
+                                                rows="2"><%= equipment.description %></textarea>
+                                    </div>
+                                <% }) %>
+                            <% } else { %>
+                                <div class="equipamento-lista">
+                                    <label>Nome:</label>
+                                    <input type="text" id="equip1" name="equipments[0][name]">
+
+                                    <label>Peso:</label>
+                                    <input type="text" id="peso1" name="equipments[0][weight]">
+
+                                    <textarea id="descricao_peso1" name="equipments[0][description]" rows="2">Descrição:</textarea>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="mais-menos">
                             <button id="equip-mais">+</button>
@@ -1219,53 +1356,77 @@
                             <div class="grid-armadura">
                                 <div class="cabeca">
                                     <label for="cabecaa">Cabeça:</label>
-                                    <input type="number" id="cabecaa" name="defense[head][armour]" placeholder="Armadura">
-                                    <input type="number" id="cabecat" name="defense[head][totalArmour]" class="armadura-total">
+                                    <input type="number" id="cabecaa" name="defense[head][armour]" placeholder="Armadura"
+                                           value="<%= character.defense.head.armour %>">
+                                    <input type="number" id="cabecat" name="defense[head][totalArmour]" class="armadura-total"
+                                           value="<%= character.defense.head.totalArmour %>">
                                 </div>
+                            
                                 <div class="bracoe">
                                     <label for="bracoea">Braço Esquerdo:</label>
-                                    <input type="number" id="bracoea" name="defense[leftArm][armour]" placeholder="Armadura">
-                                    <input type="number" id="bracoet" name="defense[leftArm][totalArmour]" class="armadura-total">
+                                    <input type="number" id="bracoea" name="defense[leftArm][armour]" placeholder="Armadura"
+                                           value="<%= character.defense.leftArm.armour %>">
+                                    <input type="number" id="bracoet" name="defense[leftArm][totalArmour]" class="armadura-total"
+                                           value="<%= character.defense.leftArm.totalArmour %>">
                                 </div>
+                            
                                 <div class="bracod">
                                     <label for="bracoda">Braço Direito:</label>
-                                    <input type="number" id="bracoda" name="defense[rightArm][armour]" placeholder="Armadura">
-                                    <input type="number" id="bracodt" name="defense[rightArm][totalArmour]" class="armadura-total">
+                                    <input type="number" id="bracoda" name="defense[rightArm][armour]" placeholder="Armadura"
+                                           value="<%= character.defense.rightArm.armour %>">
+                                    <input type="number" id="bracodt" name="defense[rightArm][totalArmour]" class="armadura-total"
+                                           value="<%= character.defense.rightArm.totalArmour %>">
                                 </div>
+                            
                                 <div class="corpo">
                                     <label for="corpoa">Corpo:</label>
-                                    <input type="number" id="corpoa" name="defense[body][armour]" placeholder="Armadura">
-                                    <input type="number" id="corpot" name="defense[body][totalArmour]" class="armadura-total">
+                                    <input type="number" id="corpoa" name="defense[body][armour]" placeholder="Armadura"
+                                           value="<%= character.defense.body.armour %>">
+                                    <input type="number" id="corpot" name="defense[body][totalArmour]" class="armadura-total"
+                                           value="<%= character.defense.body.totalArmour %>">
                                 </div>
+                            
                                 <div class="pernae">
                                     <label for="pernaea">Perna Esquerda:</label>
-                                    <input type="number" id="pernaea" name="defense[leftLeg][armour]" placeholder="Armadura">
-                                    <input type="number" id="pernaet" name="defense[leftLeg][totalArmour]" class="armadura-total">
+                                    <input type="number" id="pernaea" name="defense[leftLeg][armour]" placeholder="Armadura"
+                                           value="<%= character.defense.leftLeg.armour %>">
+                                    <input type="number" id="pernaet" name="defense[leftLeg][totalArmour]" class="armadura-total"
+                                           value="<%= character.defense.leftLeg.totalArmour %>">
                                 </div>
+                            
                                 <div class="pernad">
                                     <label for="pernada">Perna Direita:</label>
-                                    <input type="number" id="pernada" name="defense[rightLeg][armour]" placeholder="Armadura">
-                                    <input type="number" id="pernadt" name="defense[rightLeg][totalArmour]" class="armadura-total">
+                                    <input type="number" id="pernada" name="defense[rightLeg][armour]" placeholder="Armadura"
+                                           value="<%= character.defense.rightLeg.armour %>">
+                                    <input type="number" id="pernadt" name="defense[rightLeg][totalArmour]" class="armadura-total"
+                                           value="<%= character.defense.rightLeg.totalArmour %>">
                                 </div>
                             </div>
                             <div class="vida-condicao">
                                 <div class="vida">
                                     <h3>Vida</h3>
                                     <label for="vida_total">Total:</label>
-                                    <input type="number" id="vida_total" name="health[total]" min="0" value="1">
+                                    <input type="number" id="vida_total" name="health[total]" min="0" 
+                                           value="<%= character.health.total %>">
+                                
                                     <label for="vida_atual">Atual:</label>
-                                    <input type="number" id="vida_atual" name="health[current]" min="0" value="1">
+                                    <input type="number" id="vida_atual" name="health[current]" min="0" 
+                                           value="<%= character.health.current %>">
+                                
                                     <label for="dano_critico">Dano Crítico:</label>
-                                    <input type="number" id="dano_critico" name="health[criticalDamage]" min="0" max="10" value="0">
+                                    <input type="number" id="dano_critico" name="health[criticalDamage]" min="0" max="10" 
+                                           value="<%= character.health.criticalDamage %>">
                                 </div>
                                 <div class="condicoes">
                                     <h3>Condições</h3>
-                                    <input type="text" id="condicao1" name="conditions[0][name]" placeholder="Nome da Condição">
-                                    <textarea id="descricao_condicao1" name="conditions[0][description]" rows="1">Descrição:</textarea>
-                                    <input type="text" id="condicao2" name="conditions[1][name]" placeholder="Nome da Condição">
-                                    <textarea id="descricao_condicao2" name="conditions[1][description]" rows="1">Descrição:</textarea>
-                                    <input type="text" id="condicao3" name="conditions[2][name]" placeholder="Nome da Condição">
-                                    <textarea id="descricao_condicao3" name="conditions[2][description]" rows="1">Descrição:</textarea>
+                                    <% character.conditions.forEach((condition, index) => { %>
+                                        <input type="text" id="condicao<%= index + 1 %>" name="conditions[<%= index %>][name]" 
+                                               placeholder="Nome da Condição" value="<%= condition.name %>">
+                                        
+                                        <textarea id="descricao_condicao<%= index + 1 %>" name="conditions[<%= index %>][description]" rows="1">
+                                            <%= condition.description %>
+                                        </textarea>
+                                    <% }); %>
                                 </div>
                             </div>
                         </div>
@@ -1277,19 +1438,23 @@
                             <div class="grid-movimento">
                                 <div class="movimento-cell">
                                     <label for="movi_metade">Metade:</label>
-                                    <input type="number" id="movi_metade" name="movement[half]">
+                                    <input type="number" id="movi_metade" name="movement[half]" 
+                                        value="<%= character.movement.half %>">
                                 </div>
                                 <div class="movimento-cell">
                                     <label for="movi_total">Total:</label>
-                                    <input type="number" id="movi_total" name="movement[full]">
+                                    <input type="number" id="movi_total" name="movement[full]" 
+                                        value="<%= character.movement.full %>">
                                 </div>
                                 <div class="movimento-cell">
                                     <label for="movi_disparada">Disparada:</label>
-                                    <input type="number" id="movi_disparada" name="movement[charge]">
+                                    <input type="number" id="movi_disparada" name="movement[charge]" 
+                                        value="<%= character.movement.charge %>">
                                 </div>
                                 <div class="movimento-cell">
                                     <label for="movi_corrida">Corrida:</label>
-                                    <input type="number" id="movi_corrida" name="movement[run]">
+                                    <input type="number" id="movi_corrida" name="movement[run]" 
+                                        value="<%= character.movement.run %>">
                                 </div>
                             </div>
                         </div>
@@ -1299,11 +1464,13 @@
                             <div class="grid-fadiga">
                                 <div>
                                     <label for="fadiga_limite">Limite:</label>
-                                    <input type="number" id="fadiga_limite" name="fatigue[limit]" min="0">
+                                    <input type="number" id="fadiga_limite" name="fatigue[limit]" min="0"
+                                           value="<%= character.fatigue.limit %>">
                                 </div>
                                 <div>
                                     <label for="fadiga_atual">Atual:</label>
-                                    <input type="number" id="fadiga_atual" name="fatigue[current]" min="0">
+                                    <input type="number" id="fadiga_atual" name="fatigue[current]" min="0"
+                                           value="<%= character.fatigue.current %>">
                                 </div> 
                             </div>
                         </div>
@@ -1313,14 +1480,27 @@
                         <h2>Poderes Psíquicos</h2>
                         <div class="psi-nivel">
                             <label for="pp_psi">Psi-Nível:</label>
-                            <input type="number" id="pp_psi" name="psiLevel" value="0" min="0">
+                            <input type="number" id="pp_psi" name="psiLevel" value="<%= character.psiLevel %>" min="0">
                         </div>
                         <div id="poder-container">
-                            <div class="lista-poder">
-                                <label>Poder:</label>
-                                <input type="text" id="pp_poder1" name="powers[0][name]" placeholder="Nome do Poder">
-                                <input type="text" id="pp_descricao1" name="powers[0][description]" class="pp-descricao" placeholder="Descrição:">
-                            </div>
+                            <% if (character.powers && character.powers.length > 0) { %>
+                                <% character.powers.forEach((power, index) => { %>
+                                    <div class="lista-poder">
+                                        <label>Poder:</label>
+                                        <input type="text" id="pp_poder<%= index + 1 %>" name="powers[<%= index %>][name]" 
+                                               placeholder="Nome do Poder" value="<%= power.name %>">
+                        
+                                        <input type="text" id="pp_descricao<%= index + 1 %>" name="powers[<%= index %>][description]" 
+                                               class="pp-descricao" placeholder="Descrição:" value="<%= power.description %>">
+                                    </div>
+                                <% }) %>
+                            <% } else { %>
+                                <div class="lista-poder">
+                                    <label>Poder:</label>
+                                    <input type="text" id="pp_poder1" name="powers[0][name]" placeholder="Nome do Poder">
+                                    <input type="text" id="pp_descricao1" name="powers[0][description]" class="pp-descricao" placeholder="Descrição:">
+                                </div>
+                            <% } %>
                         </div>
                         <div class="mais-menos">
                             <button id="poder-mais">+</button>
@@ -1334,7 +1514,7 @@
                     
                     <div class="notas">
                         <h2>Notas</h2>
-                        <textarea id="notas" name="notes" rows="1">Notas:</textarea>
+                        <textarea id="notas" name="notes" rows="1"><%= character.notes %></textarea>
                     </div>
                 </div>
             </div>

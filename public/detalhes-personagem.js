@@ -3,7 +3,7 @@ const areaAliados = document.getElementById('area-aliados');
 const aliadosMais = document.getElementById('mais-alidados');
 const aliadosMenos = document.getElementById('menos-aliados');
 
-let aliadoCount = 0;
+let aliadoCount = areaAliados.querySelectorAll('.container-aliados .input-aliado').length;
 
 aliadosMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -29,7 +29,7 @@ const areaInimigos = document.getElementById('area-inimigos');
 const inimigosMais = document.getElementById('mais-inimigos');
 const inimigosMenos = document.getElementById('menos-inimigos');
 
-let inimigoCount = 0;
+let inimigoCount = areaInimigos.querySelectorAll('.container-inimigos .input-aliado').length;
 
 inimigosMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -55,7 +55,7 @@ const ttMais = document.getElementById("ttmais");
 const ttMenos = document.getElementById("ttmenos");
 const containerDescricao = document.getElementById("container-descricao");
 
-let ttCount = 0;
+let ttCount = containerDescricao.querySelectorAll('.item-descricao').length;
 
 ttMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -94,7 +94,7 @@ const armasContainer = document.getElementById('armas-container');
 const armaMais = document.getElementById('arma-mais');
 const armaMenos = document.getElementById('arma-menos');
 
-let armaCount = 0;
+let armaCount = armasContainer.querySelectorAll('.grid-container').length;
 
 armaMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -132,7 +132,7 @@ const equipamentoContainer = document.getElementById('equipamento-container');
 const equipMais = document.getElementById('equip-mais');
 const equipMenos = document.getElementById('equip-menos');
 
-let equipCount = 0;
+let equipCount = equipamentoContainer.querySelectorAll('.equipamento-lista').length;
 
 equipMais.addEventListener('click', (event) => {
     event.preventDefault();
@@ -170,7 +170,7 @@ const poderContainer = document.getElementById('poder-container');
 const poderMais = document.getElementById('poder-mais');
 const poderMenos = document.getElementById('poder-menos');
 
-let poderCount = 0;
+let poderCount = poderContainer.querySelectorAll('.lista-poder').length;
 
 poderMais.addEventListener('click', (event) => {
     event.preventDefault();
