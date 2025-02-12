@@ -7,7 +7,8 @@ const jwt = require('jsonwebtoken');
 const fs = require("fs");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-const planets = require('./data/planets');
+const planets = require('./data/Planets');
+const backgrounds = require('./data/Backgrounds')
 
 // Function to save error messages
 function logError(errorMessage) {
@@ -458,4 +459,6 @@ mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.ipu4x.mongodb.n
 
     //insert planets in the database for use later
     planets.insertPlanets();
+    //insert backgrounds in the database for use later
+    backgrounds.insertBackgrounds();
 }).catch(err => console.log(err));

@@ -82,7 +82,7 @@ const characterSchema = new mongoose.Schema({
         mutations: {type: String,  default: ""},
     },
     aptitude: {
-        general: { type: Boolean, default: false },
+        general: { type: Boolean, default: true },
         weaponSkill: { type: Boolean, default: false },
         balisticSkill: { type: Boolean, default: false },
         strength: { type: Boolean, default: false },
