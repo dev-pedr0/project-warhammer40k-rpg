@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="ficha">
+        <a class="link-retornar" href="/user/<%= user.id %>/lista-personagem">
+            <img src="/imgs/home.png" alt="retornar-inicio" title="Retornar">
+        <!-- Créditos da imagem: Dave Gandy -->
+        </a>
         <form action="/character-update/<%= character._id %>" method="post">
             <div class="nome">
                 <%= character.characterName %>

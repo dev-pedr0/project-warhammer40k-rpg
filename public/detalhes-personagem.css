@@ -99,6 +99,21 @@ h1 {
     margin: 0;
 }
 
+.link-retornar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background-color: #615F5C;
+    border-radius: 35px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.link-retornar img {
+    width: 30px;
+}
+
 form {
     display: flex;
     flex-direction: column;

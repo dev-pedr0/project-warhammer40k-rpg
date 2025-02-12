@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const fs = require("fs");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const planets = require('./data/planets');
 
 // Function to save error messages
 function logError(errorMessage) {
@@ -330,6 +331,11 @@ app.post("/character", checkToken, async (req, res) => {
         };
 
         const parsedPsiLevel = Number(psiLevel || 0);
+
+        const parsedPowers = powers.map(power => ({
+            name: typeof power.name === 'string' ? power.name : '', // Garante que o valor seja string
+            description: typeof power.description === 'string' ? power.description : '' // Garante que o valor seja string
+        }));
         
         //create new character
         const newCharacter = new Character({
@@ -358,7 +364,7 @@ app.post("/character", checkToken, async (req, res) => {
             movement: parsedMovement,
             fatigue: parsedFatigue,
             psiLevel: parsedPsiLevel,
-            powers,
+            powers: parsedPowers,
             notes,
         });
 
@@ -383,6 +389,7 @@ app.get('/user/:id/lista-personagem', checkToken, async (req, res) => {
 //Go to character page
 app.get('/character/:id', checkToken, async (req, res) => {
     try {
+        const user = req.user;
         const characterId = req.params.id;
 
         if (!mongoose.Types.ObjectId.isValid(characterId)) {
@@ -395,13 +402,14 @@ app.get('/character/:id', checkToken, async (req, res) => {
             return res.status(404).send('Personagem não encontrado.');
         }
 
-        return res.render('detalhes-personagem', { character });
+        return res.render('detalhes-personagem', { character, user });
     } catch (err) {
         logError(err.message || "Erro Desconhecido");
         res.status(500).send('Erro ao buscar informações do personagem.');
     }
 });
 
+//Edit and update character
 app.post('/character-update/:id', checkToken, async (req, res) => {
     const characterId = req.params.id;
     const updatedData = req.body;
@@ -422,7 +430,7 @@ app.delete('/character/:id', checkToken, async (req, res) => {
     try {
         const characterId = req.params.id;
 
-        // Deletar o personagem pelo ID
+        // Delete character by id
         const result = await Character.findByIdAndDelete(characterId);
 
         if (!result) {
@@ -447,4 +455,7 @@ mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.ipu4x.mongodb.n
     //listen to the port
     const port = process.env.PORT;
     app.listen(port);
+
+    //insert planets in the database for use later
+    planets.insertPlanets();
 }).catch(err => console.log(err));
