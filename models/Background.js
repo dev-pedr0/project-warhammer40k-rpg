@@ -191,6 +191,7 @@ const backgroundSchema = new mongoose.Schema({
         },
     ],
     backgroundTalent: { type: String, required: true },
+    backgroundTrait: {type: String, default: ""},
     backgroundEquipment: [
         {
             name: { type: String, default: "" },
@@ -221,6 +222,12 @@ const backgroundSchema = new mongoose.Schema({
         survival: { type: Boolean, default: false },
         social: { type: Boolean, default: false },
     },
+    backgroundAptitudeOptions: [
+        {
+            option1: { type: String, required: true },
+            option2: { type: String, required: true },
+        },
+    ]
 });
 
 const Background = mongoose.model('Background', backgroundSchema);
