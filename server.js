@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const planets = require('./data/Planets');
 const backgrounds = require('./data/Backgrounds');
 const roles = require('./data/Roles');
+const talents = require('./data/Talents');
 
 // Function to save error messages
 function logError(errorMessage) {
@@ -462,6 +463,8 @@ mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.ipu4x.mongodb.n
     planets.insertPlanets();
     //insert backgrounds in the database for use later
     backgrounds.insertBackgrounds();
-    // insert roles in the database for use later
+    //insert roles in the database for use later
     roles.insertRoles();
+    //insert talents in the database for use later
+    talents.insertTalents();
 }).catch(err => console.log(err));

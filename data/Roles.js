@@ -1,6 +1,6 @@
 const Role = require('../models/Role');
 
-//current list of existing types of planets. Able to create more
+//current list of existing types of roles. Able to create more
 const roleData = [
     {
         roleName: "Assassino",

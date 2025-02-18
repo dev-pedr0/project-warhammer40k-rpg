@@ -1,6 +1,6 @@
 const Background = require('../models/Background');
 
-//current list of existing types of planets. Able to create more
+//current list of existing types of backgrounds. Able to create more
 const backgroundData = [
     {
         backgroundName: "Adeptus Administratum",
