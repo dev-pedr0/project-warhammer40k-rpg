@@ -1240,6 +1240,585 @@ const talentData = [
             description: "Pode reduzir seu BV (bônus de Vontade) nos graus de falhas em testes de Medo ou Preso. Se reduzir para zero ou menos conta como se tivesse sido bem-sucedido com 1 grau de sucesso",
         },
     },
+    {
+        talentName: "Movimento Assassino",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Agilidade 40",
+            },
+            {
+                name: "Acrobacia",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade de Combate",
+            },
+            {
+                name: "Sobrevivência",
+            },
+        ],
+        talentText: {
+            description: "Após fazer um ataque corpo a corpo, pode fazer um teste moderdo (+0) de Acrobacia para se mover metade do deslocamento como Ação Livre uma vez por rodada. Essa ação não causa Ataques de Oportunidade",
+        },
+    },
+    {
+        talentName: "Bastião da Vontade de Ferro",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Psi-nível",
+            },
+            {
+                name: "Mente Fortalecida",
+            },
+            {
+                name: "Vontade 40",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Vontade",
+            },
+            {
+                name: "Psíquico",
+            },
+        ],
+        talentText: {
+            description: "Personagem adiciona 5 * Psi-nível em qualquer teste para resistir a poderes psíquicos",
+        },
+    },
+    {
+        talentName: "Mestre da Lâmina",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Habilidade de Combate 30",
+            },
+            {
+                name: "Treinamento em Armas (alguma corpo a corpo)",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade de Combate",
+            },
+            {
+                name: "Sutileza",
+            },
+        ],
+        talentText: {
+            description: "Ao atacar com uma arma laminada pode re-rolar um ataque falho por rodada",
+        },
+    },
+    {
+        talentName: "Golpe Esmagador",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Habilidade de Combate 40",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade de Combate",
+            },
+            {
+                name: "Ofensivo",
+            },
+        ],
+        talentText: {
+            description: "O personagem causa metade de seu BHC (bônus de habilidade de combate), arredondado para cima, como dano extra em seus ataques corpo a corpo",
+        },
+    },
+    {
+        talentName: "Anjo da Morte",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Habilidade de Combate ou Habilidade Balística 45",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Percepção",
+            },
+            {
+                name: "Sutileza",
+            },
+        ],
+        talentText: {
+            description: "Quando o personagem causar dano Crítico com uma arma da Especialização o personagem adiciona o BP (bônus de Percepção) ao dano",
+            specialist: "Deve escolher a Especialização Habilidade de Combate (para armas corpo a corpo) ou Habilidade Balística (para armas a distância)",
+        },
+    },
+    {
+        talentName: "Interrogatório Delicado",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Socialização 50",
+            },
+            {
+                name: "Interrogatório Coordenado",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Inteligência",
+            },
+            {
+                name: "Sutileza",
+            },
+        ],
+        talentText: {
+            description: "Caso um interrogatório fosse causar perda de Discrição, a perda é reduzida em 1d5. Se o resultado for um número negativo a Discrição aumenta em 1 ponto",
+        },
+    },
+    {
+        talentName: "Olhar Vingativo",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Habilidade Balística 50",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade Balística",
+            },
+            {
+                name: "Ofensivo",
+            },
+        ],
+        talentText: {
+            description: "Antes de fazer um Ataque Simples o personagem pode gastar um Ponto de Destino. Ele adiciona seus graus de sucesso do ataque no dano e no valor de penetração",
+        },
+    },
+    {
+        talentName: "Favorecido Pelo Imaterium",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Vontade 35",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Vontade",
+            },
+            {
+                name: "Psíquico",
+            },
+        ],
+        talentText: {
+            description: "Quando o personagem rola na tabela Fenômeno Psíquico, contanto que ele não receba um resultado de Perigos do Imaterium, ele pode rolar novamente e escolher qual resultado usar",
+        },
+    },
+    {
+        talentName: "Flash de Intuição",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Inteligência 40",
+            },
+            {
+                name: "Rede de Contatos",
+            },
+            {
+                name: "Interrogatório Coordenado",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Percepção",
+            },
+            {
+                name: "Conhecimento",
+            },
+        ],
+        talentText: {
+            description: "Pode gastar 1 Ponto de Destino e receber uma pista sobre a investigação",
+        },
+    },
+    {
+        talentName: "Coroa de Comando",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Socialização",
+            },
+            {
+                name: "Vontade 40",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Socialização",
+            },
+            {
+                name: "Liderança",
+            },
+        ],
+        talentText: {
+            description: "Ao interagir com NPC’s usando habilidades com as aptidões Social ou Liderança ele pode afetar pessoas a uma quantidade de metros igual a 100 * BS (bônus de socialização)",
+        },
+    },
+    {
+        talentName: "Martelada",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Golpe Esmagador",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Força",
+            },
+            {
+                name: "Ofensivo",
+            },
+        ],
+        talentText: {
+            description: "Ao usar Ataque Total para fazer um único ataque o personagem adiciona metade do BF (bônus de força) na penetração da arma e o ataque conta como tendo a qualidade Concussivo (2)",
+        },
+    },
+    {
+        talentName: "Conhecimento Infundido",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Inteligência 40",
+            },
+            {
+                name: "Qualquer Conhecimento",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Inteligência",
+            },
+            {
+                name: "Conhecimento",
+            },
+        ],
+        talentText: {
+            description: "O personagem ganha todas as especializações de Conhecimento Comum e Conhecimento Escolástico no nível 1. Em testes bem-sucedidos desses conhecimento o personagem sempre adiciona mais um grau de sucesso",
+        },
+    },
+    {
+        talentName: "Ataque Relâmpago",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Ataque Veloz",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade de Combate",
+            },
+            {
+                name: "Sutileza",
+            },
+        ],
+        talentText: {
+            description: "O personagem pode realizar a ação Ataque Relâmpago",
+        },
+    },
+    {
+        talentName: "Explosão de Luminens",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Choque de Luminens",
+            },
+            {
+                name: "Capacitores de Luminen",
+            },
+            {
+                name: "Implantes Mechanicus",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade Balística",
+            },
+            {
+                name: "Tecnologia",
+            },
+        ],
+        talentText: {
+            description: "O personagem sempre conta como tendo uma arma tipo Pistola com distância de 10m. Essa arma pode fazer apenas Tiros Únicos e causa 1d10 + 2*BV (bônus de Vontade) de Energia, com Penetração 0 e a qualidade Chocante. O personagem conta como tendo treinamento nessa arma e após cada ataque deve fazer um teste de Resistência para não sofrer 1 nível de Fadiga",
+        },
+    },
+    {
+        talentName: "Maestria",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Nível 4 na perícia de escolha",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Inteligência",
+            },
+            {
+                name: "Conhecimento",
+            },
+        ],
+        talentText: {
+            description: "O personagem pode gastar um Ponto de Destino para automaticamente obter sucesso na Perícia da especialização contanto que sua dificuldade seja +0 ou melhor. A quantidade de graus de sucesso é igual ao bônus da habilidade relacionada a perícia. O talento pode ser escolhido mais de uma vez, para perícias diferentes",
+            specialist: "Deve ewscolher uma perícia nível 4",
+        },
+    },
+    {
+        talentName: "Tiro Potente",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Habilidade Balística 40",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade Balística",
+            },
+            {
+                name: "Ofensivo",
+            },
+        ],
+        talentText: {
+            description: "O personagem adiciona metade do seu BCB (bônus de Combate Balístico) no dano de ataques usando armas a distância",
+        },
+    },
+    {
+        talentName: "Imortal",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Vontade 50",
+            },
+            {
+                name: "Resistência 50",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Resistência",
+            },
+            {
+                name: "Defensivo",
+            },
+        ],
+        talentText: {
+            description: "O personagem pode gastar um Ponto de Destino para, durante o combate, ignorar efeitos de ferimentos (como Dano Crítico), Fadiga, Atordoamento, contato que o efeito não o mate imediatamente. O personagem não ignora o dano, apenas os efeitos negativos dele. Ao final do combate os efeitos são sentidos como normal",
+        },
+    },
+    {
+        talentName: "Velocidade Sobrenatural",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Habilidade de Combate 40",
+            },
+            {
+                name: "Agilidade 50",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Agilidade",
+            },
+            {
+                name: "Ofensivo",
+            },
+        ],
+        talentText: {
+            description: "ao fazer a ação de Disparada o personagem pode andar o dobro da velocidade de Disparada",
+        },
+    },
+    {
+        talentName: "Arrancada",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Agilidade",
+            },
+            {
+                name: "Sobrevivência",
+            },
+        ],
+        talentText: {
+            description: "Ao realizar a ação Movimento Completo, pode se mover um número extra de metros igual ao BA (bônus de Agilidade). Ao usar uma ação de Corrida, pode se mover o dobro do movimento de Corrida. Caso tenha feito isso na rodada anterior, ganha 1 nível de Fadiga",
+        },
+    },
+    {
+        talentName: "Evasão Extra",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Agilidade 40",
+            },
+            {
+                name: "Esquiva ou Bloqueio",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Agilidade",
+            },
+            {
+                name: "Defensivo",
+            },
+        ],
+        talentText: {
+            description: "O personagem pode fazer um teste extra de Bloqueio e Esquiva uma vez por rodada",
+        },
+    },
+    {
+        talentName: "Cirurgião Superior",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Medicina Nível 2",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Inteligência",
+            },
+            {
+                name: "Sobrevivência",
+            },
+        ],
+        talentText: {
+            description: "O personagem ganha +20 em todos os testes de Medicina. Ao realizar primeiros socorros o personagem ignora penalidades de Muito Ferido em pacientes e sofre apenas -10 ao tratar pacientes com Feridas Críticas",
+        },
+    },
+    {
+        talentName: "Seleção de Alvo",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Habilidade Balística 50",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Habilidade Balística",
+            },
+            {
+                name: "Sutileza",
+            },
+        ],
+        talentText: {
+            description: "O personagem pode atirar em alvos em combate corpo a corpo. Caso realize a ação Mirar antes de atacar, as chances de acertar um aliado é 0",
+        },
+    },
+    {
+        talentName: "Atropelamento Devastador",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Força 50",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Força",
+            },
+            {
+                name: "Ofensivo",
+            },
+        ],
+        talentText: {
+            description: "Ao fazer uma ação de Disparada pode fazer um teste oposto de Força contra qualquer um em seu caminho. Caso os alvos falhem eles são derrubados",
+        },
+    },
+    {
+        talentName: "Resistência Verdadeira",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Resistência 40",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Resistência",
+            },
+            {
+                name: "Defensivo",
+            },
+        ],
+        talentText: {
+            description: "Ao sofrer Dano Crítico, reduz o valor pelo BR (bônus de resistência) do personagem (para o mínimo de 1 de dano crítico)",
+        },
+    },
+    {
+        talentName: "Maestria Com Duas Armas",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: "Agilidade 45",
+            },
+            {
+                name: "Ambidestria",
+            },
+            {
+                name: "Combater Com Duas Armas (corpo a corpo e a distância)",
+            },
+            {
+                name: "Habilidade de Combate ou Habilidade Balística 40",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Sutileza",
+            },
+            {
+                name: "Ofensivo",
+            },
+        ],
+        talentText: {
+            description: "Ao lutar com duas armas (cada uma sendo armas de uma mão) o personagem ignora a penalidade de -20",
+        },
+    },
+    {
+        talentName: "Trava do Imaterium",
+        talentLevel: 3,
+        telentRequisite: [
+            {
+                name: ": Psi-nível",
+            },
+            {
+                name: "Mente Fortalecida",
+            },
+            {
+                name: "Vontade 50",
+            },
+        ],
+        talentAptitude: [
+            {
+                name: "Vontade",
+            },
+            {
+                name: "Psíquico",
+            },
+        ],
+        talentText: {
+            description: "Uma vez por sessão o personagem pode ignorar um efeito da tabela Fenômeno Psíquico. O personagem sofre 1d5 de dano de Energia na Cabeça e não pode fazer testes de Poder de Foco ou manter poderes psíquicos até o início do seu próximo turno",
+        },
+    },
 ];
 
 //Function that verify existing talents and add new talents to the database

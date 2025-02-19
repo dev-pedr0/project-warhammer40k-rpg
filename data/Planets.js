@@ -137,7 +137,7 @@ const insertPlanets = async() => {
             }
         }
     } catch (error) {
-        console.error('Erro ao inserir planetas:', err);
+        console.error('Erro ao inserir planetas:', error);
     }
 }
 

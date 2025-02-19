@@ -11,6 +11,7 @@ const planets = require('./data/Planets');
 const backgrounds = require('./data/Backgrounds');
 const roles = require('./data/Roles');
 const talents = require('./data/Talents');
+const weapons = require('./data/Weapons');
 
 // Function to save error messages
 function logError(errorMessage) {
@@ -467,4 +468,6 @@ mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.ipu4x.mongodb.n
     roles.insertRoles();
     //insert talents in the database for use later
     talents.insertTalents();
+    //insert weapons in the database for use later
+    weapons.insertWeapons();
 }).catch(err => console.log(err));
