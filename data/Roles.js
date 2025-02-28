@@ -179,17 +179,16 @@ const roleData = [
     },
 ];
 
-//Function that verify existing backgrounds and add new backgrounds to the database
+//Function that verify existing backgrounds and add/update backgrounds to the database
 const insertRoles = async() => {
     try {
         for (const role of roleData) {
-            const existingRoles = await Role.findOne({ roleName: role.roleName });
-            if (!existingRoles) {
-                await Role.create(role);
-                //console.log(`${role.roleName} inserido com sucesso.`);
-            } else {
-                //console.log(`${role.roleName} já existe no banco.`);
-            }
+            await Role.findOneAndUpdate(
+                { roleName: role.roleName }, // Search role by name
+                { $set: role }, // Data to be updated or added
+                { upsert: true, new: true } // Added new role or update it
+            );
+            //console.log(`${role.roleName} inserido/atualizado com sucesso.`);
         }
     } catch (error) {
         console.error('Erro ao inserir roles:', error);

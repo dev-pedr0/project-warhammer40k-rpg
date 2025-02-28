@@ -388,13 +388,12 @@ const backgroundData = [
 const insertBackgrounds = async() => {
     try {
         for (const background of backgroundData) {
-            const existingBackground = await Background.findOne({ backgroundName: background.backgroundName });
-            if (!existingBackground) {
-                await Background.create(background);
-                //console.log(`${background.backgroundName } inserido com sucesso.`);
-            } else {
-                //console.log(`${background.backgroundName} já existe no banco.`);
-            }
+            await Background.findOneAndUpdate(
+                { backgroundName: background.backgroundName }, // Search background by name
+                { $set: background }, // Data to be updated or added
+                { upsert: true, new: true } // Added new background or update it
+            );
+            //console.log(`${background.backgroundName} inserido/atualizado com sucesso.`);
         }
     } catch (error) {
         console.error('Erro ao inserir backgrounds:', error);

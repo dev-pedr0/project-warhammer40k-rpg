@@ -6,7 +6,7 @@ const weaponSchema = new mongoose.Schema({
     weaponClass: {type: String, required: true},
     weaponRange: {type: String, default: ""},
     weaponRateOfFire: {type: String, required: true},
-    weapondDamage: {type: String, required: true},
+    weaponDamage: {type: String, default: ""},
     weaponPenetration: {type: Number, default: 0},
     weaponMunition: {type: Number, default: 0},
     weaponRecharge: {type: String, default: ""},

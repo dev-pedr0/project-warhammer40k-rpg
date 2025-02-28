@@ -128,13 +128,12 @@ const planetsData = [
 const insertPlanets = async() => {
     try {
         for (const planet of planetsData) {
-            const existingPlanet = await Planet.findOne({ planetName: planet.planetName });
-            if (!existingPlanet) {
-                await Planet.create(planet);
-                //console.log(`Planeta ${planet.planetName} inserido com sucesso.`);
-            } else {
-                //console.log(`Planeta ${planet.planetName} já existe no banco.`);
-            }
+            await Planet.findOneAndUpdate(
+                { planetName: planet.planetName }, // Search planet by name
+                { $set: planet }, // Data to be updated or added
+                { upsert: true, new: true } // Added new planet or update it
+            );
+            //console.log(`${planet.planetName} inserido/atualizado com sucesso.`);
         }
     } catch (error) {
         console.error('Erro ao inserir planetas:', error);

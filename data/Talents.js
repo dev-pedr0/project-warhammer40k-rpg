@@ -1821,17 +1821,16 @@ const talentData = [
     },
 ];
 
-//Function that verify existing talents and add new talents to the database
+//Function that verify existing talents and add/update talents to the database
 const insertTalents = async() => {
     try {
         for (const talent of talentData) {
-            const existingTalents = await Talent.findOne({ talentName: talent.talentName });
-            if (!existingTalents) {
-                await Talent.create(talent);
-                //console.log(`${talent.talentName} inserido com sucesso.`);
-            } else {
-                //console.log(`${talent.talentName} já existe no banco.`);
-            }
+            await Talent.findOneAndUpdate(
+                { talentName: talent.talentName }, // Search talent by name
+                { $set: talent }, // Data to be updated or added
+                { upsert: true, new: true } // Added new talent or update it
+            );
+            //console.log(`${talent.talentName} inserido/atualizado com sucesso.`);
         }
     } catch (error) {
         console.error('Erro ao inserir roles:', error);
